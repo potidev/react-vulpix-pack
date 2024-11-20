@@ -1,5 +1,7 @@
+@use "../../../styles/sass/colors.module.scss" as *;
+
 .button  {
-  background-color: #f00;
+  background-color: $primary-color;
   color: #fff;
   border: none;
   padding: 10px 20px;

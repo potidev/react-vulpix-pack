@@ -1,0 +1,33 @@
+{
+  "cSpell.words": [
+    "anims",
+    "checkin",
+    "cnpj",
+    "dayjs",
+    "deselectable",
+    "esnext",
+    "imask",
+    "imgs",
+    "lottie",
+    "potidev",
+    "qrcode",
+    "reservate",
+    "Reservate",
+    "svgr",
+    "svgs",
+    "Unselecteble",
+    "Whatsapp",
+    "youtube",
+    "zindexs"
+  ],
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "material-icon-theme.folders.associations": {
+    "sections": "layout",
+    "styled-components": "theme",
+    "forms": "docs",
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"SCSS import variables.module.scss": {
+		"scope": "scss,sass",
+		"prefix": "iscss",
+		"body": [
+		  "@import \"@/styles/sass/variables.module.scss\";",
+		],
+		"description": "SCSS import variables.module.scss"
+	},
+}
