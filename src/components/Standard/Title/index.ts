@@ -1,2 +1,2 @@
 export { Title } from "./Title";
-export type { TitleProps } from "./types";
+export { TitleProps } from "./types";
