@@ -1,0 +1,1 @@
+export { getVulpixSassAdditionalData } from "./getVulpixSassAdditionalData";

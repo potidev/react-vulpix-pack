@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.0.8",
+  "version": "0.0.15",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -13,11 +13,28 @@
   "engines": {
     "node": ">=10"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./next-config": {
+      "import": "./dist/config/next/index.js",
+      "require": "./dist/config/next/index.js",
+      "types": "./dist/config/next/index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "tsc && sass src:dist --no-source-map && node scripts/update-imports.js",
+    "clear-build": "rimraf dist",
+    "build": "node build.js",
+    "old-build": "npm run clear-build && npm run colors && tsc && tscpaths -p tsconfig.json -s ./src -o ./dist && sass --load-path=src/styles/sass src:dist --no-source-map && copyfiles -u 1 \"src/**/*.module.scss\" dist && npm run remove-variables-scss-imports",
+    "build-css": "npm run clean && tsc && sass src:dist --no-source-map && node scripts/update-imports.js",
     "prepare": "npm run build",
+    "remove-variables-scss-imports": "node scripts/remove-variables-scss-imports.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "colors": "ts-node scripts/generateColorsFile.ts"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -30,15 +47,20 @@
     "@storybook/addon-links": "^8.4.4",
     "@storybook/addons": "^7.6.17",
     "@storybook/react": "^8.4.4",
+    "@types/node": "^22.9.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "babel-loader": "^9.2.1",
     "chalk": "^4.1.2",
+    "copyfiles": "^2.4.1",
     "husky": "^9.1.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
+    "rimraf": "^5.0.10",
     "sass": "^1.81.0",
+    "ts-node": "^10.9.2",
+    "tscpaths": "^0.0.9",
     "tslib": "^2.8.1",
     "typescript": "^5.6.3"
   }

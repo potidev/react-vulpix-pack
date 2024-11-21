@@ -7,10 +7,10 @@
     "jsx": "react",
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
-    "baseUrl": "src", // Configura a base para o alias
+    "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
     }
   },
-  "include": ["src"],
+  "include": ["src"]
 }
