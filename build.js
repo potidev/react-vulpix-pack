@@ -13,9 +13,9 @@ const clearBuild = () => {
 }
 
 const buildColorsSass = () => {
-  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Sass colors...`));
+  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Sass Variables...`));
   console.log();
-  execSync('npm run colors', { stdio: 'inherit' });
+  execSync('npm run variables', { stdio: 'inherit' });
   console.log();
 }
 

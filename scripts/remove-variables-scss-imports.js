@@ -11,7 +11,7 @@ const FULL_LOG = false;
 
 const PROJECT_ROOT = path.join(__dirname, '../'); // Root of the project
 const DIST_FOLDER = path.join(PROJECT_ROOT, 'dist'); // Path to the dist folder
-const IMPORT_REGEX = /@use\s+['"]([^'"]*\/)?colors\.module\.scss['"]\s+as\s+\*;/g;
+const IMPORT_REGEX = /@use\s+['"]([^'"]*\/)?variables\.module\.scss['"]\s+as\s+\*;/g;
 
 function formatPath(path) {
   // Divida o caminho pelo separador '\'

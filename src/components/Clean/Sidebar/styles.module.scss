@@ -1,0 +1,36 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+@use '../variables.module.scss' as *;
+
+.sidebar {
+  box-sizing: border-box;
+  height: 100vh;
+  width: $sidebar-desktop-size;
+  padding: $sidebar-v-padding $sidebar-h-padding;
+  background-color: $sidebar-background-color;
+  border-right: 1px solid $separator-color;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  transition: 300ms ease-in-out;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
+.list {
+  list-style: none;
+  height: calc(100vh - $sidebar-v-padding * 2);
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  padding: $sidebar-close-v-padding $sidebar-close-h-padding;
+  width: calc(calc($sidebar-close-h-padding * 2) + $sidebar-icon-desktop-size + calc($sidebar-item-h-padding * 2));
+}
+
+.items {
+  overflow-y: auto;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // Internet Explorer
+  flex: 1;
+}

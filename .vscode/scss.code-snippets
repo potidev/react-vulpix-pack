@@ -1,10 +1,22 @@
 {
 	"SCSS import variables.module.scss": {
 		"scope": "scss,sass",
-		"prefix": "iscss",
+		"prefix": "icolors",
 		"body": [
-		  "@import \"@/styles/sass/variables.module.scss\";",
+		  "@use '../../../styles/sass/variables.module.scss' as *;",
 		],
 		"description": "SCSS import variables.module.scss"
 	},
+	"SCSS default structure": {
+		"scope": "scss,sass",
+		"prefix": "scss",
+		"body": [
+			"@use '../../../styles/sass/variables.module.scss' as *;",
+			"",
+			".container {",
+			"  display: flex;",
+			"}"
+		],
+		"description": "SCSS default structure"	
+	}
 }

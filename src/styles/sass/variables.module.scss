@@ -1,1 +1,14 @@
-@use "colors.module.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    $primary-color: #f08200;
+    $background-color: #11121a;
+    $text-color: #e6e6ef;
+    $soft-text-color: #b0b3c1;
+    $separator-color: #42434a;
+    $font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    $sidebar-background-color: #11121a;
+    $sidebar-desktop-size: 250px;
+    $sidebar-mobile-size: undefined;
+    $sidebar-icon-desktop-size: 24px;
+    $sidebar-icon-mobile-size: undefined;

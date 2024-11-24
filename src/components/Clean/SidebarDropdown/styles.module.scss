@@ -1,0 +1,44 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+
+.container {
+  
+}
+
+.title {
+  font: inherit;
+  font-family: $font-family;
+  line-height: 100%;
+  color: $text-color;
+  flex-grow: 1;
+}
+
+.dropdownButton {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.submenu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+
+  & > div {
+    overflow: hidden;
+  }
+}
+
+.show {
+  grid-template-rows: 1fr;
+}
+
+.arrow {
+  transition: 200ms ease;
+}
+
+.rotateArrow {
+  rotate: 180deg;
+}

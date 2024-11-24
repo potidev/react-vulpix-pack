@@ -1,0 +1,7 @@
+$sidebar-v-padding: 5px;
+$sidebar-h-padding: 16px;
+$sidebar-close-h-padding: 5px;
+$sidebar-close-v-padding: $sidebar-v-padding;
+$sidebar-item-v-padding: 14px;
+$sidebar-item-h-padding: 14px;
+$sidebar-item-gap: calc($sidebar-close-h-padding + $sidebar-item-h-padding);

@@ -1,0 +1,9 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+@use '../../../styles/sass/reset.module.scss' as *;
+
+.container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

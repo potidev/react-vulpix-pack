@@ -1,0 +1,17 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+
+.container {
+  display: flex;
+}
+
+.active {
+  color: $primary-color !important; 
+
+  & svg {
+    fill: $primary-color !important;
+  }
+}
+
+.label {
+  flex-grow: 1;
+}

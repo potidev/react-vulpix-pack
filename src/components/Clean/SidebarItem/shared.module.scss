@@ -1,0 +1,34 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+@use '../variables.module.scss' as *;
+
+.sidebarItemContainer {
+  border-radius: 8px;
+  padding: $sidebar-item-v-padding $sidebar-item-h-padding;
+  text-decoration: none;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  gap: $sidebar-item-gap;
+  font: inherit;
+  font-family: $font-family;
+  line-height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(250, 250, 250, 0.1);
+  }
+}
+
+.icon {
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    fill: $text-color;
+    width: $sidebar-icon-desktop-size;
+    height: $sidebar-icon-desktop-size;
+    flex-shrink: 0;
+  }
+}

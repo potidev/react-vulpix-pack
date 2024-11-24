@@ -1,0 +1,42 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+@use '../variables.module.scss' as *;
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-weight: 600;
+  font-family: $font-family;
+}
+
+.button {
+  margin-left: auto;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  cursor: pointer;
+  padding: $sidebar-item-v-padding $sidebar-item-h-padding;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(250, 250, 250, 0.1);
+  }
+
+  & svg {
+    fill: $text-color;
+    transition: rotate 300ms ease;
+    height: $sidebar-icon-desktop-size;
+    width: $sidebar-icon-desktop-size;
+  }
+}
+
+.rotate {
+  & > svg {
+    rotate: 180deg;
+  }
+}
