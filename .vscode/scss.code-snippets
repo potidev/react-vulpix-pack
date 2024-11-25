@@ -18,5 +18,14 @@
 			"}"
 		],
 		"description": "SCSS default structure"	
+	},
+	"SCSS tablet @media": {
+		"scope": "scss,sass",
+		"prefix": "tablet",
+		"body": [
+			"@media screen and (min-width: \\$tablet) {",
+			"  $1",
+			"}",
+		],
 	}
 }

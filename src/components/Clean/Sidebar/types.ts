@@ -1,4 +1,5 @@
+import { SidebarHeaderProps } from "../SidebarHeader";
+
 export type SidebarProps = {
-  headerTitle?: string;
   children?: React.ReactNode;
-};
+} & SidebarHeaderProps;

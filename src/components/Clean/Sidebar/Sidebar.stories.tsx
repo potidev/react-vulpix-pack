@@ -18,6 +18,6 @@ type Story = StoryObj<SidebarProps>;
 
 export const Developer: Story = {
   args: {
-    headerTitle: 'Sidebar',
+    title: 'Sidebar',
   },
 };

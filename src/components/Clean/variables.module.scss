@@ -1,3 +1,5 @@
+@use '../../styles/sass/variables.module.scss' as *;
+
 $sidebar-v-padding: 5px;
 $sidebar-h-padding: 16px;
 $sidebar-close-h-padding: 5px;
@@ -5,3 +7,8 @@ $sidebar-close-v-padding: $sidebar-v-padding;
 $sidebar-item-v-padding: 14px;
 $sidebar-item-h-padding: 14px;
 $sidebar-item-gap: calc($sidebar-close-h-padding + $sidebar-item-h-padding);
+$sidebar-close-desktop-size: calc(calc($sidebar-close-h-padding * 2) + $sidebar-icon-desktop-size + calc($sidebar-item-h-padding * 2));
+
+$sidebar-width-transition-desktop: 300ms ease-in-out;
+
+$sidebar-toolbar-desktop-height: calc($sidebar-v-padding * 2 + $sidebar-icon-desktop-size + calc($sidebar-item-v-padding * 2));

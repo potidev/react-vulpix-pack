@@ -24,6 +24,7 @@ type Story = StoryObj<SidebarDropdownProps>;
 export const WithOptions: Story = {
   args: {
     title: 'Create',
+    icon: <MdOutlineCreateNewFolder />,
     options: [
       { label: 'Folder' },
       { label: 'Document' },

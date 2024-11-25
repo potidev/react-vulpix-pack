@@ -4,16 +4,24 @@
 .sidebar {
   box-sizing: border-box;
   height: 100vh;
-  width: $sidebar-desktop-size;
   padding: $sidebar-v-padding $sidebar-h-padding;
   background-color: $sidebar-background-color;
+  transition: 250ms ease-in-out;
+  text-wrap: nowrap;  
   border-right: 1px solid $separator-color;
-  position: sticky;
-  top: 0;
-  align-self: start;
-  transition: 300ms ease-in-out;
-  overflow: hidden;
-  text-wrap: nowrap;
+  width: $sidebar-mobile-size;
+  left: 0px;
+  position: fixed;
+  z-index: $sidebar-z-index;
+  
+  @media screen and (min-width: $tablet) {
+    transition: $sidebar-width-transition-desktop;
+    width: $sidebar-desktop-size;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    overflow: hidden;
+  }
 }
 
 .list {
@@ -25,7 +33,11 @@
 
 .close {
   padding: $sidebar-close-v-padding $sidebar-close-h-padding;
-  width: calc(calc($sidebar-close-h-padding * 2) + $sidebar-icon-desktop-size + calc($sidebar-item-h-padding * 2));
+  left: -$sidebar-mobile-size;
+  
+  @media screen and (min-width: $tablet) {
+    width: $sidebar-close-desktop-size;
+  }
 }
 
 .items {

@@ -5,4 +5,5 @@ export type VulpixColors = {
   softTextColor: string;
   separatorColor: string;
   sidebarBackgroundColor?: string;
+  sidebarToolbarBackgroundColor?: string;
 }

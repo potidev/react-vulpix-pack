@@ -8,7 +8,21 @@
     $font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     $sidebar-background-color: #11121a;
+    $sidebar-toolbar-background-color: #11121a;
     $sidebar-desktop-size: 250px;
-    $sidebar-mobile-size: undefined;
+    $sidebar-mobile-size: 250px;
     $sidebar-icon-desktop-size: 24px;
-    $sidebar-icon-mobile-size: undefined;
+    $sidebar-icon-mobile-size: 24px;
+
+    $mobile-s: 321px;
+    $mobile-m: 376px;
+    $mobile-l: 426px;
+    $tablet: 769px;
+    $laptop: 1025px;
+    $laptop-l: 1441px;
+    $desktop: 1919px;
+
+    $modal-z-index: 4;
+    $sidebar-z-index: 3;
+    $sidebar-overlay-z-index: 2;
+    $fixed-header-z-index: 1;

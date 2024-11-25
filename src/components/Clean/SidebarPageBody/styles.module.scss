@@ -4,6 +4,10 @@
 .container {
   min-height: 100vh;
   min-height: 100dvh;
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
+
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
 }
