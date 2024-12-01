@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
 import { SidebarDropdownItem } from "../SidebarDropdownItem/component";
 import sharedStyles from '../SidebarItem/shared.module.scss';
 import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
-import { Span } from "@/modules/Common/components/Span";
+import { List, Span } from "@/modules/Common";
 
 export const SidebarDropdown = ({ className, title, icon, options = [], openId }: SidebarDropdownProps) => {
   const [open, setOpen] = useState(false);
@@ -65,7 +65,7 @@ export const SidebarDropdown = ({ className, title, icon, options = [], openId }
           <Arrow />
         </div>
       </button>
-      <ul className={cn.get(styles.submenu, openClass?.submenuOpenClass)}>
+      <List className={cn.get(styles.submenu, openClass?.submenuOpenClass)}>
         <div>
           {
             options.length > 0 && options.map((option, index) => (
@@ -73,7 +73,7 @@ export const SidebarDropdown = ({ className, title, icon, options = [], openId }
             ))
           }
         </div>
-      </ul>
+      </List>
     </li>
   );
 };

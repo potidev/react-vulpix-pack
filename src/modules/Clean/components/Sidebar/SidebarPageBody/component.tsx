@@ -7,8 +7,8 @@ import styles from './styles.module.scss';
 
 export const SidebarPageBody = ({ className, children }: SidebarPageBodyProps) => {
   return (
-    <body className={cn.get(styles.container, className)}>
+    <div className={cn.get(styles.container, className)}>
       {children}
-    </body>
+    </div>
   );
 };
