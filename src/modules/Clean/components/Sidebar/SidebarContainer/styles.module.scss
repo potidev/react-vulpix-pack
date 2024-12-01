@@ -1,5 +1,5 @@
 @use '../../../../../styles/sass/variables.module.scss' as *;
-@use '../variables.module.scss' as *;
+@import '../shared.module.scss';
 
 .sidebar {
   box-sizing: border-box;
