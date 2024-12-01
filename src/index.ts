@@ -1,1 +1,1 @@
-export * from "./components";
+// Vulpix Index

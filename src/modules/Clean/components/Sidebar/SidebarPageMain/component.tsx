@@ -6,7 +6,7 @@ import { cn } from "@/utils/ClassNameUtils";
 
 import { SidebarPageMainProps } from "./types";
 import styles from './styles.module.scss';
-import { useSidebarContext } from "@/contexts/Clean/SidebarProvider";
+import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
 
 export const SidebarPageMain = ({ className, children, fixedHeader, fixedHeaderOnlyOnMobile, defaultToolbarPadding = false }: SidebarPageMainProps) => {
   const { sidebarIsOpen } = useSidebarContext();

@@ -4,7 +4,7 @@ import React, { useMemo } from "react"
 import { MdKeyboardDoubleArrowLeft as Arrow } from "react-icons/md";;
 
 import { cn } from "@/utils/ClassNameUtils";
-import { useSidebarContext } from "@/contexts/Clean/SidebarProvider";
+import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
 
 import { SidebarControlButtonProps } from "./types";
 import styles from './styles.module.scss';

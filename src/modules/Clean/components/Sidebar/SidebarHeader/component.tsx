@@ -8,8 +8,8 @@ import { SidebarControlButton } from "../SidebarControlButton/component";
 import { SidebarHeaderProps } from "./types";
 import styles from './styles.module.scss';
 import sharedStyles from '../SidebarItem/shared.module.scss';
-import { useSidebarContext } from "@/contexts/Clean/SidebarProvider";
-import { Span } from "@/components/Common/Span";
+import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
+import { Span } from "@/modules/Common/Span";
 
 export const SidebarHeader = ({ className, title, usingToolbar = false, logo }: SidebarHeaderProps) => {
   const { sidebarIsOpen } = useSidebarContext();

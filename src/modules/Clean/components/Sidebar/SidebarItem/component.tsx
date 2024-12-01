@@ -5,7 +5,7 @@ import { cn } from "@/utils/ClassNameUtils";
 import styles from './styles.module.scss';
 import sharedStyles from './shared.module.scss';
 import { SidebarItemProps } from "./types";
-import { Span } from "@/components/Common/Span";
+import { Span } from "@/modules/Common/Span";
 
 export const SidebarItem = ({ label, active = false, icon, className }: SidebarItemProps) => {
   const activeClass = active ? styles.active : '';

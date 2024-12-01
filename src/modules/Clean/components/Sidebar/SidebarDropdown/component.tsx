@@ -4,14 +4,14 @@ import React, { useEffect, useMemo, useState } from "react";
 import { MdOutlineKeyboardArrowDown as Arrow } from "react-icons/md";
 
 import { cn } from "@/utils/ClassNameUtils";
-import { useSidebarDropdownContext } from "@/contexts/Clean/SidebarDropdownProvider";
+import { useSidebarDropdownContext } from "@/modules/Clean/contexts/SidebarDropdownProvider";
 
 import { SidebarDropdownProps } from "./types";
 import styles from './styles.module.scss';
 import { SidebarDropdownItem } from "../SidebarDropdownItem/component";
 import sharedStyles from '../SidebarItem/shared.module.scss';
-import { useSidebarContext } from "@/contexts/Clean/SidebarProvider";
-import { Span } from "@/components/Common/Span";
+import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
+import { Span } from "@/modules/Common/Span";
 
 export const SidebarDropdown = ({ className, title, icon, options = [], openId }: SidebarDropdownProps) => {
   const [open, setOpen] = useState(false);
