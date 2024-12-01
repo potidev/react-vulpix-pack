@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
 import { SidebarDropdownItem } from "../SidebarDropdownItem/component";
 import sharedStyles from '../SidebarItem/shared.module.scss';
 import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
-import { Span } from "@/modules/Common/Span";
+import { Span } from "@/modules/Common/components/Span";
 
 export const SidebarDropdown = ({ className, title, icon, options = [], openId }: SidebarDropdownProps) => {
   const [open, setOpen] = useState(false);

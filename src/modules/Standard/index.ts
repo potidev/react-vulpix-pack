@@ -1,2 +1,2 @@
-export * from "./Button";
-export * from "./Title";
+export * from "./components/Button";
+export * from "./components/Title";

@@ -9,7 +9,7 @@ import { SidebarHeaderProps } from "./types";
 import styles from './styles.module.scss';
 import sharedStyles from '../SidebarItem/shared.module.scss';
 import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
-import { Span } from "@/modules/Common/Span";
+import { Span } from "@/modules/Common/components/Span";
 
 export const SidebarHeader = ({ className, title, usingToolbar = false, logo }: SidebarHeaderProps) => {
   const { sidebarIsOpen } = useSidebarContext();

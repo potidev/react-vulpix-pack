@@ -15,19 +15,19 @@
   },
   "exports": {
     "./standard": {
-      "types": "./dist/components/Standard/index.d.ts",
-      "import": "./dist/components/Standard/index.js",
-      "require": "./dist/components/Standard/index.js"
+      "types": "./dist/modules/Standard/index.d.ts",
+      "import": "./dist/modules/Standard/index.js",
+      "require": "./dist/modules/Standard/index.js"
     },
     "./next-config": {
-      "types": "./dist/config/next/index.d.ts",
-      "import": "./dist/config/next/index.js",
-      "require": "./dist/config/next/index.js"
+      "types": "./dist/modules/next/index.d.ts",
+      "import": "./dist/modules/next/index.js",
+      "require": "./dist/modules/next/index.js"
     },
     "./clean": {
-      "types": "./dist/components/Clean/index.d.ts",
-      "import": "./dist/components/Clean/index.js",
-      "require": "./dist/components/Clean/index.js"
+      "types": "./dist/modules/Clean/index.d.ts",
+      "import": "./dist/modules/Clean/index.js",
+      "require": "./dist/modules/Clean/index.js"
     }
   },
   "scripts": {

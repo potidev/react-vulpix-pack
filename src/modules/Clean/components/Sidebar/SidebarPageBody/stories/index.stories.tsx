@@ -9,11 +9,11 @@ import "./styles.scss";
 import { MdOutlineCalendarMonth, MdOutlineChecklist, MdOutlineCreateNewFolder, MdOutlineDashboard, MdOutlineHome, MdPersonOutline } from 'react-icons/md';
 import { SidebarDropdown } from '../../SidebarDropdown/component';
 import { PageData } from "./PageData";
-import { SidebarDropdownProvider } from "../../../../../contexts/Clean/SidebarDropdownProvider";
 import { SidebarToolbar } from '../../SidebarToolbar/component';
 import { SidebarPageMain } from "../../SidebarPageMain/component";
 import { SidebarLogo } from "../../SidebarLogo/component";
-import { SidebarProvider } from "../../../../../contexts/Clean/SidebarProvider";
+import { SidebarDropdownProvider } from "../../../../contexts/SidebarDropdownProvider";
+import { SidebarProvider } from "../../../../contexts/SidebarProvider";
 
 const meta: Meta<SidebarPageBodyProps> = {
   title: 'components/Clean/SidebarPageBody',

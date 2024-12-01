@@ -32,5 +32,6 @@
     "sections": "layout",
     "styled-components": "theme",
     "forms": "docs",
+    "common": "",
   }
 }
