@@ -3,8 +3,9 @@ const path = require('path');
 const chalk = require('chalk');
 const readline = require('readline');
 
-// Caminho do README.md
+// Caminhos dos arquivos
 const readmePath = path.resolve(__dirname, '../README.md');
+const packageJsonPath = path.resolve(__dirname, '../package.json');
 
 // Cria interface para entrada do usuário
 const rl = readline.createInterface({
@@ -12,24 +13,35 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-// Função para atualizar a versão no README.md
+// Atualiza a versão no README.md
 function updateReadmeVersion(version) {
   try {
-    // Lê o conteúdo do README.md
     const readmeContent = fs.readFileSync(readmePath, 'utf8');
-
-    // Expressão regular para encontrar e substituir a versão
     const updatedContent = readmeContent.replace(
       /\[!\[\]\(https:\/\/img\.shields\.io\/badge\/Beta-([\d.]+)-purple\)\]\(https:\/\/www\.npmjs\.com\/package\/@potidev\/react-vulpix-pack\)/,
       `[![](https://img.shields.io/badge/Beta-${version}-purple)](https://www.npmjs.com/package/@potidev/react-vulpix-pack)`
     );
 
-    // Sobrescreve o arquivo README.md com a nova versão
     fs.writeFileSync(readmePath, updatedContent, 'utf8');
-    console.log(chalk.greenBright(`✨ Version updated to ${chalk.bold(version)} in README.md!`));
-    console.log(chalk.blue('📘  Check the README.md to confirm the changes.'));
+    console.log(chalk.greenBright(`✅  README.md updated to version ${chalk.bold(version)}!`));
   } catch (error) {
     console.error(chalk.red('❌  Error updating README.md:', error.message));
+    process.exit(1);
+  }
+}
+
+// Atualiza a versão no package.json
+function updatePackageJsonVersion(version) {
+  try {
+    const packageJsonContent = fs.readFileSync(packageJsonPath, 'utf8');
+    const packageJson = JSON.parse(packageJsonContent);
+
+    packageJson.version = version;
+
+    fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2), 'utf8');
+    console.log(chalk.greenBright(`✅  package.json updated to version ${chalk.bold(version)}!`));
+  } catch (error) {
+    console.error(chalk.red('❌  Error updating package.json:', error.message));
     process.exit(1);
   }
 }
@@ -45,6 +57,9 @@ function askForVersion() {
     }
 
     updateReadmeVersion(version);
+    updatePackageJsonVersion(version);
+
+    console.log(chalk.blue('📘  Check README.md and package.json to confirm the changes.'));
     rl.close();
   });
 }

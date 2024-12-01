@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -38,6 +38,7 @@
   "scripts": {
     "build": "node build.js",
     "publish": "npm run build && npm publish",
+    "version": "node scripts/set-version.js",
     "clear-build": "rimraf dist",
     "variables": "ts-node scripts/generateVariablesScssFile.ts",
     "build-css": "npm run clean && tsc && sass src:dist --no-source-map && node scripts/update-imports.js",
