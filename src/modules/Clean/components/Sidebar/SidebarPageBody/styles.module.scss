@@ -1,5 +1,5 @@
 @use '../../../../../styles/sass/variables.module.scss' as *;
-@use '../../../../../styles/sass/reset.module.scss' as *;
+@import '../../../../../styles/sass/reset.module.scss';
 
 .container {
   min-height: 100vh;

@@ -37,7 +37,7 @@ const fixAliasImports = () => {
 const buildSass = () => {
   console.log(chalk.blueBright(`🔨 ${step}/${total} Building Sass...`));
   console.log();
-  execSync('npx sass --load-path=src/styles/sass src:dist --no-source-map', { stdio: 'inherit' });
+  execSync('npx sass --quiet-deps --load-path=src/styles/sass src:dist --no-source-map', { stdio: 'inherit' });
   console.log();
 }
 
