@@ -1,0 +1,10 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+@use '../variables.module.scss' as *;
+
+.logo {
+  height: $sidebar-icon-mobile-size;
+
+  @media screen and (min-width: $tablet) {
+    height: $sidebar-icon-desktop-size;
+  }
+}

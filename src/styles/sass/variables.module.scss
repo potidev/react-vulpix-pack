@@ -1,18 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
     $primary-color: #f08200;
-    $background-color: #11121a;
+    $background-color: #0A0A0A;
     $text-color: #e6e6ef;
     $soft-text-color: #b0b3c1;
     $separator-color: #42434a;
     $font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    $sidebar-background-color: #11121a;
-    $sidebar-toolbar-background-color: #11121a;
-    $sidebar-desktop-size: 250px;
-    $sidebar-mobile-size: 250px;
-    $sidebar-icon-desktop-size: 24px;
-    $sidebar-icon-mobile-size: 24px;
 
     $mobile-s: 321px;
     $mobile-m: 376px;
@@ -21,6 +14,33 @@
     $laptop: 1025px;
     $laptop-l: 1441px;
     $desktop: 1919px;
+  
+    $fs-tiny-tablet: 11px;
+    $fs-small-tablet: 13px;
+    $fs-regular-tablet: 14px;
+    $fs-medium-tablet: 16px;
+    $fs-large-tablet: 20px;
+    $fs-x-xarge-tablet: 28px;
+
+    $fs-tiny-desktop: 12px;
+    $fs-small-desktop: 14px;
+    $fs-regular-desktop: 16px;
+    $fs-medium-desktop: 18px;
+    $fs-large-desktop: 24px;
+    $fs-x-xarge-desktop: 36px;
+
+    $border-radius-tiny: 2px;
+    $border-radius-small: 4px;
+    $border-radius-regular: 8px;
+    $border-radius-medium: 12px;
+    $border-radius-large: 16px;
+
+    $sidebar-background-color: #0A0A0A;
+    $sidebar-toolbar-background-color: #0A0A0A;
+    $sidebar-desktop-size: 250px;
+    $sidebar-mobile-size: 250px;
+    $sidebar-icon-desktop-size: 24px;
+    $sidebar-icon-mobile-size: 24px;
 
     $modal-z-index: 4;
     $sidebar-z-index: 3;

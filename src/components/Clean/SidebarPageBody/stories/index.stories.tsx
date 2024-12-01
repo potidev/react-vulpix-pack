@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 
 import { SidebarPageBodyProps } from "../types";
 import { SidebarPageBody } from "../component";
-import { Sidebar } from '../../Sidebar/component';
+import { SidebarContainer } from '../../SidebarContainer/component';
 import { SidebarItem } from '../../SidebarItem/component';
 
 import "./styles.scss";
@@ -15,6 +15,7 @@ import { PageData } from "./PageData";
 import { SidebarDropdownProvider } from "../../../../contexts/Clean/SidebarDropdownProvider";
 import { SidebarToolbar } from '../../SidebarToolbar/component';
 import { SidebarPageMain } from "../../SidebarPageMain/component";
+import { SidebarLogo } from "../../SidebarLogo/component";
 import { SidebarProvider } from "../../../../contexts/Clean/SidebarProvider";
 
 const meta: Meta<SidebarPageBodyProps> = {
@@ -36,7 +37,7 @@ export const Simple: Story = {
   args: {
     children: (
       <SidebarProvider>
-        <Sidebar
+        <SidebarContainer
           title='Sidebar'
         >
           <SidebarItem 
@@ -75,7 +76,7 @@ export const Simple: Story = {
             icon={<MdPersonOutline />}
             label='Profile'
           />
-        </Sidebar>
+        </SidebarContainer>
         <SidebarPageBody>
           <PageData />
         </SidebarPageBody>
@@ -88,7 +89,7 @@ export const DropdownSingleOpen: Story = {
   args: {
     children: (
       <SidebarProvider>
-        <Sidebar
+        <SidebarContainer
           title='Sidebar'
         >
           <SidebarDropdownProvider singleOpen>
@@ -131,7 +132,7 @@ export const DropdownSingleOpen: Story = {
               label='Profile'
             />
           </SidebarDropdownProvider>
-        </Sidebar>
+        </SidebarContainer>
         <SidebarPageBody>
           <PageData />
         </SidebarPageBody>
@@ -144,7 +145,7 @@ export const UsingToolBar: Story = {
   args: {
     children: (
       <SidebarProvider>
-        <Sidebar
+        <SidebarContainer
           title='Sidebar'
           usingToolbar
         >
@@ -186,7 +187,7 @@ export const UsingToolBar: Story = {
             icon={<MdPersonOutline />}
             label='Profile'
           />
-        </Sidebar>
+        </SidebarContainer>
         <SidebarPageMain
           defaultToolbarPadding
           fixedHeader={
@@ -204,8 +205,9 @@ export const UsingToolBarOnlyOnMobile: Story = {
   args: {
     children: (
       <SidebarProvider>
-        <Sidebar
-          title='Sidebar'
+        <SidebarContainer
+          logo={<SidebarLogo src="/assets/imgs/logo.png" />}
+          title='Vulpix'
         >
           <SidebarItem 
             icon={<MdOutlineHome />}
@@ -245,7 +247,7 @@ export const UsingToolBarOnlyOnMobile: Story = {
             icon={<MdPersonOutline />}
             label='Profile'
           />
-        </Sidebar>
+        </SidebarContainer>
         <SidebarPageMain
           fixedHeaderOnlyOnMobile={
             <SidebarToolbar />

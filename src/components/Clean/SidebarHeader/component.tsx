@@ -9,8 +9,9 @@ import { SidebarHeaderProps } from "./types";
 import styles from './styles.module.scss';
 import sharedStyles from '../SidebarItem/shared.module.scss';
 import { useSidebarContext } from "@/contexts/Clean/SidebarProvider";
+import { Span } from "@/components/Common/Span";
 
-export const SidebarHeader = ({ className, title, usingToolbar = false }: SidebarHeaderProps) => {
+export const SidebarHeader = ({ className, title, usingToolbar = false, logo }: SidebarHeaderProps) => {
   const { sidebarIsOpen } = useSidebarContext();
 
   const usingToolbarContainerClass = useMemo(() => usingToolbar ? styles.usingToolbarContainer : undefined, [usingToolbar])
@@ -20,7 +21,12 @@ export const SidebarHeader = ({ className, title, usingToolbar = false }: Sideba
 
   return (
     <li className={cn.get(styles.container,  className, usingToolbarContainerClass, closeContainerUsingToolbarClass)}>
-      {title && <span className={cn.get(sharedStyles.sidebarItemContainer, styles.title)}>{title}</span>}
+      {title || logo ? ( 
+        <div className={cn.get(sharedStyles.sidebarItemContainer)}>
+          {logo}
+          {title && <Span size="small" className={cn.get(styles.title)}>{title}</Span>}
+        </div>
+      ) : null}
       <SidebarControlButton className={cn.get(styles.button, usingToolbarButtonClass)} />
     </li>
   );

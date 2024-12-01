@@ -5,6 +5,7 @@ import { cn } from "@/utils/ClassNameUtils";
 import styles from './styles.module.scss';
 import sharedStyles from './shared.module.scss';
 import { SidebarItemProps } from "./types";
+import { Span } from "@/components/Common/Span";
 
 export const SidebarItem = ({ label, active = false, icon, className }: SidebarItemProps) => {
   const activeClass = active ? styles.active : '';
@@ -14,9 +15,9 @@ export const SidebarItem = ({ label, active = false, icon, className }: SidebarI
       <div className={sharedStyles.icon}>
         {icon}
       </div>
-      <span className={styles.label}>
+      <Span size="small" className={styles.label}>
         {label}
-      </span>
+      </Span>
     </li>
   );
 };

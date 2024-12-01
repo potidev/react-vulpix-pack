@@ -1,13 +1,17 @@
 import React from "react";
 
-import styles from "./styles.module.scss";
-import { TouchableProps } from "./types";
 import { cn } from "@/utils/ClassNameUtils";
+import { useFontSizeClass } from "@/hooks/useFontSizeClass";
 
-export const Touchable = (props: TouchableProps) => {
+import { TouchableProps } from "./types";
+import styles from "./styles.module.scss";
+
+export const Touchable = ({ fontSize = "regular", ...props }: TouchableProps) => {
+  const fontSizeClass = useFontSizeClass(fontSize);
+
   if(props.type === "a") {
     return (
-      <a className={props.className} target={props.aTarget} onClick={props.onClick}>
+      <a className={cn.get(fontSizeClass, props.className)} target={props.aTarget} onClick={props.onClick}>
         {props.children}
       </a>
     )

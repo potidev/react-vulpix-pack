@@ -11,6 +11,7 @@ import styles from './styles.module.scss';
 import { SidebarDropdownItem } from "../SidebarDropdownItem/component";
 import sharedStyles from '../SidebarItem/shared.module.scss';
 import { useSidebarContext } from "@/contexts/Clean/SidebarProvider";
+import { Span } from "@/components/Common/Span";
 
 export const SidebarDropdown = ({ className, title, icon, options = [], openId }: SidebarDropdownProps) => {
   const [open, setOpen] = useState(false);
@@ -57,9 +58,9 @@ export const SidebarDropdown = ({ className, title, icon, options = [], openId }
         <div className={cn.get(sharedStyles.icon)}>
           {icon}
         </div>
-        <span className={styles.title}>
+        <Span size="small" className={styles.title}>
           {title}
-        </span>
+        </Span>
         <div className={cn.get(sharedStyles.icon, styles.arrow, openClass?.arrowOpenClass)}>
           <Arrow />
         </div>

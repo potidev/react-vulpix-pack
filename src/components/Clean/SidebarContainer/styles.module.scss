@@ -40,9 +40,12 @@
   }
 }
 
-.items {
+.content {
   overflow-y: auto;
   scrollbar-width: none; // Firefox
   -ms-overflow-style: none; // Internet Explorer
   flex: 1;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,3 +1,6 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+@use "../variables.module.scss" as *;
+
 .container {
-  padding-left: 32px;
+  padding-left: calc($sidebar-item-h-padding + $sidebar-icon-desktop-size + $sidebar-item-gap-open);
 }

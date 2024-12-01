@@ -33,6 +33,7 @@
     "build-scss": "npm run clear-build && npm run variables && tsc && tscpaths -p tsconfig.json -s ./src -o ./dist && sass --load-path=src/styles/sass src:dist --no-source-map && copyfiles -u 1 \"src/**/*.module.scss\" dist && npm run remove-variables-scss-imports",
     "remove-variables-scss-imports": "node scripts/remove-variables-scss-imports.js",
     "storybook": "storybook dev -p 6006 --no-open",
+    "storybook-ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 npm run storybook",
     "build-storybook": "storybook build"
   },
   "peerDependencies": {
@@ -71,7 +72,8 @@
     "ts-node": "^10.9.2",
     "tscpaths": "^0.0.9",
     "tslib": "^2.8.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vite": "^6.0.1"
   },
   "keywords": [
     "potidev",

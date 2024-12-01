@@ -1,3 +1,4 @@
+import { FontSizeTypes } from "@/types/font-sizes";
 import { MouseEventHandler, ReactNode } from "react";
 
 export type TouchableType = "a" | "button";
@@ -24,4 +25,5 @@ export type MixTouchableProps = ButtonProps | AProps;
 export type TouchableProps = {
   className?: string;
   children: ReactNode;
+  fontSize?: FontSizeTypes;
 } & MixTouchableProps;

@@ -1,8 +1,4 @@
-export type ResponsiveSizes = {
-  desktop?: string;
-  tablet?: string;
-  mobile?: string;
-}
+import { ResponsiveSizes } from "./vulpix-responsive-sizes";
 
 export type VulpixSizes = {
   sidebarSize: ResponsiveSizes;

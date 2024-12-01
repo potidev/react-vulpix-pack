@@ -2,22 +2,22 @@
 
 import React, { useMemo } from "react";
 
-import { SidebarProps } from "./types";
+import { SidebarContainerProps } from "./types";
 import styles from './styles.module.scss';
 import { SidebarHeader } from "../SidebarHeader/component";
-import { SidebarProvider, useSidebarContext } from "@/contexts/Clean/SidebarProvider";
+import { useSidebarContext } from "@/contexts/Clean/SidebarProvider";
 import { cn } from "@/utils/ClassNameUtils";
 
-export const Sidebar = ({ children, ...rest }: SidebarProps) => {
+export const SidebarContainer = ({ children, className, contentClassName, listClassName, ...rest }: SidebarContainerProps) => {
   const { sidebarIsOpen } = useSidebarContext();
 
   const sidebarClass = useMemo(() => sidebarIsOpen ? undefined : styles.close, [sidebarIsOpen]);
 
   return (
-    <aside className={cn.get(styles.sidebar, sidebarClass)}>
-      <ul className={styles.list}>
+    <aside className={cn.get(styles.sidebar, sidebarClass, className)}>
+      <ul className={cn.get(styles.list, listClassName)}>
         <SidebarHeader {...rest} />
-        <div className={styles.items}>
+        <div className={cn.get(styles.content, contentClassName)}>
           {children}
         </div>
       </ul>
