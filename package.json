@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -23,6 +23,11 @@
       "types": "./dist/config/next/index.d.ts",
       "import": "./dist/config/next/index.js",
       "require": "./dist/config/next/index.js"
+    },
+    "./clean": {
+      "types": "./dist/components/Clean/index.d.ts",
+      "import": "./dist/components/Clean/index.js",
+      "require": "./dist/components/Clean/index.js"
     }
   },
   "scripts": {

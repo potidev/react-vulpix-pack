@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { SidebarProps } from "./types";
-import { Sidebar } from "./component";
+import { SidebarContainerProps } from "./types";
+import { SidebarContainer } from "./component";
 
-const meta: Meta<SidebarProps> = {
-  title: 'components/Clean/Sidebar',
-  component: Sidebar,
+const meta: Meta<SidebarContainerProps> = {
+  title: 'components/Clean/SidebarContainer',
+  component: SidebarContainer,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -14,7 +14,7 @@ const meta: Meta<SidebarProps> = {
 };
 
 export default meta;
-type Story = StoryObj<SidebarProps>;
+type Story = StoryObj<SidebarContainerProps>;
 
 export const Developer: Story = {
   args: {

@@ -10,9 +10,9 @@ export type VulpixSassConfig = {
   theme?: Partial<VulpixColors> 
     & Partial<VulpixFonts> 
     & Partial<VulpixSizes> 
-    & { devices: Partial<VulpixDevices> }
-    & { zIndexs: Partial<VulpixZIndex> }
-    & { fontSizes: Partial<VulpixFontSizes> }
-    & { borderRadius: Partial<VulpixBorderRadius> }
+    & { devices?: Partial<VulpixDevices> }
+    & { zIndexs?: Partial<VulpixZIndex> }
+    & { fontSizes?: Partial<VulpixFontSizes> }
+    & { borderRadius?: Partial<VulpixBorderRadius> }
   importFontInSass?: boolean;
 }

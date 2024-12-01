@@ -1,7 +1,5 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-
 import { SidebarPageBodyProps } from "../types";
 import { SidebarPageBody } from "../component";
 import { SidebarContainer } from '../../SidebarContainer/component';
@@ -9,14 +7,13 @@ import { SidebarItem } from '../../SidebarItem/component';
 
 import "./styles.scss";
 import { MdOutlineCalendarMonth, MdOutlineChecklist, MdOutlineCreateNewFolder, MdOutlineDashboard, MdOutlineHome, MdPersonOutline } from 'react-icons/md';
-import { SidebarDropdownItem } from '../../SidebarDropdownItem/component';
 import { SidebarDropdown } from '../../SidebarDropdown/component';
 import { PageData } from "./PageData";
-import { SidebarDropdownProvider } from "../../../../contexts/Clean/SidebarDropdownProvider";
+import { SidebarDropdownProvider } from "../../../../../contexts/Clean/SidebarDropdownProvider";
 import { SidebarToolbar } from '../../SidebarToolbar/component';
 import { SidebarPageMain } from "../../SidebarPageMain/component";
 import { SidebarLogo } from "../../SidebarLogo/component";
-import { SidebarProvider } from "../../../../contexts/Clean/SidebarProvider";
+import { SidebarProvider } from "../../../../../contexts/Clean/SidebarProvider";
 
 const meta: Meta<SidebarPageBodyProps> = {
   title: 'components/Clean/SidebarPageBody',
