@@ -19,6 +19,11 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
+    "./standard": {
+      "types": "./dist/components/Standard/index.d.ts",
+      "import": "./dist/components/Standard/index.js",
+      "require": "./dist/components/Standard/index.js"
+    },
     "./next-config": {
       "types": "./dist/config/next/index.d.ts",
       "import": "./dist/config/next/index.js",
@@ -32,6 +37,7 @@
   },
   "scripts": {
     "build": "node build.js",
+    "publish": "npm run build && npm publish",
     "clear-build": "rimraf dist",
     "variables": "ts-node scripts/generateVariablesScssFile.ts",
     "build-css": "npm run clean && tsc && sass src:dist --no-source-map && node scripts/update-imports.js",
