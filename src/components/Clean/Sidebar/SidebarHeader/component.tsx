@@ -24,7 +24,7 @@ export const SidebarHeader = ({ className, title, usingToolbar = false, logo }: 
       {title || logo ? ( 
         <div className={cn.get(sharedStyles.sidebarItemContainer)}>
           {logo}
-          {title && <Span size="small" className={cn.get(styles.title)}>{title}</Span>}
+          {title && <Span className={cn.get(styles.title)}>{title}</Span>}
         </div>
       ) : null}
       <SidebarControlButton className={cn.get(styles.button, usingToolbarButtonClass)} />
