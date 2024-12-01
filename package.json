@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -44,10 +44,6 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "storybook-ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 npm run storybook",
     "build-storybook": "storybook build"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
