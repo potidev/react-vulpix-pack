@@ -6,7 +6,7 @@ const DefaultTheme: VulpixSassConfig = {
   importFontInSass: true,
 }
 
-export const getVulpixSassAdditionalData = (config?: VulpixSassConfig): string => {
+export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
   const importFont = config && config.importFontInSass !== undefined ? config?.importFontInSass : DefaultTheme.importFontInSass;
 
   return `
@@ -60,3 +60,11 @@ export const getVulpixSassAdditionalData = (config?: VulpixSassConfig): string =
     $fixed-header-z-index: ${config?.theme?.zIndexs?.fixedHeader || ZIndexs.fixedHeader};
   `;
 }
+
+export const getVulpixSassAdditionalData = (config?: VulpixSassConfig): string => {
+  const sassData = generateVariablesDevFile(config);
+
+  return sassData.replace(/\$(\w+[-\w]*)/g, (match, variableName) => {
+    return `$vulpix-${variableName}`;
+  });
+};
