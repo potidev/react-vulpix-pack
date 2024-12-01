@@ -7,11 +7,17 @@ const readline = require('readline');
 const readmePath = path.resolve(__dirname, '../README.md');
 const packageJsonPath = path.resolve(__dirname, '../package.json');
 
-// Cria interface para entrada do usuário
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+// Lê a versão atual do package.json
+function getCurrentVersion() {
+  try {
+    const packageJsonContent = fs.readFileSync(packageJsonPath, 'utf8');
+    const packageJson = JSON.parse(packageJsonContent);
+    return packageJson.version;
+  } catch (error) {
+    console.error(chalk.red('❌  Error reading package.json:', error.message));
+    process.exit(1);
+  }
+}
 
 // Atualiza a versão no README.md
 function updateReadmeVersion(version) {
@@ -48,21 +54,31 @@ function updatePackageJsonVersion(version) {
 
 // Pergunta ao usuário pela nova versão
 function askForVersion() {
+  const currentVersion = getCurrentVersion();
   console.log(chalk.yellow('⚙️  Welcome to the version updater!'));
-  rl.question(chalk.cyan('🚀  Please enter the new version (e.g., 0.0.20): '), (version) => {
-    if (!/^\d+\.\d+\.\d+$/.test(version)) {
-      console.log(chalk.red('❌  Invalid version format. Use the format x.x.x.'));
+  rl.question(
+    chalk.cyan(`🚀 Current version is ${chalk.bold(currentVersion)}. Enter the new version: `),
+    (version) => {
+      if (!/^\d+\.\d+\.\d+$/.test(version)) {
+        console.log(chalk.red('❌  Invalid version format. Use the format x.x.x.'));
+        rl.close();
+        return;
+      }
+
+      updateReadmeVersion(version);
+      updatePackageJsonVersion(version);
+
+      console.log(chalk.blue('📘 Check README.md and package.json to confirm the changes.'));
       rl.close();
-      return;
     }
-
-    updateReadmeVersion(version);
-    updatePackageJsonVersion(version);
-
-    console.log(chalk.blue('📘  Check README.md and package.json to confirm the changes.'));
-    rl.close();
-  });
+  );
 }
+
+// Cria interface para entrada do usuário
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 // Inicia o processo
 askForVersion();
