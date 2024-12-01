@@ -1,0 +1,51 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+@import '../shared.module.scss';
+
+.sidebar {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: $sidebar-v-padding $sidebar-h-padding;
+  background-color: $sidebar-background-color;
+  transition: 250ms ease-in-out;
+  text-wrap: nowrap;  
+  border-right: 1px solid $separator-color;
+  width: $sidebar-mobile-size;
+  left: 0px;
+  position: fixed;
+  z-index: $sidebar-z-index;
+  
+  @media screen and (min-width: $tablet) {
+    transition: $sidebar-width-transition-desktop;
+    width: $sidebar-desktop-size;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    overflow: hidden;
+  }
+}
+
+.list {
+  list-style: none;
+  height: calc(100vh - $sidebar-v-padding * 2);
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  padding: $sidebar-close-v-padding $sidebar-close-h-padding;
+  left: -$sidebar-mobile-size;
+  
+  @media screen and (min-width: $tablet) {
+    width: $sidebar-close-desktop-size;
+  }
+}
+
+.content {
+  overflow-y: auto;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // Internet Explorer
+  flex: 1;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,1 @@
+export type FontSizeTypes = "tiny" | "small" | "regular" | "medium" | "large" | "xLarge";

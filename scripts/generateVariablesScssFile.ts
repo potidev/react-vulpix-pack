@@ -1,5 +1,4 @@
-import { getVulpixSassAdditionalData } from './../src/config/sass/SassAdditionalData/getVulpixSassAdditionalData'
-import { VulpixSassConfig } from './../src/config/sass/types'
+import { getVulpixSassAdditionalData } from '../src/config/sass/SassAdditionalData/getVulpixSassAdditionalData'
 import fs from "fs";
 import path from "path";
 import chalk from 'chalk';
@@ -12,18 +11,18 @@ const generateColorsFile = () => {
     const sassContent = getVulpixSassAdditionalData();
 
 
-    const filePath = path.resolve(__dirname, "../src/styles/sass/colors.module.scss");
+    const filePath = path.resolve(__dirname, "../src/styles/sass/variables.module.scss");
 
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);
-      console.log(chalk.yellow(`${cleanEmoji} Existing colors.module.scss file deleted.`));
+      console.log(chalk.yellow(`${cleanEmoji} Existing variables.module.scss file deleted.`));
     }
 
     // Crie o arquivo e escreva o conteúdo
     fs.writeFileSync(filePath, sassContent.trim(), "utf8");
-    console.log(chalk.bold.green(`${successEmoji} File colors.module.scss created successfully!`));
+    console.log(chalk.bold.green(`${successEmoji} File variables.module.scss created successfully!`));
   } catch (error) {
-    console.error(chalk.red(`🚨 Error generating colors.module.scss: ${error}`));
+    console.error(chalk.red(`🚨 Error generating variables.module.scss: ${error}`));
   }
 };
 

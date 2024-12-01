@@ -7,14 +7,16 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack"
+    "@storybook/addon-styling-webpack",
+    "@storybook/preset-scss",
+    "storybook-css-modules",
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
   },
   core: {
-    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+    builder: '@storybook/builder-vite',
   },
 };
 export default config;

@@ -1,0 +1,43 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+@import '../shared.module.scss';
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+  transition: all 300ms ease;
+}
+
+.usingToolbarContainer {
+  @media screen and (min-width: $tablet) {
+    justify-content: flex-start;  
+  }
+}
+
+.closeContainerUsingToolbar {
+  @media screen and (min-width: $tablet) {
+    width: 0px;
+    overflow: hidden;
+  }
+}
+
+.usingToolbarButton {
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-family: $font-family;
+}
+
+.button {
+  margin-left: auto;
+}
+
+.hidden {
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}

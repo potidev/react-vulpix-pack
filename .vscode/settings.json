@@ -16,6 +16,7 @@
     "svgr",
     "svgs",
     "Unselecteble",
+    "vulpix",
     "Vulpix",
     "Whatsapp",
     "youtube",
@@ -26,9 +27,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "explorer.compactFolders": false,
   "material-icon-theme.folders.associations": {
     "sections": "layout",
     "styled-components": "theme",
     "forms": "docs",
+    "common": "",
   }
 }

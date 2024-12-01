@@ -1,0 +1,28 @@
+@use '../../../../../../styles/sass/variables.module.scss' as *;
+
+.page {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+main {
+  padding: min(30px, 7%);
+
+  & p {
+    color: $soft-text-color;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+}
+
+.container {
+  border: 1px solid $separator-color;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: min(3em, 15%);
+
+  & h2, p {
+    margin-top: 1em;
+    font-family: $font-family;
+  }
+}

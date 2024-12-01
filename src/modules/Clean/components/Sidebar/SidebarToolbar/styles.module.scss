@@ -1,0 +1,11 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+@import '../shared.module.scss';
+
+.container {
+  display: flex;
+  flex: 1;
+  padding: $sidebar-v-padding $sidebar-h-padding;
+  border-bottom: 1px solid $separator-color;
+  background-color: $sidebar-toolbar-background-color;
+  z-index: $fixed-header-z-index;
+}
