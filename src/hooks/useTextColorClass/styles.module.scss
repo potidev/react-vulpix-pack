@@ -1,0 +1,9 @@
+@use '../../styles/sass/variables.module.scss' as *;
+
+.soft {
+  color: $soft-text-color;
+}
+
+.default {
+  color: $text-color;
+}
