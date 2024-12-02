@@ -5,6 +5,7 @@ export type VulpixColors = {
   softTextColor: string;
   separatorColor: string;
   shapeColor: string;
+  softShapeColor: string;
 
   cardColor?: string;
   softCardColor?: string;

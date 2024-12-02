@@ -1,23 +1,16 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SidebarPage } from "../../components/Sidebar/SidebarPage/component";
 
 import { MdOutlineCalendarMonth, MdOutlineChecklist, MdOutlineCreateNewFolder, MdOutlineDashboard, MdOutlineHome, MdPersonOutline } from 'react-icons/md';
-import { SidebarContainer } from '../../components/Sidebar/SidebarContainer/component';
-import { SidebarDropdown } from '../../components/Sidebar/SidebarDropdown/component';
-import { SidebarItem } from '../../components/Sidebar/SidebarItem/component';
-import { SidebarToolbar } from '../../components/Sidebar/SidebarToolbar/component';
-import { SidebarPageMain } from "../../components/Sidebar/SidebarPageMain/component";
-import { SidebarLogo } from "../../components/Sidebar/SidebarLogo/component";
-import { SidebarDropdownProvider } from "../../contexts/SidebarDropdownProvider";
-import { SidebarProvider } from "../../contexts/SidebarProvider";
+import { SidebarDropdownProvider, SidebarProvider, SidebarProviderProps } from "../../contexts";
+import { Sidebar } from "../../components/Sidebar";
 
 import { PageData } from "./PageData";
 import "./styles.scss";
 
-const meta: Meta<any> = {
+const meta: Meta<SidebarProviderProps> = {
   title: 'Clean/Sidebar',
-  component: SidebarPage,
+  component: SidebarProvider,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -28,25 +21,25 @@ const meta: Meta<any> = {
 };
 
 export default meta;
-type Story = StoryObj<any>;
+type Story = StoryObj<SidebarProviderProps>;
 
 export const Simple: Story = {
   args: {
     children: (
       <SidebarProvider>
-        <SidebarContainer
+        <Sidebar.Root
           title='Sidebar'
         >
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineHome />}
             label='Home'
             active
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineDashboard />}
             label='Dashboard'
           />
-          <SidebarDropdown 
+          <Sidebar.Dropdown 
             icon={<MdOutlineCreateNewFolder />}
             title='Create'
             options={[
@@ -55,7 +48,7 @@ export const Simple: Story = {
               { label: 'Project' },
             ]}
           />
-          <SidebarDropdown 
+          <Sidebar.Dropdown 
             icon={<MdOutlineChecklist />}
             title='Todo-Lists'
             options={[
@@ -65,18 +58,18 @@ export const Simple: Story = {
               { label: 'School' }
             ]}
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineCalendarMonth />}
             label='Calendar'
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdPersonOutline />}
             label='Profile'
           />
-        </SidebarContainer>
-        <SidebarPage>
+        </Sidebar.Root>
+        <Sidebar.Main>
           <PageData />
-        </SidebarPage>
+        </Sidebar.Main>
       </SidebarProvider>
     )
   },
@@ -85,21 +78,21 @@ export const Simple: Story = {
 export const DropdownSingleOpen: Story = {
   args: {
     children: (
-      <SidebarProvider>
-        <SidebarContainer
+      <>
+        <Sidebar.Root
           title='Sidebar'
         >
           <SidebarDropdownProvider singleOpen>
-            <SidebarItem 
+            <Sidebar.Item 
               icon={<MdOutlineHome />}
               label='Home'
               active
               />
-            <SidebarItem 
+            <Sidebar.Item 
               icon={<MdOutlineDashboard />}
               label='Dashboard'
               />
-            <SidebarDropdown 
+            <Sidebar.Dropdown 
               icon={<MdOutlineCreateNewFolder />}
               title='Create'
               openId='create'
@@ -109,7 +102,7 @@ export const DropdownSingleOpen: Story = {
                 { label: 'Project' },
               ]}
               />
-            <SidebarDropdown 
+            <Sidebar.Dropdown 
               icon={<MdOutlineChecklist />}
               title='Todo-Lists'
               openId='todo'
@@ -120,20 +113,20 @@ export const DropdownSingleOpen: Story = {
                 { label: 'School' }
               ]}
               />
-            <SidebarItem 
+            <Sidebar.Item 
               icon={<MdOutlineCalendarMonth />}
               label='Calendar'
             />
-            <SidebarItem 
+            <Sidebar.Item 
               icon={<MdPersonOutline />}
               label='Profile'
             />
           </SidebarDropdownProvider>
-        </SidebarContainer>
-        <SidebarPage>
+        </Sidebar.Root>
+        <Sidebar.Main>
           <PageData />
-        </SidebarPage>
-      </SidebarProvider>
+        </Sidebar.Main>
+      </>
     )
   },
 };
@@ -141,21 +134,21 @@ export const DropdownSingleOpen: Story = {
 export const UsingToolBar: Story = {
   args: {
     children: (
-      <SidebarProvider>
-        <SidebarContainer
+      <>
+        <Sidebar.Root
           title='Sidebar'
           usingToolbar
         >
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineHome />}
             label='Home'
             active
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineDashboard />}
             label='Dashboard'
             />
-          <SidebarDropdown 
+          <Sidebar.Dropdown 
             icon={<MdOutlineCreateNewFolder />}
             title='Create'
             openId='create'
@@ -165,7 +158,7 @@ export const UsingToolBar: Story = {
               { label: 'Project' },
             ]}
             />
-          <SidebarDropdown 
+          <Sidebar.Dropdown 
             icon={<MdOutlineChecklist />}
             title='Todo-Lists'
             openId='todo'
@@ -176,24 +169,24 @@ export const UsingToolBar: Story = {
               { label: 'School' }
             ]}
             />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineCalendarMonth />}
             label='Calendar'
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdPersonOutline />}
             label='Profile'
           />
-        </SidebarContainer>
-        <SidebarPageMain
+        </Sidebar.Root>
+        <Sidebar.Main
           defaultToolbarPadding
           fixedHeader={
-            <SidebarToolbar />
+            <Sidebar.Toolbar />
           }
         >
           <PageData />
-        </SidebarPageMain>
-      </SidebarProvider>
+        </Sidebar.Main>
+      </>
     )
   },
 };
@@ -201,21 +194,21 @@ export const UsingToolBar: Story = {
 export const UsingToolBarOnlyOnMobile: Story = {
   args: {
     children: (
-      <SidebarProvider>
-        <SidebarContainer
-          logo={<SidebarLogo src="/assets/imgs/logo.png" />}
+      <>
+        <Sidebar.Root
+          logo={<Sidebar.Logo src="/assets/imgs/logo.png" />}
           title='Vulpix'
         >
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineHome />}
             label='Home'
             active
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineDashboard />}
             label='Dashboard'
             />
-          <SidebarDropdown 
+          <Sidebar.Dropdown 
             icon={<MdOutlineCreateNewFolder />}
             title='Create'
             openId='create'
@@ -225,7 +218,7 @@ export const UsingToolBarOnlyOnMobile: Story = {
               { label: 'Project' },
             ]}
           />
-          <SidebarDropdown 
+          <Sidebar.Dropdown 
             icon={<MdOutlineChecklist />}
             title='Todo-Lists'
             openId='todo'
@@ -236,23 +229,23 @@ export const UsingToolBarOnlyOnMobile: Story = {
               { label: 'School' }
             ]}
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdOutlineCalendarMonth />}
             label='Calendar'
           />
-          <SidebarItem 
+          <Sidebar.Item 
             icon={<MdPersonOutline />}
             label='Profile'
           />
-        </SidebarContainer>
-        <SidebarPageMain
+        </Sidebar.Root>
+        <Sidebar.Main
           fixedHeaderOnlyOnMobile={
-            <SidebarToolbar />
+            <Sidebar.Toolbar />
           }
         >
           <PageData />
-        </SidebarPageMain>
-      </SidebarProvider>
+        </Sidebar.Main>
+      </>
     )
   },
 };

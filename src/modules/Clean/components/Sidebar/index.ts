@@ -9,14 +9,13 @@ import { SidebarToolbar } from "./SidebarToolbar";
 
 
 export const Sidebar = {
-  Root: SidebarPage,
-  Container: SidebarContainer,
+  Root: SidebarContainer,
   ControlButton: SidebarControlButton,
   Dropdown: SidebarDropdown,
   Item: SidebarItem,
   Logo: SidebarLogo,
-  Main: SidebarPageMain,
   Toolbar: SidebarToolbar,
+  Main: SidebarPageMain,
 };
 
 export { SidebarDropdownItemProps } from "./SidebarDropdownItem";

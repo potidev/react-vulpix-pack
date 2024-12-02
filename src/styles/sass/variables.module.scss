@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
     $primary-color: #f08200;
-    $background-color: #0A0A0A;
-    $text-color: #fafafa;
-    $soft-text-color: #B0B3C1;
+    $text-color: #FAFAFA;
+    $soft-text-color: #A1A1A1;
+    $background-color: #000000;
+    $shape-color: #0A0A0A;
+    $soft-shape-color: #171717;
     $separator-color: #2C2C2C;
-    $shape-color: #171717;
 
     $font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -54,8 +55,8 @@
     $z-index-sidebar-overlay: 2;
     $z-index-fixed-header: 1;
 
-    $sidebar-background-color: #0A0A0A;
-    $sidebar-toolbar-background-color: #0A0A0A;
+    $sidebar-background-color: #000000;
+    $sidebar-toolbar-background-color: #000000;
     $sidebar-desktop-size: 250px;
     $sidebar-mobile-size: 250px;
     $sidebar-icon-desktop-size: 24px;

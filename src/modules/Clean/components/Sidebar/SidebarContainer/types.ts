@@ -1,3 +1,4 @@
+import { ShapeColorsTypes } from "@/types/shape-colors";
 import { SidebarHeaderProps } from "../SidebarHeader";
 
 export type SidebarContainerProps = {
@@ -5,4 +6,5 @@ export type SidebarContainerProps = {
   className?: string;
   listClassName?: string;
   contentClassName?: string;
+  color?: ShapeColorsTypes;
 } & SidebarHeaderProps;

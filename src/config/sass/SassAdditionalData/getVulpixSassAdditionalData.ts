@@ -14,11 +14,12 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     ${importFont ? (config?.theme?.importFont || Fonts.importFont) : ""}
 
     $primary-color: ${config?.theme?.primaryColor || Colors.primaryColor};
-    $background-color: ${config?.theme?.backgroundColor || Colors.backgroundColor};
     $text-color: ${config?.theme?.textColor || Colors.textColor};
     $soft-text-color: ${config?.theme?.softTextColor || Colors.softTextColor};
-    $separator-color: ${config?.theme?.separatorColor || Colors.separatorColor};
+    $background-color: ${config?.theme?.backgroundColor || Colors.backgroundColor};
     $shape-color: ${config?.theme?.shapeColor || Colors.shapeColor};
+    $soft-shape-color: ${config?.theme?.softShapeColor || Colors.softShapeColor};
+    $separator-color: ${config?.theme?.separatorColor || Colors.separatorColor};
 
     $font-family: ${config?.theme?.fontFamily || Fonts.fontFamily || "Roboto, sans-serif"};
 
@@ -76,8 +77,8 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
 
     $card-padding-tablet: ${getCardPaddingTablet(config)};
     $card-padding-desktop: ${getCardPaddingDesktop(config)};
-    $card-color: ${config?.theme?.cardColor || Colors.cardColor || config?.theme?.backgroundColor || Colors.backgroundColor};
-    $soft-card-color: ${config?.theme?.softCardColor || Colors.softCardColor || config?.theme?.shapeColor || Colors.shapeColor};
+    $card-color: ${config?.theme?.cardColor || Colors.cardColor || config?.theme?.shapeColor || Colors.shapeColor};
+    $soft-card-color: ${config?.theme?.softCardColor || Colors.softCardColor || config?.theme?.softShapeColor || Colors.softShapeColor};
   `;
 }
 
