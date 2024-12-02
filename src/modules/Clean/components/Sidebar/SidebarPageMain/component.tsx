@@ -33,9 +33,9 @@ export const SidebarPageMain = ({ className, children, fixedHeader, fixedHeaderO
           </header>
         )
       }
-      <main className={cn.get(containerOnOpenClass)}>
+      <div className={cn.get(containerOnOpenClass)}>
         {children}
-      </main>
+      </div>
     </div>
   );
 };

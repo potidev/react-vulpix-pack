@@ -1,23 +1,23 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SidebarPageBodyProps } from "../types";
-import { SidebarPageBody } from "../component";
-import { SidebarContainer } from '../../SidebarContainer/component';
-import { SidebarItem } from '../../SidebarItem/component';
+import { SidebarPage } from "../../components/Sidebar/SidebarPage/component";
 
-import "./styles.scss";
 import { MdOutlineCalendarMonth, MdOutlineChecklist, MdOutlineCreateNewFolder, MdOutlineDashboard, MdOutlineHome, MdPersonOutline } from 'react-icons/md';
-import { SidebarDropdown } from '../../SidebarDropdown/component';
-import { PageData } from "./PageData";
-import { SidebarToolbar } from '../../SidebarToolbar/component';
-import { SidebarPageMain } from "../../SidebarPageMain/component";
-import { SidebarLogo } from "../../SidebarLogo/component";
-import { SidebarDropdownProvider } from "../../../../contexts/SidebarDropdownProvider";
-import { SidebarProvider } from "../../../../contexts/SidebarProvider";
+import { SidebarContainer } from '../../components/Sidebar/SidebarContainer/component';
+import { SidebarDropdown } from '../../components/Sidebar/SidebarDropdown/component';
+import { SidebarItem } from '../../components/Sidebar/SidebarItem/component';
+import { SidebarToolbar } from '../../components/Sidebar/SidebarToolbar/component';
+import { SidebarPageMain } from "../../components/Sidebar/SidebarPageMain/component";
+import { SidebarLogo } from "../../components/Sidebar/SidebarLogo/component";
+import { SidebarDropdownProvider } from "../../contexts/SidebarDropdownProvider";
+import { SidebarProvider } from "../../contexts/SidebarProvider";
 
-const meta: Meta<SidebarPageBodyProps> = {
-  title: 'components/Clean/SidebarPageBody',
-  component: SidebarPageBody,
+import { PageData } from "./PageData";
+import "./styles.scss";
+
+const meta: Meta<any> = {
+  title: 'components/Clean/Sidebar',
+  component: SidebarPage,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -28,7 +28,7 @@ const meta: Meta<SidebarPageBodyProps> = {
 };
 
 export default meta;
-type Story = StoryObj<SidebarPageBodyProps>;
+type Story = StoryObj<any>;
 
 export const Simple: Story = {
   args: {
@@ -74,9 +74,9 @@ export const Simple: Story = {
             label='Profile'
           />
         </SidebarContainer>
-        <SidebarPageBody>
+        <SidebarPage>
           <PageData />
-        </SidebarPageBody>
+        </SidebarPage>
       </SidebarProvider>
     )
   },
@@ -130,9 +130,9 @@ export const DropdownSingleOpen: Story = {
             />
           </SidebarDropdownProvider>
         </SidebarContainer>
-        <SidebarPageBody>
+        <SidebarPage>
           <PageData />
-        </SidebarPageBody>
+        </SidebarPage>
       </SidebarProvider>
     )
   },
@@ -250,7 +250,7 @@ export const UsingToolBarOnlyOnMobile: Story = {
             <SidebarToolbar />
           }
         >
-          <PageData />
+          <h1>Olá mundo</h1>
         </SidebarPageMain>
       </SidebarProvider>
     )

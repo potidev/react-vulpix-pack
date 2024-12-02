@@ -8,7 +8,6 @@ import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
 
 import { SidebarControlButtonProps } from "./types";
 import styles from './styles.module.scss';
-import sharedStyles from '../SidebarItem/shared.module.scss';
 
 export const SidebarControlButton = ({ className }: SidebarControlButtonProps) => {
   const { toggleSidebar, sidebarIsOpen } = useSidebarContext();
