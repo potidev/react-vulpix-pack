@@ -1,0 +1,34 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $separator-color;
+  border-radius: 8px;
+  padding: $card-padding-tablet;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  @media screen and (min-width: $tablet) {
+    padding: $card-padding-desktop;
+  }
+}
+
+.cardHover {
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.defaultCardBackground {
+  background-color: $card-color;
+}
+
+.softCardBackground {
+  background-color: $soft-card-color;
+}

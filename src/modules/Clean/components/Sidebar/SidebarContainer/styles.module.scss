@@ -12,7 +12,7 @@
   width: $sidebar-mobile-size;
   left: 0px;
   position: fixed;
-  z-index: $sidebar-z-index;
+  z-index: $z-index-sidebar;
   
   @media screen and (min-width: $tablet) {
     transition: $sidebar-width-transition-desktop;

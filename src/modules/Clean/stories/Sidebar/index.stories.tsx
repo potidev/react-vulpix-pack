@@ -16,7 +16,7 @@ import { PageData } from "./PageData";
 import "./styles.scss";
 
 const meta: Meta<any> = {
-  title: 'components/Clean/Sidebar',
+  title: 'Clean/Sidebar',
   component: SidebarPage,
   tags: ['autodocs'],
   parameters: {

@@ -6,4 +6,5 @@ export type SidebarPageMainProps = {
   fixedHeader?: ReactNode;
   fixedHeaderOnlyOnMobile?: ReactNode;
   defaultToolbarPadding?: boolean;
+  defaultContentPadding?: boolean;
 };

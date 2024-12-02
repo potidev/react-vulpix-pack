@@ -2,9 +2,11 @@
 
     $primary-color: #f08200;
     $background-color: #0A0A0A;
-    $text-color: #e6e6ef;
-    $soft-text-color: #b0b3c1;
-    $separator-color: #42434a;
+    $text-color: #fafafa;
+    $soft-text-color: #B0B3C1;
+    $separator-color: #2C2C2C;
+    $shape-color: #171717;
+
     $font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     $mobile-s: 321px;
@@ -35,6 +37,23 @@
     $border-radius-medium: 12px;
     $border-radius-large: 16px;
 
+    $padding-tiny-tablet: 2px;
+    $padding-small-tablet: 4px;
+    $padding-regular-tablet: 12px;
+    $padding-medium-tablet: 16px;
+    $padding-large-tablet: 24px;
+
+    $padding-tiny-desktop: 4px;
+    $padding-small-desktop: 8px;
+    $padding-regular-desktop: 16px;
+    $padding-medium-desktop: 18px;
+    $padding-large-desktop: 20px;
+
+    $z-index-modal: 4;
+    $z-index-sidebar: 3;
+    $z-index-sidebar-overlay: 2;
+    $z-index-fixed-header: 1;
+
     $sidebar-background-color: #0A0A0A;
     $sidebar-toolbar-background-color: #0A0A0A;
     $sidebar-desktop-size: 250px;
@@ -42,7 +61,7 @@
     $sidebar-icon-desktop-size: 24px;
     $sidebar-icon-mobile-size: 24px;
 
-    $modal-z-index: 4;
-    $sidebar-z-index: 3;
-    $sidebar-overlay-z-index: 2;
-    $fixed-header-z-index: 1;
+    $card-padding-tablet: 16px;
+    $card-padding-desktop: 16px;
+    $card-color: #0A0A0A;
+    $soft-card-color: #171717;

@@ -1,6 +1,7 @@
-import { Fonts, Colors, Sizes, Devices, ZIndexs, FontSizes, BorderRadius } from "../../../styles/typescript";
+import { Fonts, Colors, Sizes, Devices, ZIndexs, FontSizes, BorderRadius, Paddings } from "../../../styles/typescript";
 
 import { VulpixSassConfig } from "../types";
+import { getCardPaddingDesktop, getCardPaddingTablet } from "./getCardPadding";
 
 const DefaultTheme: VulpixSassConfig = {
   importFontInSass: true,
@@ -17,6 +18,8 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     $text-color: ${config?.theme?.textColor || Colors.textColor};
     $soft-text-color: ${config?.theme?.softTextColor || Colors.softTextColor};
     $separator-color: ${config?.theme?.separatorColor || Colors.separatorColor};
+    $shape-color: ${config?.theme?.shapeColor || Colors.shapeColor};
+
     $font-family: ${config?.theme?.fontFamily || Fonts.fontFamily || "Roboto, sans-serif"};
 
     $mobile-s: ${config?.theme?.devices?.mobileS || Devices.mobileS}px;
@@ -47,6 +50,23 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     $border-radius-medium: ${config?.theme?.borderRadius?.medium || BorderRadius.medium};
     $border-radius-large: ${config?.theme?.borderRadius?.large || BorderRadius.large};
 
+    $padding-tiny-tablet: ${config?.theme?.paddings?.tiny?.tablet || Paddings.tiny.tablet};
+    $padding-small-tablet: ${config?.theme?.paddings?.small?.tablet || Paddings.small.tablet};
+    $padding-regular-tablet: ${config?.theme?.paddings?.regular?.tablet || Paddings.regular.tablet};
+    $padding-medium-tablet: ${config?.theme?.paddings?.medium?.tablet || Paddings.medium.tablet};
+    $padding-large-tablet: ${config?.theme?.paddings?.large?.tablet || Paddings.large.tablet};
+
+    $padding-tiny-desktop: ${config?.theme?.paddings?.tiny?.desktop || Paddings.tiny.desktop};
+    $padding-small-desktop: ${config?.theme?.paddings?.small?.desktop || Paddings.small.desktop};
+    $padding-regular-desktop: ${config?.theme?.paddings?.regular?.desktop || Paddings.regular.desktop};
+    $padding-medium-desktop: ${config?.theme?.paddings?.medium?.desktop || Paddings.medium.desktop};
+    $padding-large-desktop: ${config?.theme?.paddings?.large?.desktop || Paddings.large.desktop};
+
+    $z-index-modal: ${config?.theme?.zIndexs?.modal || ZIndexs.modal};
+    $z-index-sidebar: ${config?.theme?.zIndexs?.sidebar || ZIndexs.sidebar};
+    $z-index-sidebar-overlay: ${config?.theme?.zIndexs?.sidebarOverlay || ZIndexs.sidebarOverlay};
+    $z-index-fixed-header: ${config?.theme?.zIndexs?.fixedHeader || ZIndexs.fixedHeader};
+
     $sidebar-background-color: ${config?.theme?.sidebarBackgroundColor || config?.theme?.backgroundColor || Colors.sidebarBackgroundColor || Colors.backgroundColor};
     $sidebar-toolbar-background-color: ${config?.theme?.sidebarToolbarBackgroundColor || config?.theme?.backgroundColor || Colors.sidebarToolbarBackgroundColor || Colors.backgroundColor};
     $sidebar-desktop-size: ${config?.theme?.sidebarSize?.desktop || Sizes.sidebarSize.desktop};
@@ -54,10 +74,10 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     $sidebar-icon-desktop-size: ${config?.theme?.sidebarIcon?.desktop || Sizes.sidebarIcon.desktop};
     $sidebar-icon-mobile-size: ${config?.theme?.sidebarIcon?.tablet || Sizes.sidebarIcon.tablet};
 
-    $modal-z-index: ${config?.theme?.zIndexs?.modal || ZIndexs.modal};
-    $sidebar-z-index: ${config?.theme?.zIndexs?.sidebar || ZIndexs.sidebar};
-    $sidebar-overlay-z-index: ${config?.theme?.zIndexs?.sidebarOverlay || ZIndexs.sidebarOverlay};
-    $fixed-header-z-index: ${config?.theme?.zIndexs?.fixedHeader || ZIndexs.fixedHeader};
+    $card-padding-tablet: ${getCardPaddingTablet(config)};
+    $card-padding-desktop: ${getCardPaddingDesktop(config)};
+    $card-color: ${config?.theme?.cardColor || Colors.cardColor || config?.theme?.backgroundColor || Colors.backgroundColor};
+    $soft-card-color: ${config?.theme?.softCardColor || Colors.softCardColor || config?.theme?.shapeColor || Colors.shapeColor};
   `;
 }
 

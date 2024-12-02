@@ -5,6 +5,7 @@ import { VulpixFonts } from "../../types/vulpix-fonts";
 import { VulpixDevices } from "../../types/vulpix-devices";
 import { VulpixFontSizes } from '../../types/vulpix-font-sizes';
 import { VulpixBorderRadius } from '../../types/vulpix-border-radius';
+import { VulpixPaddings } from '../../types/vulpix-paddings';
 
 export type VulpixSassConfig = {
   theme?: Partial<VulpixColors> 
@@ -14,5 +15,6 @@ export type VulpixSassConfig = {
     & { zIndexs?: Partial<VulpixZIndex> }
     & { fontSizes?: Partial<VulpixFontSizes> }
     & { borderRadius?: Partial<VulpixBorderRadius> }
+    & { paddings?: Partial<VulpixPaddings> }
   importFontInSass?: boolean;
 }
