@@ -20,7 +20,7 @@ const meta: Meta<CardRootProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    background: {
+    color: {
       control: "select",
       options: [
         "default",
@@ -46,13 +46,13 @@ type Story = StoryObj<CardRootProps>;
 
 export const DefaultBackground: Story = {
   args: {
-    background: "default"
+    color: "default"
   },
 };
 
 export const SoftBackground: Story = {
   args: {
-    background: "soft"
+    color: "soft"
   },
 };
 

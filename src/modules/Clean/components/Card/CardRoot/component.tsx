@@ -4,14 +4,15 @@ import { cn } from "@/utils/ClassNameUtils";
 
 import { CardRootProps } from "./types";
 import styles from './styles.module.scss';
+import { useShapeBackgroundColorClass } from "@/hooks";
 
-export const CardRoot = ({ className, background = "default", hoverEffect = false, cursorPointer = false, children }: CardRootProps) => {
-  const backgroundClass = background === "soft" ? styles.softCardBackground : styles.defaultCardBackground;
+export const CardRoot = ({ className, color = "default", hoverEffect = false, cursorPointer = false, children }: CardRootProps) => {
+  const shapeBackgroundColorClass = useShapeBackgroundColorClass(color);
   const hoverClass = hoverEffect === true ? styles.cardHover : "";
   const cursorPointerClass = cursorPointer === true ? styles.cursorPointer : "";
 
   return (
-    <section className={cn.get(styles.card, backgroundClass, hoverClass, cursorPointerClass, className)}>
+    <section className={cn.get(styles.card, shapeBackgroundColorClass, hoverClass, cursorPointerClass, className)}>
       {children}
     </section>
   );

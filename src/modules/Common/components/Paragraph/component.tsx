@@ -7,7 +7,7 @@ import { useFontSizeClass, useTextColorClass } from "@/hooks";
 import styles from './styles.module.scss';
 import { TextColorsTypes } from "@/types/text-colors";
 
-type ParagraphProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> & {
+export type ParagraphProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> & {
   size?: FontSizeTypes;
   color?: TextColorsTypes;
 }
