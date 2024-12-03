@@ -1,0 +1,1 @@
+export type ColorTypes = "background" | "text" | "primary";

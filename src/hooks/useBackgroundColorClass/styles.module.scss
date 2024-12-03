@@ -1,0 +1,13 @@
+@use '../../styles/sass/variables.module.scss' as *;
+
+.primary {
+  background-color: $primary-color;
+}
+
+.text {
+  background-color: $text-color;
+}
+
+.background {
+  background-color: $background-color;
+}

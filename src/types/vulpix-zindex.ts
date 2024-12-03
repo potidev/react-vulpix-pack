@@ -3,4 +3,5 @@ export type VulpixZIndex = {
   sidebar: number;
   sidebarOverlay: number;
   fixedHeader: number;
+  loaderOverlay: number;
 };

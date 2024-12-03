@@ -1,0 +1,10 @@
+@use '../../../../styles/sass/variables.module.scss' as *;
+
+.label {
+  font-family: $font-family;
+  color: $text-color;
+}
+
+.noSelectable {
+  user-select: none;
+}

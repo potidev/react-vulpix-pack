@@ -7,11 +7,11 @@ import sharedStyles from './shared.module.scss';
 import { SidebarItemProps } from "./types";
 import { Span } from "@/modules/Common/components/Span";
 
-export const SidebarItem = ({ label, active = false, icon, className }: SidebarItemProps) => {
+export const SidebarItem = ({ label, active = false, icon, className, onClick }: SidebarItemProps) => {
   const activeClass = active ? styles.active : '';
   
   return (
-    <li className={cn.get(sharedStyles.sidebarItemContainer, activeClass, className)}>
+    <li className={cn.get(sharedStyles.sidebarItemContainer, activeClass, className)} onClick={onClick}>
       <div className={sharedStyles.icon}>
         {icon}
       </div>

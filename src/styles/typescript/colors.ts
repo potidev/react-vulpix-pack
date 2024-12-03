@@ -7,5 +7,6 @@ export const Colors: VulpixColors = {
   backgroundColor: '#000000',
   separatorColor: '#2C2C2C',
   shapeColor: '#0A0A0A',
-  softShapeColor: '#171717',
+  softShapeColor: '#171717', 
+  inputColor: '#27272a',
 }

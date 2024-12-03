@@ -20,6 +20,7 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     $shape-color: ${config?.theme?.shapeColor || Colors.shapeColor};
     $soft-shape-color: ${config?.theme?.softShapeColor || Colors.softShapeColor};
     $separator-color: ${config?.theme?.separatorColor || Colors.separatorColor};
+    $input-color: ${config?.theme?.inputColor || Colors.inputColor};
 
     $font-family: ${config?.theme?.fontFamily || Fonts.fontFamily || "Roboto, sans-serif"};
 
@@ -67,6 +68,7 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     $z-index-sidebar: ${config?.theme?.zIndexs?.sidebar || ZIndexs.sidebar};
     $z-index-sidebar-overlay: ${config?.theme?.zIndexs?.sidebarOverlay || ZIndexs.sidebarOverlay};
     $z-index-fixed-header: ${config?.theme?.zIndexs?.fixedHeader || ZIndexs.fixedHeader};
+    $z-index-loader-overlay: ${config?.theme?.zIndexs?.loaderOverlay || ZIndexs.loaderOverlay};
 
     $sidebar-background-color: ${config?.theme?.sidebarBackgroundColor || config?.theme?.backgroundColor || Colors.sidebarBackgroundColor || Colors.backgroundColor};
     $sidebar-toolbar-background-color: ${config?.theme?.sidebarToolbarBackgroundColor || config?.theme?.backgroundColor || Colors.sidebarToolbarBackgroundColor || Colors.backgroundColor};

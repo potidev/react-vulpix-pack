@@ -3,4 +3,5 @@ export type SidebarItemProps = {
   icon: React.ReactNode;
   active?: boolean;
   className?: string;
+  onClick?: () => void;
 };
