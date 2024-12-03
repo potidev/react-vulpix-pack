@@ -20,6 +20,7 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     $shape-color: ${config?.theme?.shapeColor || Colors.shapeColor};
     $soft-shape-color: ${config?.theme?.softShapeColor || Colors.softShapeColor};
     $separator-color: ${config?.theme?.separatorColor || Colors.separatorColor};
+    $input-color: ${config?.theme?.inputColor || Colors.inputColor};
 
     $font-family: ${config?.theme?.fontFamily || Fonts.fontFamily || "Roboto, sans-serif"};
 
