@@ -1,0 +1,1 @@
+export type PaddingSizeTypes = "tiny" | "small" | "regular" | "medium" | "large";

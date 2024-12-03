@@ -20,7 +20,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: $fixed-header-z-index;
+  z-index: $z-index-fixed-header;
   background-color: $sidebar-background-color; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   
@@ -39,8 +39,12 @@
 }
 
 .mobileHeader {
-  z-index: $fixed-header-z-index;
+  z-index: $z-index-fixed-header;
   @media screen and (min-width: $tablet) {
     display: none;
   }
+}
+
+.defaultContentPadding {
+  padding-top: 1rem;
 }

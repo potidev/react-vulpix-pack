@@ -15,7 +15,7 @@ export const SidebarItem = ({ label, active = false, icon, className }: SidebarI
       <div className={sharedStyles.icon}>
         {icon}
       </div>
-      <Span size="small" className={styles.label}>
+      <Span size="small" className={cn.get(styles.label, activeClass)}>
         {label}
       </Span>
     </li>

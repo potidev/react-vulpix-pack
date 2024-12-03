@@ -16,13 +16,7 @@ main {
 }
 
 .container {
-  border: 1px solid $separator-color;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  padding: min(3em, 15%);
-
-  & h2, p {
-    margin-top: 1em;
-    font-family: $font-family;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }

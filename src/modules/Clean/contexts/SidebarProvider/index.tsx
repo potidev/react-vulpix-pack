@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, ReactNode, useContext, useState } from "react";
+import { SidebarPage, SidebarPageProps } from "../../components/Sidebar/SidebarPage";
 
 type SidebarContextData = {
   sidebarIsOpen: boolean;
@@ -12,11 +13,11 @@ export const SidebarContext = createContext<SidebarContextData>(
   {} as SidebarContextData,
 );
 
-type SidebarProviderProps = {
+export type SidebarProviderProps = {
   children: ReactNode;
-};
+} & SidebarPageProps;
 
-export const SidebarProvider = ({ children }: SidebarProviderProps) => {
+export const SidebarProvider = ({ children, ...pageProps }: SidebarProviderProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -29,7 +30,9 @@ export const SidebarProvider = ({ children }: SidebarProviderProps) => {
       openSidebar: setIsOpen,
       toggleSidebar,
     }}>
-      {children}
+      <SidebarPage {...pageProps}>
+        {children}
+      </SidebarPage>
     </SidebarContext.Provider>
   );
 };

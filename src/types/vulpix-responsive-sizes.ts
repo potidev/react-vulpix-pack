@@ -8,3 +8,8 @@ export type FontResponsiveSizes = {
   desktop?: string;
   tablet?: string;
 };
+
+export type PaddingResponsiveSizes = {
+  desktop?: string;
+  tablet?: string;
+};
