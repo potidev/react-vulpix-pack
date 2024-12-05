@@ -1,1 +1,1 @@
-export type TextColorsTypes = "soft" | "default";
+export type TextColorsTypes = "soft" | "default" | "danger";

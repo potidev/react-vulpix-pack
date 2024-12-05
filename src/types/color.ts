@@ -1,1 +1,1 @@
-export type ColorTypes = "background" | "text" | "primary";
+export type ColorTypes = "background" | "text" | "primary" | "success" | "warning" | "danger";

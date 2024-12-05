@@ -14,6 +14,9 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     ${importFont ? (config?.theme?.importFont || Fonts.importFont) : ""}
 
     $primary-color: ${config?.theme?.primaryColor || Colors.primaryColor};
+    $success-color: ${config?.theme?.successColor || Colors.successColor};
+    $warning-color: ${config?.theme?.warningColor || Colors.warningColor};
+    $danger-color: ${config?.theme?.dargerColor || Colors.dargerColor};
     $text-color: ${config?.theme?.textColor || Colors.textColor};
     $soft-text-color: ${config?.theme?.softTextColor || Colors.softTextColor};
     $background-color: ${config?.theme?.backgroundColor || Colors.backgroundColor};

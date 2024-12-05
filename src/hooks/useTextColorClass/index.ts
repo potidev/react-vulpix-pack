@@ -5,6 +5,8 @@ export const useTextColorClass = (color?: TextColorsTypes): string => {
   switch(color) {
     case "soft":
       return styles.soft;
+    case "danger":
+      return styles.danger;
     case "default":
     default:
       return styles.default;

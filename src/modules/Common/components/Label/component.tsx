@@ -7,7 +7,7 @@ import { FontSizeTypes } from "@/types/font-sizes";
 import { TextColorsTypes } from "@/types/text-colors";
 import { useTextColorClass, useFontSizeClass } from "@/hooks";
 
-export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> & {
+export type LabelProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "color"> & {
   size?: FontSizeTypes;
   color?: TextColorsTypes;
   noSelectable?: boolean;

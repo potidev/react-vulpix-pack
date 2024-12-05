@@ -1,0 +1,32 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;// Light Mode Colors
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  padding: 4px 12px;
+  font-size: $fs-small-desktop;
+  color: $text-color;
+  border: 1px solid $separator-color;
+  border-radius: 6px;
+  outline: none;
+  line-height: 26px;
+
+  &::placeholder {
+    color: $soft-text-color;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border-color: $input-color;
+    color: lighten($input-color, 25%);
+    cursor: not-allowed;
+  }
+}
+
+.labelError {
+
+}
