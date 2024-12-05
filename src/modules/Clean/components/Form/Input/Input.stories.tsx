@@ -47,6 +47,9 @@ const meta: Meta<InputProps> = {
     },
     errorMessage: {
       control: "text",
+    },
+    disabled: {
+      control: "boolean",
     }
   },
   args: { 
@@ -80,7 +83,6 @@ export const Disabled: Story = {
 
 export const HelpMessage: Story = {
   args: {
-    disabled: true,
     defaultValue: "John Due",
     placeholder: "Your name here",
     helperMessage: "Type your full name"
@@ -90,7 +92,6 @@ export const HelpMessage: Story = {
 
 export const Error: Story = {
   args: {
-    disabled: true,
     defaultValue: "John Due",
     placeholder: "Your name here",
     error: true,
@@ -111,11 +112,14 @@ export const ErrorWithMessage: Story = {
 
 
 
-export const InCard: Story = {
+export const WithReactHookForm: Story = {
   args: {
   },
   render: (args) => (
+    
     <Card.Root>
+      <Card.Title>Login</Card.Title>
+      <Card.Description>Faça seu login</Card.Description>
       <Input {...args} />
     </Card.Root>
   ),
