@@ -1,0 +1,11 @@
+$radix-popper-available-width: 1076px;
+$radix-popper-available-height: 819px;
+$radix-popper-anchor-width: 280px;
+$radix-popper-anchor-height: 36px;
+$radix-popper-transform-origin: 0% 0px;
+
+$radix-select-content-transform-origin: $radix-popper-transform-origin;
+$radix-select-content-available-width: $radix-popper-available-width;
+$radix-select-content-available-height: $radix-popper-available-height;
+$radix-select-trigger-width: $radix-popper-anchor-width;
+$radix-select-trigger-height: $radix-popper-anchor-height;

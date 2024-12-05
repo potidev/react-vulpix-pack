@@ -1,0 +1,10 @@
+@use '../../../../../../styles/sass/variables.module.scss' as *;
+
+.defaultSeparator {
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  height: 1px;
+  background-color: $separator-color;
+}

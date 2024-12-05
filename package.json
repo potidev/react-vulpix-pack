@@ -109,5 +109,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/potidev/react-vulpix-pack.git"
+  },
+  "dependencies": {
+    "@radix-ui/react-popover": "1.1.2",
+    "@radix-ui/react-select": "^2.1.2"
   }
 }
