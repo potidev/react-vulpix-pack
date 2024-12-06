@@ -5,6 +5,7 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/utils";
 
+import itemStyles from "../item.module.scss";
 import styles from "./styles.module.scss";
 
 const DropdownMenuSubTrigger = React.forwardRef<
@@ -16,7 +17,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn.get(
-      styles.subTrigger,
+      itemStyles.dropdownItem,
       inset && styles.inset,
       className
     )}

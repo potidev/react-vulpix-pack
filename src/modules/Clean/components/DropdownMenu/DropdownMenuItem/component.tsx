@@ -5,6 +5,7 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { cn } from "@/utils/ClassNameUtils";
 
 import styles from "./styles.module.scss";
+import itemStyles from "../item.module.scss";
 
 const DropdownMenuItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Item>,
@@ -15,7 +16,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn.get(
-      styles.dropdownItem,
+      itemStyles.dropdownItem,
       inset && styles.inset,
       className
     )}

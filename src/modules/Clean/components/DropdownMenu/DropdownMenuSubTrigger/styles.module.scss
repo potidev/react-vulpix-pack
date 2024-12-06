@@ -1,36 +1,5 @@
 @use '../../../../../styles/sass/variables.module.scss' as *;
 
-.subTrigger {
-  display: flex; 
-  padding-top: 6px;
-  padding-bottom: 6px; 
-  padding-left: 8px;
-  padding-right: 8px; 
-  gap: 8px; 
-  align-items: center; 
-  border-radius: $border-radius-tiny; 
-  outline-style: none; 
-  font-size: $fs-small-desktop;
-  line-height: 20px; 
-  cursor: default; 
-  user-select: none; 
-
-  &:focus {
-    background-color: $text-color; /* focus:bg-accent */
-  }
-
-  &[data-state="open"] {
-    background-color: $text-color; /* data-[state=open]:bg-accent */
-  }
-
-  & > svg {
-    pointer-events: none; /* [&_svg]:pointer-events-none */
-    width: 16px; /* [&_svg]:size-4 */
-    height: 16px; /* [&_svg]:size-4 */
-    flex-shrink: 0; /* [&_svg]:shrink-0 */
-  }
-}
-
 .inset {
   padding-left: 32px;
 }
