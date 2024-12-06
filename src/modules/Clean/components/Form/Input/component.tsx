@@ -12,7 +12,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
   labelClassName, 
   backgroundColor = "default", 
   color = "text", 
-  error,
+  error = false,
   errorMessage,
   helperMessage,
   ...props 
@@ -22,7 +22,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
 
   return (
     <div className={cn.get(styles.inputWrapper, className)}>
-      {label && <Label color={error === true ? "danger" : "default"} size="small" className={cn.get(labelClassName)}>{label}</Label>}
+      {label && <Label color={error === true || errorMessage? "danger" : "default"} size="small" className={cn.get(labelClassName)}>{label}</Label>}
       <input ref={ref} className={cn.get(styles.input, inputBackgroundColorClass, inputBorderColorFocusClass, inputClassName)} {...props} />
       {errorMessage || helperMessage ? <Paragraph size="tiny" color={error || errorMessage ? "danger" : "soft"}>{errorMessage || helperMessage}</Paragraph> : null}
     </div>

@@ -6,7 +6,7 @@ import { SelectValue } from "../SelectValue";
 
 
 const meta: Meta<any> = {
-  title: 'Clean/Select/SelectTrigger',
+  title: 'Clean/Form/Select/SelectTrigger',
   component: SelectTrigger,
   tags: ['autodocs'],
   parameters: {

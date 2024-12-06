@@ -10,7 +10,7 @@ import { SelectValue } from '@radix-ui/react-select';
 
 
 const meta: Meta<any> = {
-  title: 'Clean/Select',
+  title: 'Clean/Form/Select/Demos',
   component: SelectRoot,
   tags: ['autodocs'],
   parameters: {
@@ -88,6 +88,76 @@ export const TopRight: Story = {
       <SelectRoot {...args}>
         <SelectTrigger style={{ width: "200px" }}>
           <SelectValue placeholder="Select" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="light">Light</SelectItem>
+          <SelectItem value="dark">Dark</SelectItem>
+          <SelectItem value="system">System</SelectItem>
+        </SelectContent>
+      </SelectRoot>
+    </PositionScreen>
+  ),
+};
+
+
+export const WithLabel: Story = {
+  render: (args) => (
+    <PositionScreen justifyContent='center' alignItems='center'>
+      <SelectRoot {...args}>
+        <SelectTrigger label="Select" style={{ width: "200px" }}>
+          <SelectValue placeholder="Select a option" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="light">Light</SelectItem>
+          <SelectItem value="dark">Dark</SelectItem>
+          <SelectItem value="system">System</SelectItem>
+        </SelectContent>
+      </SelectRoot>
+    </PositionScreen>
+  ),
+};
+
+export const HelperMessage: Story = {
+  render: (args) => (
+    <PositionScreen justifyContent='center' alignItems='center'>
+      <SelectRoot {...args}>
+        <SelectTrigger label="Select" helperMessage='Select a option to continue' style={{ width: "200px" }}>
+          <SelectValue placeholder="Select a option" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="light">Light</SelectItem>
+          <SelectItem value="dark">Dark</SelectItem>
+          <SelectItem value="system">System</SelectItem>
+        </SelectContent>
+      </SelectRoot>
+    </PositionScreen>
+  ),
+};
+
+
+export const Error: Story = {
+  render: (args) => (
+    <PositionScreen justifyContent='center' alignItems='center'>
+      <SelectRoot {...args}>
+        <SelectTrigger label="Select" error style={{ width: "200px" }}>
+          <SelectValue placeholder="Select a option" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="light">Light</SelectItem>
+          <SelectItem value="dark">Dark</SelectItem>
+          <SelectItem value="system">System</SelectItem>
+        </SelectContent>
+      </SelectRoot>
+    </PositionScreen>
+  ),
+};
+
+export const ErrorMessage: Story = {
+  render: (args) => (
+    <PositionScreen justifyContent='center' alignItems='center'>
+      <SelectRoot {...args}>
+        <SelectTrigger label="Select" errorMessage='Error when select option' style={{ width: "200px" }}>
+          <SelectValue placeholder="Select a option" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="light">Light</SelectItem>

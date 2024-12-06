@@ -1,4 +1,11 @@
 @use '../../../../../../styles/sass/variables.module.scss' as *;
+@import '../../shared.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $input-container-gap;
+}
 
 .selectTrigger {
   display: flex;

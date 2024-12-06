@@ -1,9 +1,10 @@
 @use '../../../../../styles/sass/variables.module.scss' as *;
+@import '../shared.module.scss';
 
 .inputWrapper {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $input-container-gap;
 }
 
 .input {
