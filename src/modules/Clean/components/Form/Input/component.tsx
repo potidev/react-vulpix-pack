@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import styles from "./styles.module.scss";
 import { InputProps } from "./types";
 import { cn } from "@/utils";
-import { useBorderColorFocusClass, useShapeBackgroundColorClass } from "@/hooks";
+import { useBorderColorFocusClass, useShapeBackgroundColorClass } from "@/hooks/ClassName";
 import { Label, Paragraph } from "@/modules/Common";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(({

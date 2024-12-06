@@ -1,0 +1,41 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+
+.primary {
+  &:hover {
+    background-color: rgba(red($primary-color), green($primary-color), blue($primary-color), 0.9);
+  }
+}
+
+.success {
+  &:hover {
+    background-color: rgba(red($success-color), green($success-color), blue($success-color), 0.9);
+  }
+}
+
+.warning {
+  &:hover {
+    background-color: rgba(red($warning-color), green($warning-color), blue($warning-color), 0.9);
+  }
+}
+
+.danger {
+  &:hover {
+    background-color: rgba(red($danger-color), green($danger-color), blue($danger-color), 0.9);
+  }
+}
+
+.text {
+  &:hover {
+    background-color: darken($text-color, 20%);
+  }
+}
+
+.background {
+  &:hover {
+    background-color: rgba(red($background-color), green($background-color), blue($background-color), 0.9);
+  }
+}
+
+.hoverTransision {
+  transition: background-color 150ms ease-in-out;
+}

@@ -8,7 +8,7 @@ import { SidebarHeader } from "../SidebarHeader/component";
 import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
 import { cn } from "@/utils/ClassNameUtils";
 import { List } from "@/modules/Common";
-import { useShapeBackgroundColorClass } from "@/hooks/useShapeBackgroundColorClass";
+import { useShapeBackgroundColorClass } from "@/hooks/ClassName";
 
 export const SidebarContainer = ({ children, className, contentClassName, listClassName, color = "default", ...rest }: SidebarContainerProps) => {
   const { sidebarIsOpen } = useSidebarContext();

@@ -4,7 +4,7 @@ import { cn } from "@/utils/ClassNameUtils";
 
 import { SwitchProps } from "./types";
 import styles from './styles.module.scss';
-import { useBackgroundColorClass } from "@/hooks/useBackgroundColorClass";
+import { useBackgroundColorClass } from "@/hooks/ClassName";
 import { Label } from "@/modules/Common";
 
 export const Switch = ({ className, checked = false, disabled, color = "text", label, onChange, id, labelSize, labelColor, labelClassName, labelHtmlFor, containerClassName, labelNoSelectable = true }: SwitchProps) => {

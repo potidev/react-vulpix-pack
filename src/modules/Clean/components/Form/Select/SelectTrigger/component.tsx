@@ -6,7 +6,7 @@ import { cn } from "@/utils/ClassNameUtils";
 import { MdChevronRight } from "react-icons/md";
 import { SelectTriggerProps } from "./types";
 import { Label, Paragraph } from "@/modules/Common";
-import { useBorderColorFocusClass } from "@/hooks";
+import { useBorderColorFocusClass } from "@/hooks/ClassName";
 
 
 const SelectTrigger = React.forwardRef<
