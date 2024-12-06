@@ -1,25 +1,20 @@
-@use '../../../../../../styles/sass/variables.module.scss' as *;
-@import '../shared.module.scss';
+@use '../../../../styles/sass/variables.module.scss' as *;
 
-$animation-in: fade-in 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-$animation-bottom: slide-in-from-top 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-$animation-left: slide-in-from-right 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-$animation-right: slide-in-from-left 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-$animation-top: slide-in-from-bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-in: fade-in 0.1s ease-in-out forwards;
+$animation-bottom: slide-in-from-top 0.1s ease-in-out forwards;
+$animation-left: slide-in-from-right 0.1s ease-in-out forwards;
+$animation-right: slide-in-from-left 0.1s ease-in-out forwards;
+$animation-top: slide-in-from-bottom 0.1s ease-in-out forwards;
 $zoom-in-start: scale(0.95);
 $zoom-in-end: scale(1);
 
-.selectContentDefault {
-  position: relative; 
+.subContent {
+  overflow: hidden; 
   z-index: 50; 
-  max-height: 384px;
-  min-width: 128px;
-  overflow: hidden;
+  padding: 4px; 
   border-radius: 6px; 
-  border: 1px solid $separator-color; 
-  background-color: $background-color; 
-  color: $text-color; 
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-width: 1px; 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
   opacity: 0%;
   transform: scale(200%);
 
@@ -37,6 +32,10 @@ $zoom-in-end: scale(1);
 
   &[data-state='open'][data-side='top'] {
     animation: $animation-in, $animation-top;
+  }
+
+  &[data-state='closed'] {
+    animation: fade-out 0.2s ease-in forwards;
   }
 }
 
@@ -92,32 +91,4 @@ $zoom-in-end: scale(1);
   to {
     transform: translateY(-4px) $zoom-in-end;
   }
-}
-
-.popperContent {
-  &[data-side='bottom'] {
-    transform: translateY(4px);
-  }
-
-  &[data-side='left'] {
-    transform: translateX(-4px); /* equivalente a -translate-x-1 */
-  }
-
-  &[data-side='right'] {
-    transform: translateX(4px); /* equivalente a translate-x-1 */
-  }
-
-  &[data-side='top'] {
-    transform: translateY(-4px); /* equivalente a -translate-y-1 */
-  }
-}
-
-.defaultViewPort {
-  padding: 4px;
-}
-
-.popperViewPort {
-  height: var($radix-select-trigger-height);
-  width: 100%;
-  min-width: $radix-select-trigger-width;
 }

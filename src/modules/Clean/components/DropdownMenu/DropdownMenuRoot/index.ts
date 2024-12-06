@@ -1,0 +1,1 @@
+export { DropdownMenuRoot } from "./component";

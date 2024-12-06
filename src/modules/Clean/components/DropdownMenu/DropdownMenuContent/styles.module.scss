@@ -1,5 +1,4 @@
-@use '../../../../../../styles/sass/variables.module.scss' as *;
-@import '../shared.module.scss';
+@use '../../../../../styles/sass/variables.module.scss' as *;
 
 $animation-in: fade-in 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 $animation-bottom: slide-in-from-top 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -9,19 +8,25 @@ $animation-top: slide-in-from-bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 $zoom-in-start: scale(0.95);
 $zoom-in-end: scale(1);
 
-.selectContentDefault {
-  position: relative; 
+.dropdownContent {
+  overflow: hidden; 
   z-index: 50; 
-  max-height: 384px;
-  min-width: 128px;
-  overflow: hidden;
-  border-radius: 6px; 
-  border: 1px solid $separator-color; 
-  background-color: $background-color; 
-  color: $text-color; 
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.25rem; 
+  border-radius: $border-radius-small; 
+
+  border-width: 1px; 
+  border-style: solid;
+  border-color: $separator-color;
+  
+  color: $text-color;
+  font-family: $font-family;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+  min-width: calc(16px * 8);
   opacity: 0%;
-  transform: scale(200%);
+
+  * {
+    box-sizing: border-box;
+  }
 
   &[data-state='open'][data-side='bottom'] {
     animation: $animation-in, $animation-bottom;
@@ -68,21 +73,21 @@ $zoom-in-end: scale(1);
 }
 
 @keyframes slide-in-from-right {
-  from {
-    transform: translateX(8px) $zoom-in-start; 
-  }
-  to {
-    transform: translateX(-4px) $zoom-in-end;
-  }
+  // from {
+  //   transform: translateX(8px) $zoom-in-start; 
+  // }
+  // to {
+  //   transform: translateX(-4px) $zoom-in-end;
+  // }
 }
 
 @keyframes slide-in-from-left {
-  from {
-    transform: translateX(-8px) $zoom-in-start; 
-  }
-  to {
-    transform: translateX(4px) $zoom-in-end;
-  }
+  // from {
+  //   transform: translateX(-8px) $zoom-in-start; 
+  // }
+  // to {
+  //   transform: translateX(4px) $zoom-in-end;
+  // }
 }
 
 @keyframes slide-in-from-bottom {
@@ -92,32 +97,4 @@ $zoom-in-end: scale(1);
   to {
     transform: translateY(-4px) $zoom-in-end;
   }
-}
-
-.popperContent {
-  &[data-side='bottom'] {
-    transform: translateY(4px);
-  }
-
-  &[data-side='left'] {
-    transform: translateX(-4px); /* equivalente a -translate-x-1 */
-  }
-
-  &[data-side='right'] {
-    transform: translateX(4px); /* equivalente a translate-x-1 */
-  }
-
-  &[data-side='top'] {
-    transform: translateY(-4px); /* equivalente a -translate-y-1 */
-  }
-}
-
-.defaultViewPort {
-  padding: 4px;
-}
-
-.popperViewPort {
-  height: var($radix-select-trigger-height);
-  width: 100%;
-  min-width: $radix-select-trigger-width;
 }
