@@ -1,1 +1,0 @@
-export { Touchable } from "./component";

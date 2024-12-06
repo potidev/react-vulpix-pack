@@ -3,4 +3,4 @@ export * from "./Span";
 export * from "./Label";
 export * from "./H3";
 export * from "./List";
-export * from "./Touchable";
+export * from "./Text";
