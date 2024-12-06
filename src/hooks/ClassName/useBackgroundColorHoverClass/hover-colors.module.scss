@@ -2,43 +2,43 @@
 
 .primary {
   &:hover {
-    background-color: rgba($primary-color, 15%);
+    background-color: rgba($primary-color, 0.9);
   }
 }
 
 .success {
   &:hover {
-    background-color: rgba($success-color, 15%);
+    background-color: rgba($success-color, 0.9);
   }
 }
 
 .warning {
   &:hover {
-    background-color: rgba($warning-color, 15%);
+    background-color: rgba($warning-color, 0.9);
   }
 }
 
 .danger {
   &:hover {
-    background-color: rgba($danger-color, 15%);
+    background-color: rgba($danger-color, 0.9);
   }
 }
 
 .text {
   &:hover {
-    background-color: rgba($text-color, 15%);
+    background-color: darken($text-color, 20%);
   }
 }
 
 .background {
   &:hover {
-    background-color: rgba($background-color, 15%);
+    background-color: rgba($background-color, 0.9);
   }
 }
 
 .separator {
   &:hover {
-    background-color: rgba($separator-color, 15%);
+    background-color: rgba($separator-color, 0.9);
   }
 }
 

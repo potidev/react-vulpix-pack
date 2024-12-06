@@ -16,7 +16,7 @@ import { DropdownMenuTrigger } from "./DropdownMenuTrigger";
 import { DropdownMenuSubTrigger } from "./DropdownMenuSubTrigger";
 
 
-export const Dropdown = {
+export const DropdownMenu = {
   Root: DropdownMenuRoot,
   CheckboxItem: DropdownMenuCheckboxItem,
   Content: DropdownMenuContent,
@@ -31,5 +31,5 @@ export const Dropdown = {
   Sub: DropdownMenuSub,
   SubContent: DropdownMenuSubContent,
   SubTrigger: DropdownMenuSubTrigger,
-  Trigge: DropdownMenuTrigger
+  Trigger: DropdownMenuTrigger, 
 };
