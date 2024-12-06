@@ -1,1 +1,1 @@
-export type ShapeColorsTypes = "soft" | "default";
+export type ShapeColorsTypes = "soft" | "default" | "background";
