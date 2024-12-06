@@ -1,0 +1,8 @@
+.tableFooter {
+  border-top-width: 1px; 
+  font-weight: 500; 
+
+  & > tr:last-child {
+    border-bottom: 0; 
+  }
+}

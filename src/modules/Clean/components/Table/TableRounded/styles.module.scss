@@ -1,0 +1,10 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+
+.tableRounded {
+  border-radius: $border-radius-small; 
+  border-width: 1px;
+  border-style: solid;
+  border-color: $separator-color;
+  width: 100%;
+  box-sizing: border-box;
+}

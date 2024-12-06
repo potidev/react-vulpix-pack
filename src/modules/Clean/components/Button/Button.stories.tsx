@@ -36,8 +36,9 @@ const meta: Meta<ButtonProps> = {
     variant: {
       control: "select",
       options: [
-        "default",
+        "solid",
         "outline",
+        "ghost",
       ]
     }
   },
@@ -62,6 +63,14 @@ export const Outline: Story = {
     children: "Button"
   },
 };
+
+export const Ghost: Story = {
+  args: {
+    variant: "ghost",
+    children: "Button"
+  },
+};
+
 
 export const Icon: Story = {
   args: {

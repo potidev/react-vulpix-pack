@@ -1,11 +1,11 @@
 @use '../../../../../../styles/sass/variables.module.scss' as *;
 @import '../shared.module.scss';
 
-$animation-in: fade-in 0.1s ease-in-out forwards;
-$animation-bottom: slide-in-from-top 0.1s ease-in-out forwards;
-$animation-left: slide-in-from-right 0.1s ease-in-out forwards;
-$animation-right: slide-in-from-left 0.1s ease-in-out forwards;
-$animation-top: slide-in-from-bottom 0.1s ease-in-out forwards;
+$animation-in: fade-in 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-bottom: slide-in-from-top 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-left: slide-in-from-right 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-right: slide-in-from-left 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-top: slide-in-from-bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 $zoom-in-start: scale(0.95);
 $zoom-in-end: scale(1);
 
@@ -37,10 +37,6 @@ $zoom-in-end: scale(1);
 
   &[data-state='open'][data-side='top'] {
     animation: $animation-in, $animation-top;
-  }
-
-  &[data-state='closed'] {
-    animation: fade-out 0.2s ease-in forwards;
   }
 }
 

@@ -1,0 +1,5 @@
+.tableBody {
+  & tr:last-child {
+    border-width: 0; 
+  }
+}

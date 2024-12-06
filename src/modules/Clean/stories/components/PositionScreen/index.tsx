@@ -5,11 +5,12 @@ type PositionScreenProps = {
   justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
   alignItems?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
   withoutPadding?: boolean;
+  style?: React.CSSProperties;
 }
 
-export const PositionScreen = ({ children, justifyContent = "flex-start", alignItems = "flex-start", withoutPadding = false }: PositionScreenProps) => {
+export const PositionScreen = ({ children, justifyContent = "flex-start", alignItems = "flex-start", withoutPadding = false, style }: PositionScreenProps) => {
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100vw", alignItems, justifyContent, padding: withoutPadding ? undefined : "24px" }}>
+    <div style={{ display: "flex", height: "100vh", width: "100vw", alignItems, justifyContent, padding: withoutPadding ? undefined : "24px", ...style }}>
       {children}
     </div>
   );

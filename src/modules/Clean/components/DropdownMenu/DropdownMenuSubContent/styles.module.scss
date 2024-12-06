@@ -1,0 +1,97 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+
+$animation-in: fade-in 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-bottom: slide-in-from-top 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-left: slide-in-from-right 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-right: slide-in-from-left 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$animation-top: slide-in-from-bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+$zoom-in-start: scale(0.95);
+$zoom-in-end: scale(1);
+
+.subContent {
+  overflow: hidden; 
+  z-index: 51; 
+  padding: 4px;
+  border-radius: $border-radius-small; 
+
+  border-width: 1px; 
+  border-style: solid;
+  border-color: $separator-color;
+  color: $text-color;
+  font-family: $font-family;
+  background-color: $background-color;
+
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+  min-width: calc(16px * 8);
+  opacity: 0%;
+
+  &[data-state='open'][data-side='bottom'] {
+    animation: $animation-in, $animation-bottom;
+  }
+
+  &[data-state='open'][data-side='left'] {
+    animation: $animation-in, $animation-left;
+  }
+
+  &[data-state='open'][data-side='right'] {
+    animation: $animation-in, $animation-right;
+  }
+
+  &[data-state='open'][data-side='top'] {
+    animation: $animation-in, $animation-top;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+@keyframes slide-in-from-top {
+  from {
+    transform: translateY(-8px) $zoom-in-start;
+  }
+  to {
+    transform: translateY(2px) $zoom-in-end;
+  }
+}
+
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(8px) $zoom-in-start; 
+  }
+  to {
+    transform: translateX(-2px) $zoom-in-end;
+  }
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-8px) $zoom-in-start; 
+  }
+  to {
+    transform: translateX(2px) $zoom-in-end;
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(8px) $zoom-in-start;
+  }
+  to {
+    transform: translateY(-2px) $zoom-in-end;
+  }
+}

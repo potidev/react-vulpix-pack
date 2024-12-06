@@ -6,17 +6,17 @@ import { ButtonProps } from "./types";
 import { cva } from "class-variance-authority";
 import styles from "./styles.module.scss";
 import { Slot } from "@radix-ui/react-slot";
-import { useBackgroundColorClass, useBorderColorClass } from "@/hooks/ClassName";
+import { useBackgroundColorClass, useBorderColorClass, useSoftBackgroundColorHoverClass } from "@/hooks/ClassName";
+import { useBackgroundColorHoverClass } from "@/hooks/ClassName/useBackgroundColorHoverClass";
 
 const buttonVariants = cva(
   styles.defaultButtonStyles,
   {
     variants: {
       variant: {
-        solid:
-          styles.solidVariant,
-        outline:
-          styles.outlineVariant,
+        solid: styles.solidVariant,
+        outline: styles.outlineVariant,
+        ghost: styles.gostVariant,
       },
       size: {
         regular: styles.sizeRegular,
@@ -44,12 +44,13 @@ const Button = React.forwardRef<
   ...props
 }, ref) => {
   const Comp = asChild ? Slot : "button"
-
   
   const getVariantPropsClass = () => {
     switch(variant) {
       case "outline":
         return useBorderColorClass(color === "text" ? "separator" : color, { textColor: true, softBackgroundColorHover: true });
+      case "ghost":
+        return useSoftBackgroundColorHoverClass(color, { hoverTransition: true })
       case "solid":
       default:
         return useBackgroundColorClass(color, { hoverBackground: true, recommendedTextColor: true, hoverTransition: true });
