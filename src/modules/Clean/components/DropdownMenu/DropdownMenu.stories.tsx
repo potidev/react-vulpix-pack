@@ -13,9 +13,14 @@ import { DropdownMenuSub } from "./DropdownMenuSub";
 import { DropdownMenuSubTrigger } from "./DropdownMenuSubTrigger";
 import { DropdownMenuPortal } from "./DropdownMenuPortal";
 import { DropdownMenuSubContent } from "./DropdownMenuSubContent";
+import { DropdownMenuCheckboxItem, DropdownMenuCheckboxItemProps } from "./DropdownMenuCheckboxItem";
+import { DropdownMenuRadioGroup } from "./DropdownMenuRadioGroup";
+import { DropdownMenuRadioItem } from "./DropdownMenuRadioItem";
 
 import { PositionScreen } from '../../stories/components/PositionScreen';
 import { Button } from '../Button';
+
+type Checked = DropdownMenuCheckboxItemProps["checked"]
 
 const meta: Meta<any> = {
   title: 'Clean/DropdownMenu/Demos',
@@ -36,9 +41,69 @@ const meta: Meta<any> = {
 export default meta;
 type Story = StoryObj<any>;
 
-export const Simple: Story = {
+export const TopLeft: Story = {
   render: (args) => (
     <PositionScreen justifyContent='flex-start' alignItems='flex-start'>
+      <DropdownMenuRoot {...args}>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline">Open</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem disabled>Billing</DropdownMenuItem>
+          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>Subscription</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuRoot>
+    </PositionScreen>
+  ),
+};
+
+export const TopRight: Story = {
+  render: (args) => (
+    <PositionScreen justifyContent='flex-end' alignItems='flex-start'>
+      <DropdownMenuRoot {...args}>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline">Open</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem disabled>Billing</DropdownMenuItem>
+          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>Subscription</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuRoot>
+    </PositionScreen>
+  ),
+};
+
+export const BottomRight: Story = {
+  render: (args) => (
+    <PositionScreen justifyContent='flex-end' alignItems='flex-end'>
+      <DropdownMenuRoot {...args}>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline">Open</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem disabled>Billing</DropdownMenuItem>
+          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>Subscription</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuRoot>
+    </PositionScreen>
+  ),
+};
+
+export const BottomLeft: Story = {
+  render: (args) => (
+    <PositionScreen justifyContent='flex-start' alignItems='flex-end'>
       <DropdownMenuRoot {...args}>
         <DropdownMenuTrigger asChild>
           <Button variant="outline">Open</Button>
@@ -116,4 +181,72 @@ export const Complex: Story = {
       </DropdownMenuRoot>
     </PositionScreen>
   ),
+};
+
+
+export const Checkbox: Story = {
+  render: (args) => {
+    const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
+    const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
+    const [showPanel, setShowPanel] = React.useState<Checked>(false);
+
+    return (
+      <PositionScreen justifyContent='flex-start' alignItems='flex-start'>
+        <DropdownMenuRoot {...args}>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">Open</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56">
+            <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuCheckboxItem
+              checked={showStatusBar}
+              onCheckedChange={setShowStatusBar}
+            >
+              Status Bar
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+              checked={showActivityBar}
+              onCheckedChange={setShowActivityBar}
+              disabled
+            >
+              Activity Bar
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+              checked={showPanel}
+              onCheckedChange={setShowPanel}
+            >
+              Panel
+            </DropdownMenuCheckboxItem>
+          </DropdownMenuContent>
+        </DropdownMenuRoot>
+      </PositionScreen>
+    )
+  },
+};
+
+export const RadioGrup: Story = {
+  render: (args) => {
+    const [position, setPosition] = React.useState("bottom");
+
+    return (
+      <PositionScreen justifyContent='flex-start' alignItems='flex-start'>
+        <DropdownMenuRoot {...args}>
+        <DropdownMenuTrigger asChild>
+        <Button variant="outline">Open</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+          <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+
+        </DropdownMenuRoot>
+      </PositionScreen>
+    )
+  },
 };
