@@ -1,3 +1,2 @@
-export type TextProps = {
-  className?: string;
-};
+export { Text } from "./component";
+export { TextProps } from "./types";
