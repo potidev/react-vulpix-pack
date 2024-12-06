@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext, useState } from 'react';
 import styles from './styles.module.scss';
 import { Spinner, SpinnerProps } from '../../components';
