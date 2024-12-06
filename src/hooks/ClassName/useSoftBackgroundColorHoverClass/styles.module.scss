@@ -1,0 +1,47 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+
+.primary {
+  &:hover {
+    background-color: rgba($primary-color, 15%);
+  }
+}
+
+.success {
+  &:hover {
+    background-color: rgba($success-color, 15%);
+  }
+}
+
+.warning {
+  &:hover {
+    background-color: rgba($warning-color, 15%);
+  }
+}
+
+.danger {
+  &:hover {
+    background-color: rgba($danger-color, 15%);
+  }
+}
+
+.text {
+  &:hover {
+    background-color: rgba($text-color, 15%);
+  }
+}
+
+.background {
+  &:hover {
+    background-color: rgba($background-color, 15%);
+  }
+}
+
+.separator {
+  &:hover {
+    background-color: rgba($separator-color, 15%);
+  }
+}
+
+.hoverTransision {
+  transition: background-color 150ms ease-in-out;
+}

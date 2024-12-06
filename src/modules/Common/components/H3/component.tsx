@@ -1,7 +1,7 @@
 import React from "react";
 
 import { cn } from "@/utils/ClassNameUtils";
-import { useTextColorClass, useFontSizeClass } from "@/hooks";
+import { useTextColorClass, useFontSizeClass } from "@/hooks/ClassName";
 
 import styles from './styles.module.scss';
 import { H3Props } from "./types";

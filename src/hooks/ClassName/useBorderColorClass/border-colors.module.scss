@@ -1,0 +1,29 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+
+.primary {
+  border-color: $primary-color;
+}
+
+.success {
+  border-color: $success-color;
+}
+
+.warning {
+  border-color: $warning-color;
+}
+
+.danger {
+  border-color: $danger-color;
+}
+
+.text {
+  border-color: $text-color;
+}
+
+.background {
+  border-color: $background-color;
+}
+
+.separator {
+  border-color: $separator-color;
+}

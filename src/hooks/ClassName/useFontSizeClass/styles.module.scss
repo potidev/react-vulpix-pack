@@ -1,0 +1,49 @@
+@use '../../../styles/sass/variables.module.scss' as *;
+
+.tiny {
+  font-size: $fs-tiny-tablet;
+
+  @media screen and (min-width: $tablet) {
+    font-size: $fs-tiny-desktop;
+  }
+}
+
+.small {
+  font-size: $fs-small-tablet;
+
+  @media screen and (min-width: $tablet) {
+    font-size: $fs-small-desktop;
+  }
+}
+
+.regular {
+  font-size: $fs-regular-tablet;
+
+  @media screen and (min-width: $tablet) {
+    font-size: $fs-regular-desktop;
+  }
+}
+
+.medium {
+  font-size: $fs-medium-tablet;
+
+  @media screen and (min-width: $tablet) {
+    font-size: $fs-medium-desktop;
+  }
+}
+
+.large {
+  font-size: $fs-large-tablet;
+
+  @media screen and (min-width: $tablet) {
+    font-size: $fs-large-desktop;
+  }
+}
+
+.xLarge {
+  font-size: $fs-large-tablet;
+
+  @media screen and (min-width: $tablet) {
+    font-size: $fs-large-desktop;
+  }
+}

@@ -5,7 +5,7 @@ import { cn } from "@/utils/ClassNameUtils";
 import { SidebarDropdownItemProps } from "./types";
 import styles from './styles.module.scss';
 import sharedStyles from '../SidebarItem/shared.module.scss';
-import { useFontSizeClass } from "@/hooks/useFontSizeClass";
+import { useFontSizeClass } from "@/hooks/ClassName";
 
 export const SidebarDropdownItem = ({ className, label }: SidebarDropdownItemProps) => {
   const fontSizeClass = useFontSizeClass("small");

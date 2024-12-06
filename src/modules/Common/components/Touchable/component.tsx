@@ -1,7 +1,7 @@
 import React from "react";
 
 import { cn } from "@/utils/ClassNameUtils";
-import { useFontSizeClass } from "@/hooks/useFontSizeClass";
+import { useFontSizeClass } from "@/hooks/ClassName";
 
 import { TouchableProps } from "./types";
 import styles from "./styles.module.scss";

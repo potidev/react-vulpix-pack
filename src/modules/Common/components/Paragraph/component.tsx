@@ -2,7 +2,7 @@ import React from "react";
 
 import { cn } from "@/utils/ClassNameUtils";
 import { FontSizeTypes } from "@/types/font-sizes";
-import { useFontSizeClass, useTextColorClass } from "@/hooks";
+import { useFontSizeClass, useTextColorClass } from "@/hooks/ClassName";
 
 import styles from './styles.module.scss';
 import { TextColorsTypes } from "@/types/text-colors";
