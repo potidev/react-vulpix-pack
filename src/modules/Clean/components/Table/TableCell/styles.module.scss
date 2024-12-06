@@ -1,0 +1,12 @@
+.tableCell {
+  padding: 8px; 
+  vertical-align: middle; 
+
+  &:has([role="checkbox"]) {
+    padding-right: 0;
+  }
+
+  &[role="checkbox"] {
+    transform: translateY(2px);
+  }
+}

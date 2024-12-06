@@ -1,0 +1,14 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+
+.tableRow {
+  border-bottom-width: 1px; 
+  border-bottom-color: $separator-color;
+
+  &[data-state="selected"] {
+    background-color: $separator-color;
+  }
+
+  &:hover {
+    background-color: rgba($separator-color, 40%);
+  }
+}

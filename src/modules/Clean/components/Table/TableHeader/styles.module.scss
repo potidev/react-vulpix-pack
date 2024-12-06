@@ -1,0 +1,8 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+
+.tableHeader {
+  & tr {
+    border-bottom-width: 1px;
+    border-bottom-color: $separator-color;
+  }
+}

@@ -1,0 +1,25 @@
+@use '../../../../../styles/sass/variables.module.scss' as *;
+
+.tableContainer {
+  overflow: auto; 
+  position: relative; 
+  width: 100%; 
+}
+
+.tableRoot {
+  width: 100%; 
+  font-size: $fs-small-desktop;
+  line-height: 20px; 
+  color: $text-color;
+  font-family: $font-family;
+  border-collapse: collapse;
+  caption-side: bottom;
+  text-indent: 0;
+
+  *, ::before, ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: $separator-color;
+  }
+}
