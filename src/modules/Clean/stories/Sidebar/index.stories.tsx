@@ -239,6 +239,7 @@ export const UsingToolBarOnlyOnMobile: Story = {
           />
         </Sidebar.Root>
         <Sidebar.Main
+          defaultContentPadding
           fixedHeaderOnlyOnMobile={
             <Sidebar.Toolbar />
           }

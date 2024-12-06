@@ -11,6 +11,20 @@
   overflow: hidden;
 }
 
+.defaultPadding {
+  padding-top: $padding-regular-tablet;
+  padding-right: $padding-regular-tablet;
+  padding-bottom: $padding-regular-tablet;
+  padding-left: $padding-regular-tablet;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: $padding-medium-desktop;
+    padding-right: $padding-medium-desktop;
+    padding-bottom: $padding-medium-desktop;
+    padding-left: $padding-medium-desktop;
+  }
+}
+
 .defaultToolbarPadding {
   padding-top: $sidebar-toolbar-desktop-height;
 }

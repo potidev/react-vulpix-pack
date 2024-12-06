@@ -8,14 +8,14 @@ import { SidebarPageMainProps } from "./types";
 import styles from './styles.module.scss';
 import { useSidebarContext } from "@/modules/Clean/contexts/SidebarProvider";
 
-export const SidebarPageMain = ({ className, children, fixedHeader, fixedHeaderOnlyOnMobile, defaultToolbarPadding = false }: SidebarPageMainProps) => {
+export const SidebarPageMain = ({ className, children, fixedHeader, fixedHeaderOnlyOnMobile, defaultToolbarPadding = false, defaultContentPadding = false }: SidebarPageMainProps) => {
   const { sidebarIsOpen } = useSidebarContext();
   
   const containerOnOpenClass = useMemo(() => sidebarIsOpen ? styles.containerOnOpen : undefined, [sidebarIsOpen]);
   const fixedHeaderOnOpenClass = useMemo(() => !sidebarIsOpen ? styles.fixedHeaderOpen : undefined, [sidebarIsOpen]);
 
   const defaultToolbarPaddingClass = defaultToolbarPadding ? styles.defaultToolbarPadding : undefined;
-  console.log(defaultToolbarPaddingClass);
+  const defaultPaddingClass = defaultContentPadding ? styles.defaultPadding : undefined;
 
   return (
     <div className={cn.get(styles.container, defaultToolbarPaddingClass, className)}>
@@ -33,7 +33,7 @@ export const SidebarPageMain = ({ className, children, fixedHeader, fixedHeaderO
           </header>
         )
       }
-      <div className={cn.get(containerOnOpenClass)}>
+      <div className={cn.get(containerOnOpenClass, defaultPaddingClass)}>
         {children}
       </div>
     </div>
