@@ -42,9 +42,9 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <DropdownMenu.Root>
           <DropdownMenu.Trigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
+            <Button variant="ghost" style={{ padding: 0, width: 32, height: 32 }}>
+              <span className={styles.openMenuText}>Open menu</span>
+              <MoreHorizontal style={{ padding: 0, width: 16, height: 16 }} />
             </Button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Content align="end">
