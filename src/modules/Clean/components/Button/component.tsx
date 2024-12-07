@@ -41,9 +41,12 @@ const Button = React.forwardRef<
   size,
   asChild = false,
   color = "text",
+  fullWidth = false,
   ...props
 }, ref) => {
   const Comp = asChild ? Slot : "button"
+
+  const fitContentClass = fullWidth === true ? undefined : styles.fitContent;
   
   const getVariantPropsClass = () => {
     switch(variant) {
@@ -59,7 +62,7 @@ const Button = React.forwardRef<
   
   return (
     <Comp
-      className={cn.get(buttonVariants({ variant, size, className }), getVariantPropsClass(), className)}
+      className={cn.get(buttonVariants({ variant, size, className }), getVariantPropsClass(), fitContentClass, className)}
       ref={ref}
       {...props}
     />

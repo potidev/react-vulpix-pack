@@ -5,5 +5,5 @@ export * from "./FormDescription";
 export * from "./FormItem";
 export * from "./FormLabel";
 export * from "./FormMessage";
-export * from "./FormProvider";
 export * from "./FormField";
+export * from "./Form";
