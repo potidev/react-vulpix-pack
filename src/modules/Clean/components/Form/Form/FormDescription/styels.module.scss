@@ -1,0 +1,7 @@
+@use '../../../../../../styles/sass/variables.module.scss' as *;
+
+.formDescription {
+  font-size: $fs-small-desktop;
+  color: $soft-text-color;
+  font-family: $font-family;
+}
