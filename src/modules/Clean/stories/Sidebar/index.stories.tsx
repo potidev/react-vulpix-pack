@@ -180,6 +180,7 @@ export const UsingToolBar: Story = {
         </Sidebar.Root>
         <Sidebar.Main
           defaultToolbarPadding
+          defaultContentPadding
           fixedHeader={
             <Sidebar.Toolbar />
           }
@@ -239,6 +240,7 @@ export const UsingToolBarOnlyOnMobile: Story = {
           />
         </Sidebar.Root>
         <Sidebar.Main
+          defaultToolbarPadding
           defaultContentPadding
           fixedHeaderOnlyOnMobile={
             <Sidebar.Toolbar />
