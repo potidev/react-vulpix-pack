@@ -7,4 +7,5 @@ export type CardRootProps = {
   color?: ShapeColorsTypes;
   hoverEffect?: boolean;
   cursorPointer?: boolean;
+  withoutDefaultPadding?: boolean;
 };

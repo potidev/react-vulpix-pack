@@ -23,9 +23,13 @@ const meta: Meta<CardRootProps> = {
     color: {
       control: "select",
       options: [
-        "default",
-        "soft"
+        "background",
+        "shape",
+        "soft",
       ],
+    },
+    withoutDefaultPadding: {
+      control: "boolean",
     },
     hoverEffect: {
       control: "boolean",
@@ -46,7 +50,13 @@ type Story = StoryObj<CardRootProps>;
 
 export const DefaultBackground: Story = {
   args: {
-    color: "default"
+    color: "background"
+  },
+};
+
+export const ShapeBackground: Story = {
+  args: {
+    color: "shape"
   },
 };
 
@@ -72,5 +82,11 @@ export const CursorPointerHoverEffect: Story = {
   args: {
     cursorPointer: true,
     hoverEffect: true,
+  },
+};
+
+export const WithoutDefaultPadding: Story = {
+  args: {
+    withoutDefaultPadding: true,
   },
 };

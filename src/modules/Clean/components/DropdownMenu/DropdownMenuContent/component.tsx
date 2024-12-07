@@ -11,7 +11,7 @@ import { useShapeBackgroundColorClass } from "@/hooks/ClassName";
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
   DropdownMenuContentProps
->(({ className, sideOffset = 4, backgroundColor = "default", ...props }, ref) => {
+>(({ className, sideOffset = 4, backgroundColor = "background", ...props }, ref) => {
   const backgroundColorClass = useShapeBackgroundColorClass(backgroundColor);
 
   return (

@@ -6,9 +6,12 @@
   gap: 8px;
   border: 1px solid $separator-color;
   border-radius: 8px;
-  padding: $card-padding-tablet;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cardDefaultPadding {
+  padding: $card-padding-tablet;
 
   @media screen and (min-width: $tablet) {
     padding: $card-padding-desktop;

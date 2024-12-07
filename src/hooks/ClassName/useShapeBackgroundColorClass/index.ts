@@ -5,10 +5,10 @@ export const useShapeBackgroundColorClass = (color?: ShapeColorsTypes): string =
   switch(color) {
     case "soft":
       return styles.soft;
+    case "shape":
+    return styles.shape;
     case "background":
-      return styles.background;
-    case "default":
     default:
-      return styles.default;
+      return styles.background;
   }
 }

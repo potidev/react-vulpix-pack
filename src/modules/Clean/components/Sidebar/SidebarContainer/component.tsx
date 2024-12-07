@@ -10,7 +10,7 @@ import { cn } from "@/utils/ClassNameUtils";
 import { List } from "@/modules/Common";
 import { useShapeBackgroundColorClass } from "@/hooks/ClassName";
 
-export const SidebarContainer = ({ children, className, contentClassName, listClassName, color = "default", ...rest }: SidebarContainerProps) => {
+export const SidebarContainer = ({ children, className, contentClassName, listClassName, color = "shape", ...rest }: SidebarContainerProps) => {
   const { sidebarIsOpen } = useSidebarContext();
   const backgroundColorClass = useShapeBackgroundColorClass(color);
 

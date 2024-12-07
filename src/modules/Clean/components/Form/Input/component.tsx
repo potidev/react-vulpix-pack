@@ -10,7 +10,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
   className, 
   inputClassName, 
   labelClassName, 
-  backgroundColor = "default", 
+  backgroundColor = "shape", 
   color = "text", 
   error = false,
   errorMessage,
