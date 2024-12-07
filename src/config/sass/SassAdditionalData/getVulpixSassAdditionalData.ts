@@ -23,7 +23,14 @@ export const generateVariablesDevFile = (config?: VulpixSassConfig): string => {
     $shape-color: ${config?.theme?.shapeColor || Colors.shapeColor};
     $soft-shape-color: ${config?.theme?.softShapeColor || Colors.softShapeColor};
     $separator-color: ${config?.theme?.separatorColor || Colors.separatorColor};
+    $ring-color: ${config?.theme?.ringColor || Colors.ringColor || Colors.separatorColor};
     $input-color: ${config?.theme?.inputColor || Colors.inputColor};
+
+    $primary-foreground-color: ${config?.theme?.primaryForegroundColor || Colors.primaryForegroundColor};
+    $success-foreground-color: ${config?.theme?.successForegroundColor || Colors.successForegroundColor};
+    $warning-foreground-color: ${config?.theme?.warningForegroundColor || Colors.warningForegroundColor};
+    $danger-foreground-color: ${config?.theme?.dangerForegroundColor || Colors.dangerForegroundColor};
+    $text-foreground-color: ${config?.theme?.textForegroundColor || Colors.textForegroundColor};
 
     $font-family: ${config?.theme?.fontFamily || Fonts.fontFamily || "Roboto, sans-serif"};
 
