@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 import { cn } from "@/utils";
 
 import { Button } from "../../../Button";
-import { DropdownMenu } from "../../../DropdownMenu";
+import { DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRoot, DropdownMenuSeparator, DropdownMenuTrigger } from "../../../DropdownMenu";
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -40,25 +40,25 @@ export const columns: ColumnDef<Payment>[] = [
       const payment = row.original
  
       return (
-        <DropdownMenu.Root>
-          <DropdownMenu.Trigger asChild>
+        <DropdownMenuRoot>
+          <DropdownMenuTrigger asChild>
             <Button variant="ghost" style={{ padding: 0, width: 32, height: 32 }}>
               <span className={styles.openMenuText}>Open menu</span>
               <MoreHorizontal style={{ padding: 0, width: 16, height: 16 }} />
             </Button>
-          </DropdownMenu.Trigger>
-          <DropdownMenu.Content align="end">
-            <DropdownMenu.Label>Actions</DropdownMenu.Label>
-            <DropdownMenu.Item
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(payment.id)}
             >
               Copy payment ID
-            </DropdownMenu.Item>
-            <DropdownMenu.Separator />
-            <DropdownMenu.Item>View customer</DropdownMenu.Item>
-            <DropdownMenu.Item>View payment details</DropdownMenu.Item>
-          </DropdownMenu.Content>
-        </DropdownMenu.Root>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>View customer</DropdownMenuItem>
+            <DropdownMenuItem>View payment details</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenuRoot>
       )
     },
   },

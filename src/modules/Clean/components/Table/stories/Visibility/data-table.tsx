@@ -25,7 +25,9 @@ import {
   Button,
   TableContainer,
 } from "../../.."
-import { DropdownMenu } from "../../../DropdownMenu"
+
+import { DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRoot, DropdownMenuSeparator, DropdownMenuTrigger } from "../../../DropdownMenu";
+
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -68,13 +70,13 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-        <DropdownMenu.Root>
-          <DropdownMenu.Trigger asChild>
+        <DropdownMenuRoot>
+          <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
               Columns
             </Button>
-          </DropdownMenu.Trigger>
-          <DropdownMenu.Content align="end">
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
             {table
               .getAllColumns()
               .filter(
@@ -82,7 +84,7 @@ export function DataTable<TData, TValue>({
               )
               .map((column) => {
                 return (
-                  <DropdownMenu.CheckboxItem
+                  <DropdownMenuCheckboxItem
                     key={column.id}
                     className="capitalize"
                     checked={column.getIsVisible()}
@@ -91,11 +93,11 @@ export function DataTable<TData, TValue>({
                     }
                   >
                     {column.id}
-                  </DropdownMenu.CheckboxItem>
+                  </DropdownMenuCheckboxItem>
                 )
               })}
-          </DropdownMenu.Content>
-        </DropdownMenu.Root>
+          </DropdownMenuContent>
+        </DropdownMenuRoot>
       </div>
       <TableRounded>
         <TableRoot>
