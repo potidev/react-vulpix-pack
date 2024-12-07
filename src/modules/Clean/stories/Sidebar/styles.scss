@@ -2,11 +2,12 @@
 
 .page {
   background-color: $background-color;
-  color: $text-color;
+  color: $text-color;  
 }
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  box-sizing: border-box;
 }

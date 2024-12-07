@@ -23,6 +23,7 @@ import {
   TableRounded,
   Input,
   Button,
+  TableContainer,
 } from "../../.."
 import { DropdownMenu } from "../../../DropdownMenu"
 
@@ -57,7 +58,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
+    <TableContainer>
       <div style={{"display":"flex","paddingTop":"1rem","paddingBottom":"1rem","alignItems":"center", gap: 8}}>
         <Input
           placeholder="Filter emails..."
@@ -140,6 +141,6 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </TableRoot>
       </TableRounded>
-    </div>
+    </TableContainer>
   )
 }

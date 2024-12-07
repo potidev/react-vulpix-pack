@@ -10,7 +10,7 @@ type PositionScreenProps = {
 
 export const PositionScreen = ({ children, justifyContent = "flex-start", alignItems = "flex-start", withoutPadding = false, style }: PositionScreenProps) => {
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100vw", alignItems, justifyContent, padding: withoutPadding ? undefined : "24px", ...style }}>
+    <div style={{ boxSizing: "border-box", display: "flex", height: "100vh", width: "100vw", alignItems, justifyContent, padding: withoutPadding ? undefined : "24px", ...style }}>
       {children}
     </div>
   );

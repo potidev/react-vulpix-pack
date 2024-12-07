@@ -1,6 +1,7 @@
 @use '../../../../../styles/sass/variables.module.scss' as *;
 
 .card {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 8px;

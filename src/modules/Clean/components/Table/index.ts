@@ -7,3 +7,4 @@ export * from "./TableHeader";
 export * from "./TableRoot";
 export * from "./TableRow";
 export * from "./TableRounded";
+export * from "./TableContainer";
