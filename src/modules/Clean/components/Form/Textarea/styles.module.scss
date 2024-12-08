@@ -1,0 +1,14 @@
+@use "../../../../../styles/sass/variables.module.scss" as *;
+
+.textarea {
+  width: 100%;
+  display: flex; // flex
+  min-height: 60px; // min-h-[60px]
+  font-size: $fs-small-desktop; // text-sm
+  resize: vertical;
+  line-height: 130%;
+
+  @media (min-width: $tablet) { // md:text-sm
+    font-size: $fs-small-tablet; // text-sm
+  }
+}

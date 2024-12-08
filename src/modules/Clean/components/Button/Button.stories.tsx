@@ -80,6 +80,14 @@ export const Icon: Story = {
   },
 };
 
+export const LargeIcon: Story = {
+  args: {
+    variant: "outline",
+    size: "iconMedium",
+    children: <MdChevronRight />
+  },
+};
+
 export const WithIcon: Story = {
   args: {
     variant: "solid",

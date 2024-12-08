@@ -24,7 +24,7 @@
   
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 1px #d4d4d8;
+    box-shadow: 0 0 0 1px $ring-color;
   }
 
   &:disabled {
@@ -57,7 +57,7 @@
 }
 
 .sizeRegular {
-  height: 36px; /* h-9 */
+  height: 36px;
   padding-left: 16px; /* px-4 */
   padding-right: 16px; /* px-4 */
   padding-top: 8px; /* py-2 */
@@ -80,6 +80,26 @@
 }
 
 .sizeIcon {
-  height: 36px; /* h-9 */
-  width: 36px; /* w-9 */
+  height: 36px;
+  width: 36px;
 }
+
+.sizeIconMedium {
+  height: 36px;
+  width: 36px;
+
+  & > svg {
+    height: 16px;
+    width: 16px;  
+
+    @media screen and (min-width: $tablet) {
+      height: 20px;
+      width: 20px;    
+    }
+  }
+}
+
+.fitContent {
+  width: fit-content;
+}
+

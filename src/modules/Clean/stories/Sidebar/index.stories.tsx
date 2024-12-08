@@ -197,6 +197,7 @@ export const UsingToolBarOnlyOnMobile: Story = {
     children: (
       <>
         <Sidebar.Root
+          color="shape"
           logo={<Sidebar.Logo src="/assets/imgs/logo.png" />}
           title='Vulpix'
         >

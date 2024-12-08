@@ -1,11 +1,6 @@
-import { SelectContent } from "./SelectContent";
-import { SelectItem } from "./SelectItem";
-import { SelectRoot } from "./SelectRoot";
-import { SelectTrigger } from "./SelectTrigger";
+export { SelectContent } from "./SelectContent";
+export { SelectItem } from "./SelectItem";
+export { SelectTrigger } from "./SelectTrigger";
+export { SelectValue } from "./SelectValue";
 
-export const Select = {
-  Root: SelectRoot,
-  Trigger: SelectTrigger,
-  Content: SelectContent,
-  Item: SelectItem,
-};
+export { SelectRoot as Select } from "./SelectRoot";

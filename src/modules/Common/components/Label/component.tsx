@@ -13,9 +13,9 @@ export type LabelProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "colo
   noSelectable?: boolean;
 }
 
-export const Label = ({ className, children, size = "regular", color = "default", noSelectable, ...rest }: LabelProps) => {
+export const Label = ({ className, children, size = "regular", color, noSelectable, ...rest }: LabelProps) => {
   const fontSizeClass = useFontSizeClass(size);
-  const textColorClass = useTextColorClass(color);
+  const textColorClass = color ? useTextColorClass(color) : styles.labelDefaultColor;
   const selectableClass = noSelectable ? styles.noSelectable : "";
 
   return (

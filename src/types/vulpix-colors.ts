@@ -4,12 +4,19 @@ export type VulpixColors = {
   warningColor: string;
   dargerColor: string;
 
-  backgroundColor: string;
+  primaryForegroundColor: string;
+  successForegroundColor: string;
+  warningForegroundColor: string;
+  dangerForegroundColor: string;
+  textForegroundColor: string;
 
+  backgroundColor: string;
+  
   textColor: string;
   softTextColor: string;
-
+  
   separatorColor: string;
+  ringColor?: string;
 
   shapeColor: string;
   softShapeColor: string;
