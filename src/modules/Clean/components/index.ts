@@ -7,3 +7,4 @@ export * from "./Switch";
 export * from "./Form";
 export * from "./Table"
 export * from "./DropdownMenu";
+export * from "./Avatar";

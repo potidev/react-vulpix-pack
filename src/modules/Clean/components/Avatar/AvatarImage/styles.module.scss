@@ -1,0 +1,7 @@
+@use "../../../../../styles/sass/variables.module.scss" as *;
+
+.avatarImage {
+  aspect-ratio: 1 / 1;  // aspect-square (proporção 1:1, tornando-o um quadrado)
+  height: 100%; // h-full (altura total)
+  width: 100%; // w-full (largura total)
+}
