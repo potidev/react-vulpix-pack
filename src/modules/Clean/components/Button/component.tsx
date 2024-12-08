@@ -23,6 +23,7 @@ const buttonVariants = cva(
         small: styles.sizeSmall,
         large: styles.sizeLarge,
         icon: styles.sizeIcon,
+        mediumIcon: styles.sizeMediumIcon,
       },
     },
     defaultVariants: {
@@ -46,7 +47,7 @@ const Button = React.forwardRef<
 }, ref) => {
   const Comp = asChild ? Slot : "button"
 
-  const fitContentClass = fullWidth === true || size === "icon" ? undefined : styles.fitContent;
+  const fitContentClass = fullWidth === true || size === "icon" || size === "mediumIcon" ? undefined : styles.fitContent;
   
   const getVariantPropsClass = () => {
     switch(variant) {
