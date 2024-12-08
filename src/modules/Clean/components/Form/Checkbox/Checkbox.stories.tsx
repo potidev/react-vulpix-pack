@@ -44,6 +44,12 @@ export const Default: Story = {
   },
 };
 
+export const WithLabel: Story = {
+  args: {
+    label: "Check this box"
+  },
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true,
