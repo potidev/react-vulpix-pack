@@ -22,11 +22,21 @@ const meta: Meta<any> = {
 export default meta;
 type Story = StoryObj<any>;
 
-export const Default: Story = {
+export const Image: Story = {
   args: { 
     children: (
       <>
         <AvatarImage src="https://github.com/potidev.png" alt="@potidev" />
+        <AvatarFallback>P</AvatarFallback>
+      </>
+    )
+  },
+};
+
+export const OnlyFallback: Story = {
+  args: { 
+    children: (
+      <>
         <AvatarFallback>P</AvatarFallback>
       </>
     )

@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
