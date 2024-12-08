@@ -83,7 +83,7 @@ export const Icon: Story = {
 export const LargeIcon: Story = {
   args: {
     variant: "outline",
-    size: "largeIcon",
+    size: "iconMedium",
     children: <MdChevronRight />
   },
 };
