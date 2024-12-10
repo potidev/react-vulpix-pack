@@ -3,6 +3,7 @@ import React from "react";
 import { SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarSeparator } from "../component"
 import { Calendar, ChevronDown, Home, Inbox, Search, Settings } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../../DropdownMenu";
+import { SidebarLogo } from "../SidebarLogo";
 
 const items = [
   {
@@ -10,6 +11,7 @@ const items = [
     url: "#",
     icon: Home,
     badge: 0,
+    active: true,
   },
   {
     title: "Inbox",
@@ -44,26 +46,7 @@ export const SidebarDefaultContentExemple = () => {
   return (
     <SidebarContent>
       <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <SidebarMenuButton>
-                  Select Workspace
-                  <ChevronDown className="ml-auto" />
-                </SidebarMenuButton>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
-                <DropdownMenuItem>
-                  <span>Acme Inc</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <span>Acme Corp.</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <SidebarLogo title="Vulpix Pack" src="https://raw.githubusercontent.com/potidev/react-vulpix-pack/0872cd99757e7c15e61b33e48d2fa90997889188/.github/assets/svg/logo.svg" />
       </SidebarHeader>
       <SidebarGroup>
         <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -71,7 +54,7 @@ export const SidebarDefaultContentExemple = () => {
           <SidebarMenu>
             {items.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton asChild isActive={item.active}>
                   <a href={item.url}>
                     <item.icon />
                     <span>{item.title}</span>

@@ -4,6 +4,7 @@ import { SidebarContent, SidebarGroup, SidebarGroupAction, SidebarGroupContent, 
 import { Calendar, ChevronDown, Home, Inbox, Plus, Search, Settings } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../../DropdownMenu";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../../Collapsible";
+import { SidebarLogo } from "../SidebarLogo";
 
 const items = [
   {
@@ -49,7 +50,7 @@ export const CollapsibleSidebarGroupExemple = () => {
           <SidebarMenu>
             {items.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton asChild isActive>
                   <a href={item.url}>
                     <item.icon />
                     <span>{item.title}</span>

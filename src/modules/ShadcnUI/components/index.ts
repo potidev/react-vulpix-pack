@@ -17,3 +17,4 @@ export * from "./Switch";
 export * from "./Toast";
 export * from "./Toaster";
 export * from "./Table";
+export * from "./Breadcrumb";

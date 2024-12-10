@@ -1,13 +1,15 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Sidebar, SidebarProps, SidebarProvider, SidebarTrigger } from "..";
+import { Sidebar, SidebarInset, SidebarProps, SidebarProvider, SidebarTrigger } from "..";
 import { SidebarDefaultContentExemple } from "./SidebarDefaultContentExemple";
 import { SidebarHeaderExemple } from "./SidebarHeaderExemple";
 import { SidebarFooterExemple } from "./SidebarFooterExemple";
 import { SidebarGroupExemple } from "./SidebarGroupExemple";
 import { CollapsibleSidebarGroupExemple } from "./CollapsibleSidebarGroupExemple";
 import { SidebarSkeletonExemple } from "./SidebarSkeletonExemple";
+import { SidebarMainContainer } from "../SidebarMainContainer";
+import { SidebarToolbar } from "../SidebarToolbar";
 
 
 const meta: Meta<SidebarProps> = {
@@ -108,9 +110,23 @@ export const CollapsibleIcon: Story = {
     return (
       <SidebarProvider>
         <Story />
-        <main>
-          <SidebarTrigger />
-        </main>
+        <SidebarInset>
+          <SidebarToolbar breadcrumbs={[
+            { label: "Home", href: "/home" },
+            { label: "Settings", href: "/settings" },
+            { label: "Current" },
+          ]} />
+          <SidebarMainContainer>
+            <div className="flex flex-1 flex-col gap-4">
+              {Array.from({ length: 24 }).map((_, index) => (
+                <div
+                  key={index}
+                  className="aspect-video h-12 w-full rounded-lg bg-muted/50"
+                />
+              ))}
+            </div>
+          </SidebarMainContainer>
+        </SidebarInset>
       </SidebarProvider>
     )
   },
