@@ -58,3 +58,11 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 ```
+
+## Setup Shadcn/ui in Vulpix Pack
+
+Ours default Shadcn/ui setup files:
+
+- [`tailwind.config.js` file](tailwind.config.js).
+
+- [`global.css` file](src/styles/css/globals.css)
