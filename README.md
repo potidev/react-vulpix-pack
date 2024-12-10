@@ -2,7 +2,7 @@
 
 # Potidev - React Vulpix Pack
 
-[![](https://img.shields.io/badge/Beta-0.1.42-purple)](https://www.npmjs.com/package/@potidev/react-vulpix-pack)
+[![](https://img.shields.io/badge/Beta-0.1.43-purple)](https://www.npmjs.com/package/@potidev/react-vulpix-pack)
 
 # Description
 
@@ -61,8 +61,27 @@ export default nextConfig;
 
 ## Setup Shadcn/ui in Vulpix Pack
 
-Ours default Shadcn/ui setup files:
+1. Install Shadcn/ui dependencies:
 
-- [`tailwind.config.js` file](tailwind.config.js).
+```bash
+npm install tailwindcss-animate class-variance-authority clsx tailwind-merge lucide-react
+```
 
-- [`global.css` file](src/styles/css/globals.css)
+2. Configure the path aliases in your `tsconfig.json` file.
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+3. Configure `tailwind.config.js`. Here's what ours tailwind.config.js file looks like: [tailwind.config.js file](tailwind.config.js).
+
+4. Add the following to your `globals.css` file: [global.css file](src/styles/css/globals.css). You can learn more about using CSS variables for [theming in the theming section of ShadcnUI](https://ui.shadcn.com/docs/theming).
+
+5. In the original shadcn-ui documentation, there are other steps that are not necessary when using the vulpix pack. That's it.
