@@ -2,7 +2,7 @@ import React from "react";
 
 import type { Preview } from "@storybook/react";
 import "./global.scss";
-import "../src/styles/css/globals.css"
+import "../src/styles/css/global.css"
 import { ThemeProvider } from "next-themes";
 
 const preview: Preview = {
