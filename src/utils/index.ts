@@ -5,3 +5,4 @@ export * from "./NameUtils";
 export * from "./MoneyUtils";
 export * from "./PhoneUtils";
 export * from "./ScrollUtils";
+export * from "./Maskito";
