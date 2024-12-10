@@ -16,3 +16,4 @@ export * from "./Card";
 export * from "./Switch";
 export * from "./Toast";
 export * from "./Toaster";
+export * from "./Table";
