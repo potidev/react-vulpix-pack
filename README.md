@@ -82,6 +82,6 @@ npm install tailwindcss-animate class-variance-authority clsx tailwind-merge luc
 
 3. Configure `tailwind.config.js`. Here's what ours tailwind.config.js file looks like: [tailwind.config.js file](tailwind.config.js).
 
-4. Add the following to your `globals.css` file: [global.css file](src/styles/css/globals.css). You can learn more about using CSS variables for [theming in the theming section of ShadcnUI](https://ui.shadcn.com/docs/theming).
+4. Add the following to your `globals.css` file: [global.css file](src/styles/css/globals.css). You can learn more about using CSS variables for [theming in the theming section of shadcn ui doc](https://ui.shadcn.com/docs/theming).
 
 5. In the original shadcn-ui documentation, there are other steps that are not necessary when using the vulpix pack. That's it.

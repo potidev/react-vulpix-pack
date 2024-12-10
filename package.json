@@ -40,9 +40,9 @@
       "require": "./dist/modules/Common/index.js"
     },
     "./shadcn-ui": {
-      "types": "./dist/modules/ShadcnIU/index.d.ts",
-      "import": "./dist/modules/ShadcnIU/index.js",
-      "require": "./dist/modules/ShadcnIU/index.js"
+      "types": "./dist/modules/ShadcnUI/index.d.ts",
+      "import": "./dist/modules/ShadcnUI/index.js",
+      "require": "./dist/modules/ShadcnUI/index.js"
     },
     "./utils": {
       "types": "./dist/utils/index.d.ts",
