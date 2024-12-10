@@ -18,11 +18,26 @@ const meta: Meta<ButtonProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    
+    variant: {
+      control: "select",
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "outline",
+        "ghost",
+        "link",
+        "destructive",
+      ],
+    },
+    disabled: {
+      control: "boolean"
+    }
   },
   args: { 
-    
+    disabled: false,
   },
+  
 };
 
 export default meta;
@@ -30,6 +45,7 @@ type Story = StoryObj<ButtonProps>;
 
 export const Default: Story = {
   args: {
-    children: "Button"
+    children: "Button",
+    variant: "default", 
   },
 };
