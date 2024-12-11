@@ -28,7 +28,7 @@ export const TipIcon = ({ className, message, type = "question" }: TipIconProps)
     <TooltipProvider>
       <Tooltip delayDuration={100}>
         <TooltipTrigger asChild>
-          <Button variant="ghost" size="iconSm" className={cn("fill-default", className)}>          
+          <Button variant="ghost" size="iconSm" type="button" className={cn("fill-default", className)}>          
             {renderIcon()}
           </Button>
         </TooltipTrigger>
