@@ -20,3 +20,5 @@ export * from "./Table";
 export * from "./Breadcrumb";
 export * from "./Calendar";
 export * from "./Popover";
+export * from "./Dialog";
+export * from "./Textarea";
