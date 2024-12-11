@@ -46,7 +46,8 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, fullWidth = false, ...props }, ref) => {
-    const fitContentClass = fullWidth === true || size === "icon" || size === "iconSm" ? "w-full" : "w-fit";
+    let fitContentClass = fullWidth === true ? "w-full" : "w-fit";
+    fitContentClass = size === "icon" || size === "iconSm" ? "" : fitContentClass;
   
     const Comp = asChild ? Slot : "button"
     return (
