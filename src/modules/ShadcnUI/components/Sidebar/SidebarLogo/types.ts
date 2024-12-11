@@ -7,4 +7,6 @@ export type SidebarLogoProps = {
   fallback?: string;
   borderLogo?: boolean;
   avatarClassName?: string;
+  imagePadding?: boolean;
+  imageClassName?: string;
 };
