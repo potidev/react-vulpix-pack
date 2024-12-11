@@ -1,12 +1,12 @@
 import React from "react";
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TipButton } from './component';
-import { TipButtonProps } from './types';
+import { TipIcon } from './component';
+import { TipIconProps } from './types';
 
-const meta: Meta<TipButtonProps> = {
-  title: 'Shadcn UI/TipButton',
-  component: TipButton,
+const meta: Meta<TipIconProps> = {
+  title: 'Shadcn UI/TipIcon',
+  component: TipIcon,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -24,7 +24,7 @@ const meta: Meta<TipButtonProps> = {
 };
 
 export default meta;
-type Story = StoryObj<TipButtonProps>;
+type Story = StoryObj<TipIconProps>;
 
 export const Default: Story = {
   args: {

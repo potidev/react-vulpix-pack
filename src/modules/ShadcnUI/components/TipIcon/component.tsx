@@ -2,13 +2,13 @@
 
 import React from "react";
 
-import { TipButtonProps } from "./types";
+import { TipIconProps } from "./types";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../Tooltip";
 import { Button } from "../Button";
 import { Ban, CircleAlert, CircleEllipsis, CircleHelp } from "lucide-react";
 import { cn } from "../../lib";
 
-export const TipButton = ({ className, message, type = "question" }: TipButtonProps) => {
+export const TipIcon = ({ className, message, type = "question" }: TipIconProps) => {
 
   const renderIcon = () => {
     switch(type) {
