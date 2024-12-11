@@ -2,19 +2,28 @@ import * as React from "react"
 
 import { cn } from "@/modules/ShadcnUI/lib/utils"
 
+export type CardProps = React.HTMLAttributes<HTMLDivElement> & {
+  withoutDefaultPadding?: boolean;
+}
+
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
-      className
-    )}
-    {...props}
-  />
-))
+  CardProps
+>(({ className, withoutDefaultPadding = false, ...props }, ref) => {
+  const defaultPaddingClass = withoutDefaultPadding === false ? "w-4 h-4" : "";
+
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "rounded-xl border bg-card text-card-foreground shadow",
+        defaultPaddingClass,
+        className
+      )}
+      {...props}
+    />
+  );
+})
 Card.displayName = "Card"
 
 const CardHeader = React.forwardRef<
