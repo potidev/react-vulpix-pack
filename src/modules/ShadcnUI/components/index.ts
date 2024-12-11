@@ -23,3 +23,4 @@ export * from "./Popover";
 export * from "./Dialog";
 export * from "./Textarea";
 export * from "./TipIcon";
+export * from "./TipLabel";

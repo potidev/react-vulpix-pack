@@ -12,7 +12,6 @@ export const TipIcon = ({ className, message, type = "question" }: TipIconProps)
 
   const renderIcon = () => {
     switch(type) {
-      
       case "alert":
         return <CircleAlert />
       case "ban":
