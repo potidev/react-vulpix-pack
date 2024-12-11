@@ -2,7 +2,7 @@
 
 # Potidev - React Vulpix Pack
 
-[![](https://img.shields.io/badge/Beta-0.1.47-purple)](https://www.npmjs.com/package/@potidev/react-vulpix-pack)
+[![](https://img.shields.io/badge/Beta-0.1.52-purple)](https://www.npmjs.com/package/@potidev/react-vulpix-pack)
 
 # Description
 

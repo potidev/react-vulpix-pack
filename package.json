@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.1.47",
+  "version": "0.1.52",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -153,8 +153,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cpf-cnpj-validator": "^1.0.3",
+    "date-fns": "^3.6.0",
     "lucide-react": "^0.468.0",
     "next-themes": "^0.4.4",
+    "react-day-picker": "^8.10.1",
     "react-hook-form": "^7.54.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"

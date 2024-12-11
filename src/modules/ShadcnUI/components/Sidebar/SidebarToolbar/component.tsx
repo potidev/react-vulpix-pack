@@ -1,5 +1,6 @@
-import React from "react";
+"use client";
 
+import React from "react";
 
 import { SidebarTrigger } from "../component"
 import { Separator } from "../../Separator";

@@ -5,4 +5,6 @@ export type SidebarLogoProps = {
   href?: string;
   src?: string;
   fallback?: string;
+  borderLogo?: boolean;
+  avatarClassName?: string;
 };
