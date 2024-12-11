@@ -28,6 +28,7 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
         iconSm: "h-4 w-4",
+        iconMd: "h-9 w-9 [&>svg]:w-5 [&>svg]:w-5",
       },
     },
     defaultVariants: {
@@ -47,7 +48,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, fullWidth = false, ...props }, ref) => {
     let fitContentClass = fullWidth === true ? "w-full" : "w-fit";
-    fitContentClass = size === "icon" || size === "iconSm" ? "" : fitContentClass;
+    fitContentClass = size === "icon" || size === "iconSm" || size === "iconMd" ? "" : fitContentClass;
   
     const Comp = asChild ? Slot : "button"
     return (

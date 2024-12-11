@@ -1,5 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from '@storybook/react';
+import { ArrowLeft } from "lucide-react"
 
 import { Button, ButtonProps } from './component';
 
@@ -59,3 +60,13 @@ export const Default: Story = {
     variant: "default", 
   },
 };
+
+export const IconButtonMd: Story = {
+  args: {
+    children: (
+      <ArrowLeft />
+    ),
+    variant: "ghost",
+    size: "iconMd", 
+  },
+}
