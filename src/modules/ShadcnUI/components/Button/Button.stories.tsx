@@ -31,13 +31,23 @@ const meta: Meta<ButtonProps> = {
       ],
     },
     disabled: {
-      control: "boolean"
-    }
+      control: "boolean",
+    },
+    fullWidth: {
+      control: "boolean",
+    },
   },
   args: { 
     disabled: false,
+    fullWidth: false,
   },
-  
+  decorators: (Story) => {
+    return (
+      <div className="flex flex-row justify-center items-center w-screen">
+        <Story />
+      </div>
+    )
+  }
 };
 
 export default meta;
