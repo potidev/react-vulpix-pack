@@ -22,7 +22,7 @@ export const SidebarToolbar = ({ breadcrumbs, className }: SidebarToolbarProps) 
                 breadcrumbs.map(({ label, target, href }, index) => {
                   if(index === breadcrumbs.length - 1) {
                     return (
-                      <BreadcrumbItem>
+                      <BreadcrumbItem key={`tool-bc-${index}`}>
                         <BreadcrumbPage>{label}</BreadcrumbPage>
                       </BreadcrumbItem>
                     )
@@ -31,21 +31,21 @@ export const SidebarToolbar = ({ breadcrumbs, className }: SidebarToolbarProps) 
                   if(href) {
                     return (
                       <>
-                        <BreadcrumbItem className="hidden md:block">
+                        <BreadcrumbItem className="hidden md:block" key={`tool-bc-${index}`}>
                           <BreadcrumbLink href={href} target={target}>
                             {label}
                           </BreadcrumbLink>
                         </BreadcrumbItem>
-                        <BreadcrumbSeparator className="hidden md:block" />
+                        <BreadcrumbSeparator className="hidden md:block" key={`tool-bcs-${index}`} />
                       </>
                     )
                   } 
                   return (
                     <>
-                      <BreadcrumbItem className="hidden md:block">
+                      <BreadcrumbItem className="hidden md:block" key={`tool-bc-${index}`}>
                         {label}
                       </BreadcrumbItem>
-                      <BreadcrumbSeparator className="hidden md:block" />
+                      <BreadcrumbSeparator className="hidden md:block" key={`tool-bcs-${index}`} />
                     </>
                   )
                 })
