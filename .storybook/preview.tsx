@@ -4,6 +4,7 @@ import type { Preview } from "@storybook/react";
 import "./global.scss";
 import "../src/styles/css/global.css"
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "../src/modules/ShadcnUI";
 
 const preview: Preview = {
   parameters: {
@@ -24,6 +25,7 @@ const preview: Preview = {
           disableTransitionOnChange
         >
           <Story />
+          <Toaster />
         </ThemeProvider>
       );
     },

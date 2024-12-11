@@ -18,3 +18,5 @@ export * from "./Toast";
 export * from "./Toaster";
 export * from "./Table";
 export * from "./Breadcrumb";
+export * from "./Calendar";
+export * from "./Popover";
