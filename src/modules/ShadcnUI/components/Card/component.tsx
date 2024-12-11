@@ -10,7 +10,7 @@ const Card = React.forwardRef<
   HTMLDivElement,
   CardProps
 >(({ className, withoutDefaultPadding = false, ...props }, ref) => {
-  const defaultPaddingClass = withoutDefaultPadding === false ? "w-4 h-4" : "";
+  const defaultPaddingClass = withoutDefaultPadding === false ? "px-4 py-4" : "";
 
   return (
     <div
