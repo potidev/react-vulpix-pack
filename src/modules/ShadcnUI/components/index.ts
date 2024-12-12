@@ -25,3 +25,4 @@ export * from "./Textarea";
 export * from "./TipIcon";
 export * from "./TipLabel";
 export * from "./Chart";
+export * from "./Tabs";
