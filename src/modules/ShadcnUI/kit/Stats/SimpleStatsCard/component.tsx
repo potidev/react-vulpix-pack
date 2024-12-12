@@ -7,8 +7,8 @@ import { cn } from "@/modules/ShadcnUI/lib";
 
 export const SimpleStatsCard = ({ className, icon, title, description, value, children }: SimpleStatsCardProps) => {
   return (
-    <Card withoutDefaultPadding>
-      <CardHeader className={cn("flex flex-row items-center justify-between space-y-0 pb-2", className)}>
+    <Card withoutDefaultPadding className={cn(className)}>
+      <CardHeader className={cn("flex flex-row items-center justify-between space-y-0 pb-2")}>
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
         {
           icon && (
