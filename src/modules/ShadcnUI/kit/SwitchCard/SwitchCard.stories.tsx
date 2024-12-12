@@ -6,7 +6,7 @@ import { SwitchCard, SwitchCardProps } from '.';
 import { Switch } from "../../components/Switch";
 
 const meta: Meta<SwitchCardProps> = {
-  title: 'Shadcn UI/SwitchCard',
+  title: 'Shadcn UI/Kit/Switch/SwitchCard',
   component: SwitchCard,
   parameters: {
     layout: 'centered',
