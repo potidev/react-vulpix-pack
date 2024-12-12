@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArrowLeft } from "lucide-react"
 
 import { SwitchCard, SwitchCardProps } from '.';
-import { Switch } from "../../components/Switch";
+import { Switch } from "../../../components/Switch";
 
 const meta: Meta<SwitchCardProps> = {
   title: 'Shadcn UI/Kit/Switch/SwitchCard',

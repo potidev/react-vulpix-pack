@@ -1,7 +1,7 @@
 import React from "react";
 import { SwitchCardProps } from "./types";
-import { cn } from "../../lib";
-import { FormDescription, FormLabel, Label } from "../../components";
+import { cn } from "../../../lib";
+import { FormDescription, FormLabel, Label } from "../../../components";
 
 
 export const SwitchCard = ({ className, title, description, children, form = false }: SwitchCardProps) => {
