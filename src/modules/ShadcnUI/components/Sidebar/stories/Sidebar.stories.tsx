@@ -13,7 +13,7 @@ import { SidebarToolbar } from "../SidebarToolbar";
 
 
 const meta: Meta<SidebarProps> = {
-  title: 'Shadcn UI/Sidebar',
+  title: 'Shadcn UI/Components/Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
   parameters: {

@@ -5,7 +5,7 @@ import { Calendar, CalendarProps } from '../component';
 import { WithFormExemple } from "./WithFormExemple";
 
 const meta: Meta<CalendarProps> = {
-  title: 'Shadcn UI/Calendar',
+  title: 'Shadcn UI/Components/Calendar',
   component: Calendar,
   parameters: {
     layout: 'centered',

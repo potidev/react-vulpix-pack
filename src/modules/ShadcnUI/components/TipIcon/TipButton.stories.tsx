@@ -9,7 +9,7 @@ import { Label } from "../Label";
 import { Input } from "../Input";
  
 const meta: Meta<TipIconProps> = {
-  title: 'Shadcn UI/TipIcon',
+  title: 'Shadcn UI/Components/TipIcon',
   component: TipIcon,
   parameters: {
     layout: 'centered',

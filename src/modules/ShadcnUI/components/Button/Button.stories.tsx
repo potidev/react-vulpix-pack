@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react"
 import { Button, ButtonProps } from './component';
 
 const meta: Meta<ButtonProps> = {
-  title: 'Shadcn UI/Button',
+  title: 'Shadcn UI/Components/Button',
   component: Button,
   parameters: {
     layout: 'centered',

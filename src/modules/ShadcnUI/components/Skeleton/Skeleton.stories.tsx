@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react"
 import { Skeleton } from './component';
 
 const meta: Meta<any> = {
-  title: 'Shadcn UI/Skeleton',
+  title: 'Shadcn UI/Components/Skeleton',
   component: Skeleton,
   parameters: {
     layout: 'centered',

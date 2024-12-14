@@ -9,6 +9,7 @@ export * from "./DropdownMenu";
 export * from "./Collapsible";
 export * from "./Avatar";
 export * from "./Checkbox";
+export * from "./CheckboxContainer";
 export * from "./Label";
 export * from "./Form";
 export * from "./Select";

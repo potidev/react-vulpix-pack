@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar, AvatarFallback, AvatarImage, AvatarProps  } from './component';
 
 const meta: Meta<AvatarProps> = {
-  title: 'Shadcn UI/Avatar',
+  title: 'Shadcn UI/Components/Avatar',
   component: Avatar,
   parameters: {
     layout: 'centered',
