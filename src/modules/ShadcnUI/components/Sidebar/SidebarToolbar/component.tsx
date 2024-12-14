@@ -20,7 +20,7 @@ export const SidebarToolbar = ({ breadcrumbs, className }: SidebarToolbarProps) 
             <BreadcrumbList>
               {
                 breadcrumbs.map(({ label, target, href }, index) => (
-                  <ToolbarBreadcrumbItem label={label} target={target} href={href} separator={index !== breadcrumbs.length - 1} />
+                  <ToolbarBreadcrumbItem key={`tbc-${index}`} label={label} target={target} href={href} separator={index !== breadcrumbs.length - 1} />
                 ))
               }
             </BreadcrumbList>
