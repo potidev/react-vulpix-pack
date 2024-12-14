@@ -28,3 +28,6 @@ export * from "./TipLabel";
 export * from "./Chart";
 export * from "./Tabs";
 export * from "./Spinner";
+export * from "./Text";
+export * from "./Span";
+export * from "./Paragraph";

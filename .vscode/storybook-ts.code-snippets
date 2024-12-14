@@ -1,6 +1,6 @@
 {
   "Storybook Center": {
-    "prefix": "storycenter",
+    "prefix": "storiescenter",
     "body": [
       "import React from \"react\";",
       "import type { Meta, StoryObj } from '@storybook/react';",
