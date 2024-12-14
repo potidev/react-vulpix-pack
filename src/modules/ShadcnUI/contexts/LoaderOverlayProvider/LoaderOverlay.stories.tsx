@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { LoaderOverlayProvider, loaderOverlay } from './';
+import { LoaderOverlayProvider, useLoaderOverlay } from './';
 import { Button, Spinner, SpinnerProps } from "../../components";
 
 const meta: Meta<SpinnerProps> = {
@@ -35,7 +35,7 @@ export default meta;
 type Story = StoryObj<SpinnerProps>;
 
 const LoaderStory: React.FC<{ spinnerProps: SpinnerProps }> = ({ spinnerProps }) => {
-  const { showLoaderOverlay } = loaderOverlay();
+  const { showLoaderOverlay } = useLoaderOverlay();
 
   const handleShowLoader = () => {
     showLoaderOverlay(true, spinnerProps);

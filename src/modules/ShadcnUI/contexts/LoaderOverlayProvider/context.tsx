@@ -36,4 +36,4 @@ export const LoaderOverlayProvider = ({ children }: LoaderOverlayProviderProps) 
   );
 };
 
-export const loaderOverlay = () => useContext(LoaderOverlayContext);
+export const useLoaderOverlay = () => useContext(LoaderOverlayContext);

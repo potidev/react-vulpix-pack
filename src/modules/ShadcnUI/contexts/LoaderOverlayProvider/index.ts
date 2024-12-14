@@ -1,1 +1,1 @@
-export { LoaderOverlayProvider, loaderOverlay } from "./context";
+export { LoaderOverlayProvider, useLoaderOverlay } from "./context";
