@@ -23,7 +23,9 @@ export const SimpleInformation = ({
   copyButton, 
   copyButtonTitle = "Copiar",
   copiedMessage = "Copiado!", 
-  copiedMessageDuration = 1300 
+  copiedMessageDuration = 1300,
+  colonContent = ":",
+  responsiveColon = [],
 }: SimpleInformationProps) => {
   const [valueCollapsed, setValueCollapsed] = useState(true);
   const [showCopiedMessage, setShowCopiedMessage] = useState(false);
@@ -67,7 +69,9 @@ export const SimpleInformation = ({
       {icon}
       <div className={cn("flex flex-col flex-1 gap-[2px]", contentClassName)}>
         <div className="flex flex-row gap-1 items-center">
-          <p className={cn("text-muted-foreground text-sm leading-[100%]", labelClassName)}>{label}</p>
+          <p className={cn("text-muted-foreground text-sm leading-[100%] flex flex-row", labelClassName)}>
+            {label}{responsiveColon.length !== 0 && <div className={`hidden ${responsiveColon.map((size) => size !== "" ? `${size}:block` : `block`).join(" ")}`}>{colonContent}</div>}
+          </p>
           {
             tipMessage && <TipIcon
               message={tipMessage}

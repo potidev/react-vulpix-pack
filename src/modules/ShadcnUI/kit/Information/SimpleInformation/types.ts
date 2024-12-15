@@ -1,3 +1,4 @@
+import { ResponsideIndicator } from "@/types/tailwind-responsive";
 import { ReactNode } from "react";
 
 export type SimpleInformationProps = {
@@ -16,4 +17,6 @@ export type SimpleInformationProps = {
   copyButtonTitle?: string;
   copiedMessage?: string;
   copiedMessageDuration?: number;
+  responsiveColon?: ResponsideIndicator[];
+  colonContent?: string;
 }

@@ -1,0 +1,1 @@
+export type ResponsideIndicator = "" | "sm" | "md" | "lg" | "xl" | "md" | "2xl";

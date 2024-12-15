@@ -81,3 +81,19 @@ export const WithCopyButton: Story = {
     copyButton: true,
   },
 };
+
+export const Collin: Story = {
+  decorators: (Story) => {
+    return (
+      <div className="flex items-center justify-center max-w-[300px]">
+        <Story />
+      </div>
+    )
+  },
+  args: { 
+    icon: <User />, 
+    label: "Full Name",
+    value: "John due",
+    responsiveColon: ["md"],
+  },
+};
