@@ -65,3 +65,19 @@ export const CollapsedValueLineClamp: Story = {
     collapsedValueLineClamp: 3,
   },
 };
+
+export const WithCopyButton: Story = {
+  decorators: (Story) => {
+    return (
+      <div className="flex items-center justify-center max-w-[300px]">
+        <Story />
+      </div>
+    )
+  },
+  args: { 
+    icon: <User />, 
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquam in nulla eget pulvinar. Praesent sit amet malesuada velit, in consectetur enim. Praesent vitae massa mi.",
+    collapsedValueLineClamp: 3,
+    copyButton: true,
+  },
+};

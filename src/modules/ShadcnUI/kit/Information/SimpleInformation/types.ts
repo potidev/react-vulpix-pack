@@ -12,4 +12,8 @@ export type SimpleInformationProps = {
   tipMessage?: string;
   valueTitle?: string;
   collapsedValueLineClamp?: number;
+  copyButton?: boolean;
+  copyButtonTitle?: string;
+  copiedMessage?: string;
+  copiedMessageDuration?: number;
 }
