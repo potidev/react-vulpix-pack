@@ -4,6 +4,7 @@ export type SimpleInformationProps = {
   className?: string;
   labelClassName?: string;
   valueClassName?: string;
+  contentClassName?: string;
   label: string;
   value?: string;
   defaultValue?: string;

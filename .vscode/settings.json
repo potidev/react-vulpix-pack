@@ -33,5 +33,6 @@
     "styled-components": "theme",
     "forms": "docs",
     "common": "",
-  }
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*ClassName"]
 }
