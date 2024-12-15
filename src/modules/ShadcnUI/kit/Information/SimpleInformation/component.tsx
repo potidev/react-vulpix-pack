@@ -71,7 +71,7 @@ export const SimpleInformation = ({
       <div className={cn("flex flex-col flex-1 gap-[2px]", contentClassName)}>
         <div className="flex flex-row gap-1 items-center">
           <p className={cn("text-muted-foreground text-sm leading-[100%] flex flex-row", labelClassName)}>
-            {label}{responsiveColon.length !== 0 && <div className={`hidden ${responsiveColon.map((r) => DisplayBlockClassName.getResponsive(r)).join(" ")}`}>{colonContent}</div>}
+            {label}{responsiveColon.length !== 0 && <span className={`hidden ${responsiveColon.map((r) => DisplayBlockClassName.getResponsive(r)).join(" ")}`}>{colonContent}</span>}
           </p>
           {
             tipMessage && <TipIcon
