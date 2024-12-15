@@ -7,6 +7,7 @@ import { SimpleInformationProps } from "./types";
 import { LabelIconButton, Popover, PopoverContent, PopoverTrigger, TipIcon, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/modules/ShadcnUI/components";
 import { LineClampClassName } from "@/modules/ShadcnUI/utils";
 import { Copy } from "lucide-react";
+import { DisplayBlockClassName } from "@/modules/ShadcnUI/utils/DisplayBlockClassName";
 
 export const SimpleInformation = ({ 
   className, 
@@ -70,7 +71,7 @@ export const SimpleInformation = ({
       <div className={cn("flex flex-col flex-1 gap-[2px]", contentClassName)}>
         <div className="flex flex-row gap-1 items-center">
           <p className={cn("text-muted-foreground text-sm leading-[100%] flex flex-row", labelClassName)}>
-            {label}{responsiveColon.length !== 0 && <div className={`hidden ${responsiveColon.map((size) => size !== "" ? `${size}:block` : `block`).join(" ")}`}>{colonContent}</div>}
+            {label}{responsiveColon.length !== 0 && <div className={`hidden ${responsiveColon.map((r) => DisplayBlockClassName.getResponsive(r)).join(" ")}`}>{colonContent}</div>}
           </p>
           {
             tipMessage && <TipIcon

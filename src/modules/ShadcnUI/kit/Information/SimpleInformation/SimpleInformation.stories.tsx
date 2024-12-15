@@ -94,6 +94,6 @@ export const Collin: Story = {
     icon: <User />, 
     label: "Full Name",
     value: "John due",
-    responsiveColon: ["md"],
+    responsiveColon: ["lg"],
   },
 };
