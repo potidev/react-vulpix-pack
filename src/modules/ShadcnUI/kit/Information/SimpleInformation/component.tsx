@@ -4,13 +4,13 @@ import { cn } from "@/modules/ShadcnUI/lib";
 import { SimpleInformationProps } from "./types";
 import { TipIcon } from "@/modules/ShadcnUI/components";
 
-export const SimpleInformation = ({ className, label, defaultValue, value, icon, tipMessage }: SimpleInformationProps) => {
+export const SimpleInformation = ({ className, labelClassName, valueClassName, label, defaultValue, value, icon, tipMessage }: SimpleInformationProps) => {
   return (
-    <div className={cn("flex flex-row items-center gap-2")}>
+    <div className={cn("flex flex-row items-center gap-2", className)}>
       {icon}
       <div className="flex flex-col flex-1 gap-[2px]">
         <div className="flex flex-row gap-1 items-center">
-          <p className="text-muted-foreground text-sm leading-[100%]">{label}</p>
+          <p className={cn("text-muted-foreground text-sm leading-[100%]", labelClassName)}>{label}</p>
           {
             tipMessage && <TipIcon 
               message={tipMessage}
@@ -18,7 +18,7 @@ export const SimpleInformation = ({ className, label, defaultValue, value, icon,
             />
           }
         </div>
-        <span className="leading-[130%]">{value || defaultValue || ""}</span>
+        <span className={cn("leading-[130%]", valueClassName)}>{value || defaultValue || ""}</span>
       </div>
     </div>
   );
