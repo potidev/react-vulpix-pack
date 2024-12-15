@@ -5,14 +5,15 @@
 		"body": [
 			"import React from \"react\";",
 			"",
-			"import { cn } from \"@/utils/ClassNameUtils\";",
+			"import { cn } from \"@/modules/ShadcnUI/lib/utils\";",
 			"",
-			"import { ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}Props } from \"./types\";",
-			"import styles from './styles.module.scss';",
+			"export type ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}Props = {",
+			"  className?: string;",
+			"};",
 			"",
 			"export const ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/} = ({ className }: ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}Props) => {",
 			"  return (",
-			"    <div className={cn.get(styles.container, className)}>",
+			"    <div className={cn(\"flex flex-col\", className)}>",
 			"      ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}",
 			"    </div>",
 			"  );",
@@ -22,7 +23,7 @@
 	},
 	"React props in types file": {
 		"prefix": "rprops",
-		"scope": "typescript",
+		"scope": "typescript,typescriptreact",
 		"body": [
 			"export type ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}Props = {",
 			"  className?: string;",
@@ -34,8 +35,7 @@
 		"prefix": "rindex",
 		"scope": "typescript",
 		"body": [
-			"export { ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/} } from \"./component\";",
-			"export { ${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}Props } from \"./types\";"
+			"export * from \"./component\";",
 		],
 		"description": "React index component file"
 	},
