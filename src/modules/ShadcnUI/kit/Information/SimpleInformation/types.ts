@@ -10,4 +10,6 @@ export type SimpleInformationProps = {
   defaultValue?: string;
   icon?: ReactNode;
   tipMessage?: string;
+  valueTitle?: string;
+  collapsedValueLineClamp?: number;
 }

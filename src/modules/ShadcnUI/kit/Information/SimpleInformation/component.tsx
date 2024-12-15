@@ -1,10 +1,35 @@
-import React from "react";
+"use client";
+
+import React, { ReactNode, useMemo, useState } from "react";
 
 import { cn } from "@/modules/ShadcnUI/lib";
 import { SimpleInformationProps } from "./types";
 import { TipIcon } from "@/modules/ShadcnUI/components";
+import { LineClampClassName } from "@/modules/ShadcnUI/utils";
 
-export const SimpleInformation = ({ className, labelClassName, valueClassName, contentClassName, label, defaultValue, value, icon, tipMessage }: SimpleInformationProps) => {
+export const SimpleInformation = ({ className, labelClassName, valueClassName, contentClassName, label, defaultValue, value, valueTitle, icon, tipMessage, collapsedValueLineClamp }: SimpleInformationProps) => {
+  const [valueCollapsed, setValueCollapsed] = useState(true);
+  
+  const collapsedValueLineClampClass = useMemo(() => {
+    if(valueCollapsed && !!collapsedValueLineClamp) {
+      return LineClampClassName.get(collapsedValueLineClamp);
+    } else {
+      return "";
+    }
+  }, [valueCollapsed, collapsedValueLineClamp])
+  
+  const renderValueContainer = (children: ReactNode) => {
+    if(collapsedValueLineClamp) {
+      return (
+        <button className="text-left" onClick={() => setValueCollapsed((value) => !value)}>
+          {children}
+        </button>
+      )
+    } else {
+      return children;
+    }
+  }
+
   return (
     <div className={cn("flex flex-row items-center gap-2", className)}>
       {icon}
@@ -18,7 +43,11 @@ export const SimpleInformation = ({ className, labelClassName, valueClassName, c
             />
           }
         </div>
-        <span className={cn("leading-[130%]", valueClassName)}>{value || defaultValue || ""}</span>
+        {renderValueContainer(
+          <span title={valueTitle} className={cn("leading-[130%]", collapsedValueLineClampClass, valueClassName)}>
+            {value || defaultValue || ""}
+          </span>
+        )}
       </div>
     </div>
   );

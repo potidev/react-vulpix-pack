@@ -19,6 +19,9 @@ const meta: Meta<SimpleInformationProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    collapsedValueLineClamp: {
+      control: "number",
+    }
   },
   args: { 
     label: "Full Name",
@@ -45,5 +48,20 @@ export const WithTip: Story = {
   args: { 
     icon: <User />, 
     tipMessage: "This is your full name"
+  },
+};
+
+export const CollapsedValueLineClamp: Story = {
+  decorators: (Story) => {
+    return (
+      <div className="flex items-center justify-center max-w-[300px]">
+        <Story />
+      </div>
+    )
+  },
+  args: { 
+    icon: <User />, 
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquam in nulla eget pulvinar. Praesent sit amet malesuada velit, in consectetur enim. Praesent vitae massa mi.",
+    collapsedValueLineClamp: 3,
   },
 };
