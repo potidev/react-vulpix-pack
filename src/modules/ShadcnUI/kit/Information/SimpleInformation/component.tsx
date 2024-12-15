@@ -21,6 +21,7 @@ export const SimpleInformation = ({
   tipMessage, 
   collapsedValueLineClamp, 
   copyButton, 
+  copyButtonTitle = "Copiar",
   copiedMessage = "Copiado!", 
   copiedMessageDuration = 1300 
 }: SimpleInformationProps) => {
@@ -79,6 +80,7 @@ export const SimpleInformation = ({
                 <PopoverTrigger>
                   <LabelIconButton
                     color="soft"
+                    title={copyButtonTitle}
                   >
                     <Copy />
                   </LabelIconButton>
