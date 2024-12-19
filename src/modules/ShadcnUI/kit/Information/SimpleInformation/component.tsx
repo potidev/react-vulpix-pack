@@ -27,6 +27,7 @@ export const SimpleInformation = ({
   copiedMessageDuration = 1300,
   colonContent = ":",
   responsiveColon = [],
+  renderValue = (children) => children,
 }: SimpleInformationProps) => {
   const [valueCollapsed, setValueCollapsed] = useState(true);
   const [showCopiedMessage, setShowCopiedMessage] = useState(false);
@@ -63,8 +64,6 @@ export const SimpleInformation = ({
     }
   }
 
-  console.log(tipMessage);
-
   return (
     <div className={cn("flex flex-row items-center gap-2", className)}>
       {icon}
@@ -97,11 +96,19 @@ export const SimpleInformation = ({
             )
           }
         </div>
-        {renderValueContainer(
-          <span title={valueTitle} className={cn("leading-[130%]", collapsedValueLineClampClass, valueClassName)}>
-            {value || defaultValue || ""}
-          </span>
-        )}
+        {
+          renderValue(
+            <>
+              {renderValueContainer(
+                <span title={valueTitle} className={cn("leading-[130%]", collapsedValueLineClampClass, valueClassName)}>
+                  {value || defaultValue || ""}
+                </span>
+              )}
+            </>,
+            value,
+            defaultValue,
+          )
+        }
       </div>
     </div>
   );

@@ -97,3 +97,32 @@ export const Collin: Story = {
     responsiveColon: ["lg"],
   },
 };
+
+export const Link: Story = {
+  decorators: (Story) => {
+    return (
+      <div className="flex items-center justify-center max-w-[300px]">
+        <Story />
+      </div>
+    )
+  },
+  args: { 
+    icon: <User />, 
+    label: "Full Name",
+    value: "John due",
+    responsiveColon: ["lg"],
+    renderValue: (children, value, defaultValue) => {
+      return (
+        <>
+          {value ? (
+            <a href="#">
+              {children}
+            </a>
+          ) : (
+            children
+          )}
+        </>
+      )
+    }
+  },
+};

@@ -19,4 +19,5 @@ export type SimpleInformationProps = {
   copiedMessageDuration?: number;
   responsiveColon?: ResponsiveIndicator[];
   colonContent?: string;
+  renderValue?: (children?: ReactNode, value?: string, defaultValue?: string) => ReactNode;
 }
