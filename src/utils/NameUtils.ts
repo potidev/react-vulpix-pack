@@ -38,4 +38,9 @@ export class NameUtils {
     const nameParts = fullName.trim().split(" ");
     return nameParts.length > 1;
   }
+
+  static getAvatarAcronyms(fullName: string) {
+    const fullNameParts = NameUtils.getNameParts(fullName);
+    return `${fullNameParts.firstName.charAt(0)}${fullNameParts.lastName !== "" ? fullNameParts.lastName.charAt(0) : ""}`
+  }
 }
