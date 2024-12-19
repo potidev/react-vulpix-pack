@@ -6,6 +6,7 @@ import { DayPicker } from "react-day-picker"
 
 import { cn } from "@/modules/ShadcnUI/lib/utils"
 import { buttonVariants } from "@/modules/ShadcnUI/components/Button"
+import { ptBR } from "date-fns/locale"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
   withoutBorder?: boolean;
@@ -16,10 +17,12 @@ function Calendar({
   classNames,
   showOutsideDays = true,
   withoutBorder = false,
+  locale = ptBR,
   ...props
 }: CalendarProps) {
   return (
     <DayPicker
+      locale={locale}
       showOutsideDays={showOutsideDays}
       className={cn("p-3",  withoutBorder ? "" : "rounded-md border", className)}
       classNames={{
