@@ -29,6 +29,7 @@ const meta: Meta<ButtonProps> = {
         "ghost",
         "link",
         "destructive",
+        "ghostText",
       ],
     },
     disabled: {
