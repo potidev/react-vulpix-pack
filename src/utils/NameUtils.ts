@@ -41,6 +41,6 @@ export class NameUtils {
 
   static getAvatarAcronyms(fullName: string) {
     const fullNameParts = NameUtils.getNameParts(fullName);
-    return `${fullNameParts.firstName.charAt(0)}${fullNameParts.lastName !== "" ? fullNameParts.lastName.charAt(0) : ""}`
+    return `${fullNameParts.firstName.charAt(0).toUpperCase()}${fullNameParts.lastName !== "" ? fullNameParts.lastName.charAt(0).toUpperCase() : ""}`
   }
 }

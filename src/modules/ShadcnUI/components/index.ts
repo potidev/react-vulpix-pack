@@ -33,3 +33,4 @@ export * from "./Text";
 export * from "./Span";
 export * from "./Paragraph";
 export * from "./LabelIconButton";
+export * from "./Command";
