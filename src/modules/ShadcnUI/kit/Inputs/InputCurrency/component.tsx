@@ -3,11 +3,12 @@
 import React, { useEffect, useReducer } from "react";
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage, Input, InputProps } from "@/modules/ShadcnUI/components";
-import { FieldValues, Path, useFormContext } from "react-hook-form";
+import { FieldValues, Path, useFormContext, UseFormReturn } from "react-hook-form";
 
-export type InputCurrencyProps<T extends FieldValues> = InputProps & {
+export type InputCurrencyProps<T extends FieldValues> = Omit<InputProps, "form"> & {
   name: Path<T>;
   label?: string;
+  form: UseFormReturn<T>;
 };
 
 const toCurrency = (value: number) =>
@@ -21,6 +22,7 @@ const toCurrency = (value: number) =>
 export function InputCurrency<T extends FieldValues>({
   name,
   label,
+  form,
   ...props
 }: InputCurrencyProps<T>) {
   const { watch, control } = useFormContext();

@@ -36,14 +36,49 @@ const meta: Meta<any> = {
 export default meta;
 type Story = StoryObj<any>;
 
-export const Default: Story = {
+export const Usage: Story = {
   render: () => {
     const form = useForm<z.infer<typeof inputCurrencyExempleSchema>>({
       resolver: zodResolver(inputCurrencyExempleSchema),
       defaultValues: {
         value: 0,
-      },
-      mode: "onTouched",
+      }
+    });
+  
+    function onSubmit(values: z.infer<typeof inputCurrencyExempleSchema>) {
+      console.log(values);
+    }
+  
+    return (
+      <Form {...form}>
+        <form
+          className="flex flex-col gap-8"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
+         
+          <InputCurrency
+            form={form}
+            label="Value"
+            name="value"
+            placeholder="Plan value"
+          />
+  
+          <Button type="submit">
+            Submit
+          </Button>
+        </form>
+      </Form>
+    );
+  }
+};
+
+export const WithDefaultValue: Story = {
+  render: () => {
+    const form = useForm<z.infer<typeof inputCurrencyExempleSchema>>({
+      resolver: zodResolver(inputCurrencyExempleSchema),
+      defaultValues: {
+        value: 79.9,
+      }
     });
   
     function onSubmit(values: z.infer<typeof inputCurrencyExempleSchema>) {
