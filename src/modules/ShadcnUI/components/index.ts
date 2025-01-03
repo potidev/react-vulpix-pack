@@ -1,4 +1,6 @@
 export * from "./AlertDialog";
+export * from "./Badge";
+export * from "./Breadcrumb";
 export * from "./Button";
 export * from "./Input";
 export * from "./Separator";
@@ -19,7 +21,6 @@ export * from "./Switch";
 export * from "./Toast";
 export * from "./Toaster";
 export * from "./Table";
-export * from "./Breadcrumb";
 export * from "./Calendar";
 export * from "./Popover";
 export * from "./Dialog";
