@@ -16,6 +16,7 @@ export * from "./CheckboxContainer";
 export * from "./Label";
 export * from "./Form";
 export * from "./Select";
+export * from "./Sonner";
 export * from "./Card";
 export * from "./Switch";
 export * from "./Toast";
