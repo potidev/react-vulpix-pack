@@ -1,10 +1,10 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.2.46",
+  "version": "0.3.4",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,58 +14,54 @@
     "node": ">=10"
   },
   "exports": {
-    "./next-config": {
-      "types": "./dist/config/next/index.d.ts",
-      "import": "./dist/config/next/index.js",
-      "require": "./dist/config/next/index.js"
-    },
-    "./types": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/types/index.js",
-      "require": "./dist/types/index.js"
-    },
-    "./clean": {
-      "types": "./dist/modules/Clean/index.d.ts",
-      "import": "./dist/modules/Clean/index.js",
-      "require": "./dist/modules/Clean/index.js"
-    },
-    "./clean-contexts": {
-      "types": "./dist/modules/Clean/contexts/index.d.ts",
-      "import": "./dist/modules/Clean/contexts/index.js",
-      "require": "./dist/modules/Clean/contexts/index.js"
-    },
-    "./common": {
-      "types": "./dist/modules/Common/index.d.ts",
-      "import": "./dist/modules/Common/index.js",
-      "require": "./dist/modules/Common/index.js"
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./shadcn-ui": {
-      "types": "./dist/modules/ShadcnUI/index.d.ts",
-      "import": "./dist/modules/ShadcnUI/index.js",
-      "require": "./dist/modules/ShadcnUI/index.js"
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.mjs",
+      "require": "./dist/components/index.js"
     },
-    "./utils": {
-      "types": "./dist/utils/index.d.ts",
-      "import": "./dist/utils/index.js",
-      "require": "./dist/utils/index.js"
+    "./contexts": {
+      "types": "./dist/contexts/index.d.ts",
+      "import": "./dist/contexts/index.mjs",
+      "require": "./dist/contexts/index.js"
+    },
+    "./kit": {
+      "types": "./dist/kit/index.d.ts",
+      "import": "./dist/kit/index.mjs",
+      "require": "./dist/kit/index.js"
     },
     "./hooks": {
       "types": "./dist/hooks/index.d.ts",
-      "import": "./dist/hooks/index.js",
+      "import": "./dist/hooks/index.mjs",
       "require": "./dist/hooks/index.js"
+    },
+    "./lib": {
+      "types": "./dist/lib/index.d.ts",
+      "import": "./dist/lib/index.mjs",
+      "require": "./dist/lib/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.mjs",
+      "require": "./dist/types/index.js"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.mjs",
+      "require": "./dist/utils/index.js",
+      "types": "./dist/utils/index.d.ts"
     }
   },
   "scripts": {
     "build": "node build.js",
+    "build-tsc": "npx tsc",
+    "build-tsup": "tsup src/**/*.ts src/*.ts --format cjs,esm --dts --out-dir dist --clean",
     "prepare": "npm run build",
     "version": "node scripts/set-version.js",
     "clear-build": "rimraf dist",
-    "variables": "ts-node scripts/generateVariablesScssFileDev.ts",
-    "variables-prod": "ts-node scripts/generateVariablesScssFileProd.ts",
-    "update-variables": "node scripts/update-variables-scss-prod.js",
-    "build-css": "npm run clean && tsc && sass src:dist --no-source-map && node scripts/update-imports.js",
-    "build-scss": "npm run clear-build && npm run variables && tsc && tscpaths -p tsconfig.json -s ./src -o ./dist && sass --load-path=src/styles/sass src:dist --no-source-map && copyfiles -u 1 \"src/**/*.module.scss\" dist && npm run remove-variables-scss-imports",
-    "remove-variables-scss-imports": "node scripts/remove-variables-scss-imports.js",
     "storybook": "storybook dev -p 6006",
     "storybook-ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 npm run storybook",
     "build-storybook": "storybook build"
@@ -115,6 +111,7 @@
     "ts-node": "^10.9.2",
     "tscpaths": "^0.0.9",
     "tslib": "^2.8.1",
+    "tsup": "^8.3.5",
     "typescript": "^5.6.3",
     "vite": "^6.0.1",
     "webpack": "^5.96.1",

@@ -1,1 +1,0 @@
-export { TableRoot } from "./component";

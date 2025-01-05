@@ -12,53 +12,10 @@ const clearBuild = () => {
   console.log();
 }
 
-const buildColorsSass = () => {
-  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Sass Variables Prod...`));
-  console.log();
-  execSync('npm run variables', { stdio: 'inherit' });
-  console.log();
-}
-
 const buildTypescript = () => {
-  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Typescript...`));
+  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Typescript (Tsup)...`));
   console.log();
-  execSync('npx tsc', { stdio: 'inherit' });
-  console.log();
-}
-
-
-const fixAliasImports = () => {
-  console.log(chalk.blueBright(`⚙️  ${step}/${total} Fixing alias imports...`));
-  console.log();
-  execSync('npx tscpaths -p tsconfig.json -s ./src -o ./dist', { stdio: 'inherit' });
-  console.log();
-}
-
-const buildSass = () => {
-  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Sass...`));
-  console.log();
-  execSync('npx sass --quiet-deps --load-path=src/styles/sass src:dist --no-source-map', { stdio: 'inherit' });
-  console.log();
-}
-
-const copySassFiles = () => {
-  console.log(chalk.blueBright(`⚙️  ${step}/${total} Copping .module.scss files to build folder...`));
-  console.log();
-  execSync('npx copyfiles -u 1 \"src/**/*.module.scss\" dist', { stdio: 'inherit' });
-  console.log();
-}
-
-const removeSassVariablesImports = () => {
-  console.log(chalk.blueBright(`⚙️  ${step}/${total} Removing Sass variables imports in build folder...`));
-  console.log();
-  execSync('npm run remove-variables-scss-imports', { stdio: 'inherit' });
-  console.log();
-}
-
-const updateSassVariables = () => {
-  console.log(chalk.blueBright(`⚙️  ${step}/${total} Updating Sass variables to add "$vulpix-" in build files...`));
-  console.log();
-  execSync('npm run update-variables', { stdio: 'inherit' });
+  execSync('npm run build-tsup', { stdio: 'inherit' });
   console.log();
 }
 
@@ -75,13 +32,7 @@ try {
 
   run([
     clearBuild, 
-    buildColorsSass, 
     buildTypescript,
-    fixAliasImports,
-    buildSass,
-    copySassFiles,
-    removeSassVariablesImports,
-    updateSassVariables,
   ]);
 
   console.log(chalk.bold.green(`🎉 Build complete!`));
