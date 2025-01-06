@@ -1,9 +1,8 @@
 "use client";
 
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, Button } from "../../components";
 import { MessageDialogParams } from "./types";
-import { Loader2 } from "lucide-react";
+import { MessageDialog } from "@/kit";
 
 type MessageDialogContextData = {
   showMessageDialog: (visibility: boolean, params?: MessageDialogParams) => void;
@@ -18,21 +17,21 @@ type MessageDialogProviderProps = {
 };
 
 const defaultValues: MessageDialogParams = {
-  buttonTitle: "Fechar",
+  primaryButtonTitle: "Fechar",
   variant: "default",
 }
 
 export const MessageDialogProvider = ({ children }: MessageDialogProviderProps) => {
   const [visibility, setVisibility] = useState(false);
   const [alertParams, setAlertParams] = useState<MessageDialogParams>(defaultValues);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [primaryButtonLoading, setPrimaryButtonLoading] = useState<boolean>(false);
   
   const closeDialog = () => {
     setVisibility(false);  
 
     setTimeout(() => {
       setAlertParams(defaultValues);
-      setLoading(false);
+      setPrimaryButtonLoading(false);
     }, 200);
   }
 
@@ -44,41 +43,26 @@ export const MessageDialogProvider = ({ children }: MessageDialogProviderProps) 
     }
     setAlertParams({
       ...defaultValues,
-      ...params,
-      buttonProps: {
-        ...defaultValues.buttonProps,
-        variant: params.variant,
-        ...params.buttonProps,
-      }
+      ...params
     });
   }
 
   return (
     <MessageDialogContext.Provider value={{ showMessageDialog }}>
-      <AlertDialog onOpenChange={setVisibility} open={visibility} defaultOpen={false}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            {alertParams.title && <AlertDialogTitle>{alertParams.title}</AlertDialogTitle>}
-            {
-              alertParams && (
-                <AlertDialogDescription>
-                {alertParams.description}
-              </AlertDialogDescription>
-              )
-            }
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <Button type="button" fullWidth className="w-full sm:w-fit" disabled={loading} {...alertParams.buttonProps} onClick={() => alertParams.onClickButton({
-              closeDialog,
-              setLoading,
-            })}>
-              {loading && <Loader2 className="animate-spin" />}
-              {alertParams.buttonTitle}
-            </Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-
+      <MessageDialog 
+        onOpenChange={setVisibility} 
+        open={visibility} 
+        defaultOpen={false}
+        title={alertParams.title}
+        description={alertParams.description}
+        variant={alertParams.variant}
+        primaryButtonTitle={alertParams.primaryButtonTitle}
+        primaryButtonLoading={primaryButtonLoading}
+        onClickPrimaryButton={() => alertParams.onClickPrimaryButton({
+          closeDialog,
+          setLoading: setPrimaryButtonLoading,
+        })}
+      />
       {children}
     </MessageDialogContext.Provider>
   );

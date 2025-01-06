@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { MessageDialogContext, MessageDialogParams, MessageDialogProvider, OnClickButtonParams, useMessageDialog } from '.';
+import { MessageDialogParams, MessageDialogProvider, useMessageDialog } from '.';
 import { Button } from "../../components";
 
 const meta: Meta<MessageDialogParams> = {
@@ -33,6 +33,34 @@ const meta: Meta<MessageDialogParams> = {
 export default meta;
 type Story = StoryObj<MessageDialogParams>;
 
+export const Default: Story = {
+  render: () => {
+    const { showMessageDialog } = useMessageDialog();
+
+    const onClick = () => {
+      showMessageDialog(true, { 
+        title: "Alerta", 
+        description: "Seu crédito para usar o serviço está está acabando.", 
+        variant: "default",
+        primaryButtonTitle: "Comprar",
+        onClickPrimaryButton: ({ closeDialog, setLoading }) => {
+          setLoading(true);
+          setTimeout(() => {
+            closeDialog();
+          }, 3000)
+        }
+      })
+    }
+
+    return (
+      <div>
+        <Button onClick={onClick} variant="default">Submit</Button>
+      </div>
+    )
+  }
+};
+
+
 export const Destructive: Story = {
   render: () => {
     const { showMessageDialog } = useMessageDialog();
@@ -42,8 +70,8 @@ export const Destructive: Story = {
         title: "Ops... Ocorreu um erro", 
         description: "Ocorreu um erro ao tentar realizar a operação", 
         variant: "destructive",
-        buttonTitle: "Tentar novamente",
-        onClickButton: ({ closeDialog, setLoading }) => {
+        primaryButtonTitle: "Tentar novamente",
+        onClickPrimaryButton: ({ closeDialog, setLoading }) => {
           setLoading(true);
           setTimeout(() => {
             closeDialog();
@@ -69,8 +97,8 @@ export const Warning: Story = {
         title: "Atenção!", 
         description: "Ao clicar em avançar, você concorda com os termos de uso.", 
         variant: "warning",
-        buttonTitle: "Avançar",
-        onClickButton: ({ closeDialog, setLoading }) => {
+        primaryButtonTitle: "Avançar",
+        onClickPrimaryButton: ({ closeDialog, setLoading }) => {
           setLoading(true);
           setTimeout(() => {
             closeDialog();
@@ -96,8 +124,8 @@ export const Success: Story = {
         title: "Concluído!", 
         description: "Cadastro realizado com sucesso.", 
         variant: "success",
-        buttonTitle: "Fechar",
-        onClickButton: ({ closeDialog, setLoading }) => {
+        primaryButtonTitle: "Fechar",
+        onClickPrimaryButton: ({ closeDialog, setLoading }) => {
           setLoading(true);
           setTimeout(() => {
             closeDialog();

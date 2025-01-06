@@ -1,16 +1,16 @@
-import { VariantProps } from "class-variance-authority";
-import { ButtonProps, buttonVariants } from "../../components";
+import { ButtonProps, ButtonVariant } from "@/components/Button";
+import { MessageDialogProps } from "@/kit/Alert/MessageDialog";
 
 export type OnClickButtonParams = {
+  setLoading: (loading: boolean) => void;
   closeDialog: () => void;
-  setLoading: (loading: boolean) => void
-}
+};
 
 export type MessageDialogParams = {
   title?: string;
   description?: string;
-  buttonTitle?: string;
-  onClickButton?: (params: OnClickButtonParams) => void;
-  variant?: VariantProps<typeof buttonVariants>["variant"];
-  buttonProps?: ButtonProps;
+  primaryButtonTitle?: string;
+  onClickPrimaryButton?: (params: OnClickButtonParams) => void;
+  variant?: ButtonVariant;
+  primaryButtonProps?: ButtonProps;
 }
