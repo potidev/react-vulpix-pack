@@ -6,7 +6,7 @@ export type OnClickButtonParams = {
   setLoading: (loading: boolean) => void
 }
 
-export type ErrorDialogParams = {
+export type MessageDialogParams = {
   title?: string;
   description?: string;
   buttonTitle?: string;

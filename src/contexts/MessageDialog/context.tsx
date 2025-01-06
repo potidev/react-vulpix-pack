@@ -2,29 +2,29 @@
 
 import React, { createContext, ReactNode, useContext, useState } from "react";
 import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, Button } from "../../components";
-import { ErrorDialogParams } from "./types";
+import { MessageDialogParams } from "./types";
 import { Loader2 } from "lucide-react";
 
-type ErrorDialogContextData = {
-  showErrorDialog: (visibility: boolean, params?: ErrorDialogParams) => void;
+type MessageDialogContextData = {
+  showMessageDialog: (visibility: boolean, params?: MessageDialogParams) => void;
 };
 
-export const ErrorDialogContext = createContext<ErrorDialogContextData>(
-  {} as ErrorDialogContextData,
+export const MessageDialogContext = createContext<MessageDialogContextData>(
+  {} as MessageDialogContextData,
 );
 
-type ErrorDialogProviderProps = {
+type MessageDialogProviderProps = {
   children: ReactNode;
 };
 
-const defaultValues: ErrorDialogParams = {
+const defaultValues: MessageDialogParams = {
   buttonTitle: "Fechar",
-  variant: "destructive",
+  variant: "default",
 }
 
-export const ErrorDialogProvider = ({ children }: ErrorDialogProviderProps) => {
+export const MessageDialogProvider = ({ children }: MessageDialogProviderProps) => {
   const [visibility, setVisibility] = useState(false);
-  const [alertParams, setAlertParams] = useState<ErrorDialogParams>(defaultValues);
+  const [alertParams, setAlertParams] = useState<MessageDialogParams>(defaultValues);
   const [loading, setLoading] = useState<boolean>(false);
   
   const closeDialog = () => {
@@ -36,7 +36,7 @@ export const ErrorDialogProvider = ({ children }: ErrorDialogProviderProps) => {
     }, 200);
   }
 
-  const showErrorDialog = (visibility: boolean, params?: ErrorDialogParams) => {
+  const showMessageDialog = (visibility: boolean, params?: MessageDialogParams) => {
     if(visibility) {
       setVisibility(true);
     } else {
@@ -54,7 +54,7 @@ export const ErrorDialogProvider = ({ children }: ErrorDialogProviderProps) => {
   }
 
   return (
-    <ErrorDialogContext.Provider value={{ showErrorDialog }}>
+    <MessageDialogContext.Provider value={{ showMessageDialog }}>
       <AlertDialog onOpenChange={setVisibility} open={visibility} defaultOpen={false}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -80,8 +80,8 @@ export const ErrorDialogProvider = ({ children }: ErrorDialogProviderProps) => {
       </AlertDialog>
 
       {children}
-    </ErrorDialogContext.Provider>
+    </MessageDialogContext.Provider>
   );
 };
 
-export const useErrorDialog = () => useContext(ErrorDialogContext);
+export const useMessageDialog = () => useContext(MessageDialogContext);
