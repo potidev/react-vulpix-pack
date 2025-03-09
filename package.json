@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -69,7 +69,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@chromatic-com/storybook": "^3.2.2",
-    "@hookform/resolvers": "^3.9.1",
+    "@hookform/resolvers": "^3.10.0",
     "@storybook/addon-essentials": "^8.4.5",
     "@storybook/addon-interactions": "^8.4.5",
     "@storybook/addon-onboarding": "^8.4.5",
@@ -117,7 +117,7 @@
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0",
-    "zod": "^3.24.0"
+    "zod": "^3.24.2"
   },
   "keywords": [
     "potidev",
@@ -157,7 +157,7 @@
     "lucide-react": "^0.479.0",
     "next-themes": "^0.4.4",
     "react-day-picker": "^8.10.1",
-    "react-hook-form": "^7.54.0",
+    "react-hook-form": "^7.54.2",
     "recharts": "^2.15.1",
     "sonner": "^1.7.1",
     "tailwind-merge": "^3.0.2",
