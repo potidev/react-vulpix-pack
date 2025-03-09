@@ -28,7 +28,7 @@ export const LoaderOverlayProvider = ({ children }: LoaderOverlayProviderProps) 
     <LoaderOverlayContext.Provider value={{ showLoaderOverlay }}>
       {children}
         {visibility && (
-          <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center z-50">
             <Spinner {...spinnerProps} />
           </div>
         )}

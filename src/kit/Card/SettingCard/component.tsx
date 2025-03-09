@@ -15,7 +15,7 @@ export type SettingCardProps = {
 
 export const SettingCard = ({ className, children, form = false, title, description, titleClassName, descriptionClassName }: SettingCardProps) => {
   return (
-    <Card withoutDefaultPadding className={cn("flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm gap-3", className)}>
+    <Card withoutDefaultPadding className={cn("flex flex-row items-center justify-between rounded-lg border p-3 shadow-xs gap-3", className)}>
       <div className="space-y-0.5">
         {form ? <FormLabel className={cn(titleClassName)}>{title}</FormLabel> : <Label className={cn(titleClassName)}>{title}</Label>}
         <>
