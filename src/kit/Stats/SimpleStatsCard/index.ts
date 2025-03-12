@@ -1,2 +1,2 @@
 export { SimpleStatsCard } from "./component";
-export { SimpleStatsCardProps } from "./types";
+export type { SimpleStatsCardProps } from "./types";

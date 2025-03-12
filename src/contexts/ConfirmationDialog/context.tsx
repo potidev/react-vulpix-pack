@@ -48,8 +48,8 @@ export const ConfirmationDialogProvider = ({ children }: ConfirmationDialogProvi
       ...params,
       buttonProps: {
         ...defaultValues.buttonProps,
-        variant: params.variant,
-        ...params.buttonProps,
+        variant: params?.variant,
+        ...params?.buttonProps,
       }
     });
   }
@@ -70,7 +70,7 @@ export const ConfirmationDialogProvider = ({ children }: ConfirmationDialogProvi
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel disabled={loading}>{alertParams.cancelButton}</AlertDialogCancel>
-            <Button type="button" fullWidth className="w-full sm:w-fit" disabled={loading} {...alertParams.buttonProps} onClick={() => alertParams.onClickConfirm({
+            <Button type="button" fullWidth className="w-full sm:w-fit" disabled={loading} {...alertParams.buttonProps} onClick={() => alertParams.onClickConfirm && alertParams.onClickConfirm({
               closeDialog,
               setLoading,
             })}>

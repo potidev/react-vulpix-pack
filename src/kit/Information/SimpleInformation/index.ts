@@ -1,2 +1,2 @@
 export { SimpleInformation } from "./component";
-export { SimpleInformationProps } from "./types";
+export type { SimpleInformationProps } from "./types";

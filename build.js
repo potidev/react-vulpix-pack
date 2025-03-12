@@ -12,10 +12,24 @@ const clearBuild = () => {
   console.log();
 }
 
-const buildTypescript = () => {
-  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Typescript (Tsup)...`));
+const copySrc = () => {
+  console.log(chalk.blueBright(`🔨 ${step}/${total} Copping /src to /dist...`));
   console.log();
-  execSync('npm run build-tsup', { stdio: 'inherit' });
+  execSync('npm run copy-src-to-dist', { stdio: 'inherit' });
+  console.log();  
+}
+
+const buildTypescript = () => {
+  console.log(chalk.blueBright(`🔨 ${step}/${total} Building Typescript...`));
+  console.log();
+  execSync('npx tsc --emitDeclarationOnly --declaration', { stdio: 'inherit' });
+  console.log();
+}
+
+const fixAliasImports = () => {
+  console.log(chalk.blueBright(`⚙️  ${step}/${total} Fixing alias imports...`));
+  console.log();
+  execSync('npx tscpaths -p tsconfig.json -s ./src -o ./dist', { stdio: 'inherit' });
   console.log();
 }
 
@@ -32,7 +46,8 @@ try {
 
   run([
     clearBuild, 
-    buildTypescript,
+    copySrc,
+    fixAliasImports
   ]);
 
   console.log(chalk.bold.green(`🎉 Build complete!`));

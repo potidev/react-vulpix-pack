@@ -1,2 +1,2 @@
 export { Spinner } from "./component";
-export { SpinnerProps } from "./types";
+export type { SpinnerProps } from "./types";

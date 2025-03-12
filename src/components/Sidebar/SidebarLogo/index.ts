@@ -1,2 +1,2 @@
 export { SidebarLogo } from "./component";
-export { SidebarLogoProps } from "./types";
+export type { SidebarLogoProps } from "./types";

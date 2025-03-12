@@ -1,2 +1,2 @@
 export { LabelIconButton } from "./component";
-export { LabelIconButtonProps } from "./types";
+export type { LabelIconButtonProps } from "./types";

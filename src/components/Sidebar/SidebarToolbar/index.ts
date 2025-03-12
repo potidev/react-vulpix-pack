@@ -1,2 +1,2 @@
 export * from "./component";
-export { SidebarToolbarProps } from "./types";
+export type { SidebarToolbarProps } from "./types";

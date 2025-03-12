@@ -58,7 +58,7 @@ export const MessageDialogProvider = ({ children }: MessageDialogProviderProps) 
         variant={alertParams.variant}
         primaryButtonTitle={alertParams.primaryButtonTitle}
         primaryButtonLoading={primaryButtonLoading}
-        onClickPrimaryButton={() => alertParams.onClickPrimaryButton({
+        onClickPrimaryButton={() => alertParams.onClickPrimaryButton && alertParams.onClickPrimaryButton({
           closeDialog,
           setLoading: setPrimaryButtonLoading,
         })}

@@ -54,7 +54,7 @@ export const SimpleInformation = ({
   const handleOnClickCopy = (open: boolean) => {
     setShowCopiedMessage(open);
 
-    navigator.clipboard.writeText(value);
+    value && navigator.clipboard.writeText(value);
 
     if(open) {
       setTimeout(() => {

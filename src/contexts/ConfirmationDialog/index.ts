@@ -1,2 +1,2 @@
 export * from "./context";
-export * from "./types";
+export type { ConfirmationDialogParams, OnClickConfirmParams } from "./types";

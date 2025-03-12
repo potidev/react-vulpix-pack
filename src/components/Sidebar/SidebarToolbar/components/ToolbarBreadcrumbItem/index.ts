@@ -1,2 +1,2 @@
 export { ToolbarBreadcrumbItem } from "./component";
-export { ToolbarBreadcrumbItemProps } from "./types";
+export type { ToolbarBreadcrumbItemProps } from "./types";

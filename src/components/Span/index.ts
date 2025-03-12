@@ -1,2 +1,2 @@
 export { Span } from "./component";
-export { SpanProps } from "./types";
+export type { SpanProps } from "./types";

@@ -1,2 +1,2 @@
 export { CheckboxContainer } from "./component";
-export { CheckboxContainerProps } from "./types";
+export type { CheckboxContainerProps } from "./types";
