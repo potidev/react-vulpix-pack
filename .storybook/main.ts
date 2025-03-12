@@ -9,8 +9,10 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "@storybook/addon-styling-webpack",
   ],
-  framework: '@storybook/nextjs', // 👈 Add this
+  framework: '@storybook/nextjs',
+  staticDirs: ['../assets'],
   webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.alias = {
@@ -18,7 +20,6 @@ const config: StorybookConfig = {
         '@': path.resolve(__dirname, '../src'),
       };
     }
-
     return config;
   },
 };

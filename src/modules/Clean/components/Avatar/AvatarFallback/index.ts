@@ -1,1 +1,0 @@
-export { AvatarFallback } from "./component";

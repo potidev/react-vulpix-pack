@@ -8,10 +8,11 @@
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "baseUrl": "src",
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["*"]
     }
   },
-  "include": ["src", "src/types/global.d.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "./src/stories", "./src/**/*.stories.tsx", "./src/**/*.stories.ts"]
 }

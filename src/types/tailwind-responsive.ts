@@ -1,0 +1,1 @@
+export type ResponsiveIndicator = "" | "sm" | "md" | "lg" | "xl" | "md" | "2xl";

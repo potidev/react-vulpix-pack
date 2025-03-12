@@ -1,6 +1,0 @@
-@use '../../../../../styles/sass/variables.module.scss' as *;
-@import "../shared.module.scss";
-
-.container {
-  padding-left: calc($sidebar-item-h-padding + $sidebar-icon-desktop-size + $sidebar-item-gap-open);
-}

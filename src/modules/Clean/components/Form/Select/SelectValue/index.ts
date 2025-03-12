@@ -1,1 +1,0 @@
-export { SelectValue } from "./component";
