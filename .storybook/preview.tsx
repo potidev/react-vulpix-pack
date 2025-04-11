@@ -1,8 +1,9 @@
+import '../src/styles/css/global.css';
+
 import React from "react";
 import { ThemeProvider } from "next-themes";
 import type { Preview } from "@storybook/react";
 
-import "../src/styles/css/global.css";
 import { Toaster } from "../src/components";
 
 const preview: Preview = {

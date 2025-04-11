@@ -13,6 +13,6 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "**/*.cjs"],
   "exclude": ["node_modules", "./src/stories", "./src/**/*.stories.tsx", "./src/**/*.stories.ts"]
 }
