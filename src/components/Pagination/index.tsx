@@ -109,6 +109,24 @@ function PaginationPrevious({
   )
 }
 
+function PaginationPreviousButton({
+  className,
+  label = "Anterior",
+  ...props
+}: React.ComponentProps<typeof PaginationButton> & { label?: string }) {
+  return (
+    <PaginationButton
+      aria-label="Go to previous page"
+      size="default"
+      className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
+      {...props}
+    >
+      <ChevronLeftIcon />
+      <span className="hidden sm:block">{label}</span>
+    </PaginationButton>
+  )
+}
+
 function PaginationNext({
   className,
   label = "Próximo",
@@ -124,6 +142,24 @@ function PaginationNext({
       <span className="hidden sm:block">{label}</span>
       <ChevronRightIcon />
     </PaginationLink>
+  )
+}
+
+function PaginationNextButton({
+  className,
+  label = "Próximo",
+  ...props
+}: React.ComponentProps<typeof PaginationButton> & { label?: string }) {
+  return (
+    <PaginationButton
+      aria-label="Go to next page"
+      size="default"
+      className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
+      {...props}
+    >
+      <span className="hidden sm:block">{label}</span>
+      <ChevronRightIcon />
+    </PaginationButton>
   )
 }
 
@@ -154,4 +190,6 @@ export {
   PaginationNext,
   PaginationEllipsis,
   PaginationButton,
+  PaginationNextButton,
+  PaginationPreviousButton,
 }
