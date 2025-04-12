@@ -67,8 +67,7 @@ function PaginationLink({
 
 type PaginationButtonProps = {
   isActive?: boolean
-} & Pick<React.ComponentProps<typeof Button>, "size"> &
-  React.ComponentProps<"button">
+} & Omit<React.ComponentProps<typeof Button>, "variant">;
 
 function PaginationButton({
   className,
