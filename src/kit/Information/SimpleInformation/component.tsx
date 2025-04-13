@@ -20,6 +20,7 @@ export const SimpleInformation = ({
   icon,
   tipMessage, 
   collapsedValueLineClamp, 
+  disableCollapsedClick = false,
   copyButton, 
   copyButtonTitle = "Copiar",
   copiedMessage = "Copiado!", 
@@ -42,7 +43,7 @@ export const SimpleInformation = ({
   const renderValueContainer = (children: ReactNode) => {
     if (collapsedValueLineClamp) {
       return (
-        <div className="text-left cursor-pointer" onClick={() => setValueCollapsed((value) => !value)}>
+        <div className="text-left cursor-pointer" onClick={() => disableCollapsedClick === false && setValueCollapsed((value) => !value)}>
           {children}
         </div>
       )
