@@ -1,6 +1,6 @@
 import type { MaskitoOptions } from '@maskito/core';
 
-export const cvv = {
+export const creditCardCvv = {
   mask: ({ value }) => {
     const digits = value.replace(/\D/g, '');
     const length = Math.min(digits.length, 4);
