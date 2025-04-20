@@ -37,3 +37,4 @@ export * from "./Paragraph";
 export * from "./LabelIconButton";
 export * from "./Command";
 export * from "./Pagination";
+export * from "./RadioGroup";
