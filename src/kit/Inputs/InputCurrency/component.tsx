@@ -2,13 +2,16 @@
 
 import React, { useEffect, useReducer } from "react";
 
-import { FormControl, FormField, FormItem, FormLabel, FormMessage, Input, InputProps } from "@/components";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage, Input, InputProps, LabelProps } from "@/components";
 import { FieldValues, Path, useFormContext, UseFormReturn } from "react-hook-form";
 
 export type InputCurrencyProps<T extends FieldValues> = Omit<InputProps, "form"> & {
   name: Path<T>;
   label?: string;
   form: UseFormReturn<T>;
+  labelClassName?: string;
+  inputClassName?: string;
+  labelProps?: Omit<LabelProps, "children">;
 };
 
 const toCurrency = (value: number) =>
@@ -23,6 +26,9 @@ export function InputCurrency<T extends FieldValues>({
   name,
   label,
   form,
+  className,
+  inputClassName,
+  labelProps,
   ...props
 }: InputCurrencyProps<T>) {
   const { watch, control } = useFormContext();
@@ -43,14 +49,16 @@ export function InputCurrency<T extends FieldValues>({
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem>
-          {label && <FormLabel>{label}</FormLabel>}
+        <FormItem className={className}>
+          {label && <FormLabel {...labelProps}>{label}</FormLabel>}
           <FormControl>
             <Input
               id={name}
               type="text"
+              inputMode="decimal"
               {...props}
               {...field}
+              className={inputClassName}
               onChange={(ev) => {
                 const inputValue = ev.target.value;
                 setValue(inputValue);
