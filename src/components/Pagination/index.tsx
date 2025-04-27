@@ -67,13 +67,14 @@ function PaginationLink({
 
 type PaginationButtonProps = {
   isActive?: boolean
-} & Omit<React.ComponentProps<typeof Button>, "variant">;
+} & React.ComponentProps<typeof Button>;
 
 function PaginationButton({
   className,
   isActive,
   size = "icon",
   children,
+  variant,
   ...props
 }: PaginationButtonProps) {
   return (
@@ -83,7 +84,7 @@ function PaginationButton({
       data-active={isActive}
       className={className}
       size={size}
-      variant={isActive ? "outline" : "ghost"}
+      variant={variant || isActive ? "outline" : "ghost"}
       {...props}
     >
       {children}
@@ -93,9 +94,10 @@ function PaginationButton({
 
 function PaginationPrevious({
   className,
-  label = "Anterior",
+  label,
+  icon = () => <ChevronLeftIcon />,
   ...props
-}: React.ComponentProps<typeof PaginationLink> & { label?: string }) {
+}: React.ComponentProps<typeof PaginationLink> & { label?: string, icon?: () => React.ReactNode }) {
   return (
     <PaginationLink
       aria-label="Go to previous page"
@@ -103,17 +105,18 @@ function PaginationPrevious({
       className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
       {...props}
     >
-      <ChevronLeftIcon />
-      <span className="hidden sm:block">{label}</span>
+      {icon()}
+      {label ? <span className="hidden sm:block">{label}</span> : null}
     </PaginationLink>
   )
 }
 
 function PaginationPreviousButton({
   className,
-  label = "Anterior",
+  label,
+  icon = () => <ChevronLeftIcon />,
   ...props
-}: React.ComponentProps<typeof PaginationButton> & { label?: string }) {
+}: React.ComponentProps<typeof PaginationButton> & { label?: string, icon?: () => React.ReactNode }) {
   return (
     <PaginationButton
       aria-label="Go to previous page"
@@ -121,17 +124,18 @@ function PaginationPreviousButton({
       className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
       {...props}
     >
-      <ChevronLeftIcon />
-      <span className="hidden sm:block">{label}</span>
+      {icon()}
+      {label ? <span className="hidden sm:block">{label}</span> : null}
     </PaginationButton>
   )
 }
 
 function PaginationNext({
   className,
-  label = "Próximo",
+  label,
+  icon = () => <ChevronRightIcon />,
   ...props
-}: React.ComponentProps<typeof PaginationLink> & { label?: string }) {
+}: React.ComponentProps<typeof PaginationLink> & { label?: string, icon?: () => React.ReactNode }) {
   return (
     <PaginationLink
       aria-label="Go to next page"
@@ -139,17 +143,18 @@ function PaginationNext({
       className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
       {...props}
     >
-      <span className="hidden sm:block">{label}</span>
-      <ChevronRightIcon />
+      {label ? <span className="hidden sm:block">{label}</span> : null}
+      {icon()}
     </PaginationLink>
   )
 }
 
 function PaginationNextButton({
   className,
-  label = "Próximo",
+  label,
+  icon = () => <ChevronRightIcon />,
   ...props
-}: React.ComponentProps<typeof PaginationButton> & { label?: string }) {
+}: React.ComponentProps<typeof PaginationButton> & { label?: string, icon?: () => React.ReactNode }) {
   return (
     <PaginationButton
       aria-label="Go to next page"
@@ -157,17 +162,18 @@ function PaginationNextButton({
       className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
       {...props}
     >
-      <span className="hidden sm:block">{label}</span>
-      <ChevronRightIcon />
+      {label ? <span className="hidden sm:block">{label}</span> : null}
+      {icon()}
     </PaginationButton>
   )
 }
 
 function PaginationEllipsis({
   className,
-  label = "Mais páginas",
+  label,
+  icon = () => <MoreHorizontalIcon className="size-4" />,
   ...props
-}: React.ComponentProps<"span"> & { label?: string }) {
+}: React.ComponentProps<"span"> & { label?: string, icon?: () => React.ReactNode }) {
   return (
     <span
       aria-hidden
@@ -175,8 +181,8 @@ function PaginationEllipsis({
       className={cn("flex size-9 items-center justify-center", className)}
       {...props}
     >
-      <MoreHorizontalIcon className="size-4" />
-      <span className="sr-only">{label}</span>
+      {icon()}
+      {label ? <span className="sr-only">{label}</span> : null}
     </span>
   )
 }
