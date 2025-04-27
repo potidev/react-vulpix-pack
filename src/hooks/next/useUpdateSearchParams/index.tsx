@@ -30,7 +30,6 @@ export const useUpdateSearchParams = () => {
     params.delete(key);
     const newUrl = `${window.location.pathname}?${params.toString()}`
     window.history.replaceState(null, '', newUrl)
-    console.log(key);
   }
 
 
@@ -43,7 +42,6 @@ export const useUpdateSearchParams = () => {
 
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState(null, '', newUrl);
-    console.log(keys);
   };
 
   return { setSearchParam, setSearchParams, removeSearchParam, removeSearchParams };
