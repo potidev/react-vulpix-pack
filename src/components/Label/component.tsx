@@ -14,17 +14,14 @@ const labelVariants = cva(
 const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   LabelProps
->(({ className, children, required = false, requiredLabel = "*", requiredClassName, requiredContainerClassName, ...props }, ref) => (
+>(({ className, children, required = false, requiredLabel = "*", requiredClassName, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
     className={cn(labelVariants(), className)}
     {...props}
   >
     {required ? (
-      <p className={cn("flex flex-row gap-1", requiredContainerClassName)}>
-        {children}
-        <span className={cn("text-destructive", requiredClassName)}>{requiredLabel}</span>
-      </p>
+      <>{children} <span className={cn("text-destructive", requiredClassName)}>{requiredLabel}</span></>
     ) : children}
   </LabelPrimitive.Root>
 ))

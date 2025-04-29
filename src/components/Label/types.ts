@@ -6,5 +6,4 @@ export type LabelProps = React.ComponentPropsWithoutRef<typeof LabelPrimitive.Ro
   required?: boolean;
   requiredLabel?: string;
   requiredClassName?: string;
-  requiredContainerClassName?: string;
 };
