@@ -4,4 +4,5 @@ import { CardProps } from "@/components";
 export type CardWithHeaderProps = CardProps & {
   header?: ReactNode;
   headerClassName?: string;
+  contentClassName?: string;
 };
