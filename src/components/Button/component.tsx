@@ -36,6 +36,8 @@ const buttonVariants = cva(
         icon: "h-9 w-9",
         iconSm: "h-4 w-4",
         iconMd: "h-9 w-9 [&_svg]:w-5 [&_svg]:w-5",
+        iconOnMobile: "min-h-9 min-w-9 md:min-h-none md:min-w-none md:h-9 md:px-4 md:py-2",
+        iconOnDesktop: "h-9 px-4 py-2 md:min-h-9 md:min-w-9 md:py-none md:px-none",
       },
     },
     defaultVariants: {
