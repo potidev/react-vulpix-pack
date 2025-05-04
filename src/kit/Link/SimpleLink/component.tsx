@@ -51,3 +51,5 @@ const SimpleLink = React.forwardRef<HTMLAnchorElement, SimpleLinkProps>(
 );
 
 SimpleLink.displayName = "SimpleLink"
+
+export { SimpleLink };
