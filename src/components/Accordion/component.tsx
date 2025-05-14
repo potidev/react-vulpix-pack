@@ -24,7 +24,7 @@ function AccordionItem({
 }
 
 export type AccordionTriggerProps = React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
-  withoutChevron: boolean;
+  withoutChevron?: boolean;
 }
 
 function AccordionTrigger({
