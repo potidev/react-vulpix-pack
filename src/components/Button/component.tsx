@@ -15,10 +15,6 @@ const buttonVariants = cva(
           "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90",
         destructive:
           "bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
-        outlinePrimary:
-          "border border-primary bg-background shadow-xs hover:bg-primary/5 hover:primary text-primary",
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -28,6 +24,18 @@ const buttonVariants = cva(
           "bg-success text-success-foreground shadow-xs hover:bg-success/90",
         warning:
           "bg-warning text-warning-foreground shadow-xs hover:bg-warning/90",
+        outline:
+          "border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
+        outlinePrimary:
+          "border border-primary bg-background shadow-xs hover:bg-primary/5 hover:text-primary text-primary",
+        outlineSecondary:
+          "border border-secondary bg-background shadow-xs hover:bg-secondary/5 hover:text-secondary text-secondary",
+        outlineWarning:
+          "border border-warning bg-background shadow-xs hover:bg-warning/5 hover:text-warning text-warning",
+        outlineSuccess:
+          "border border-success bg-background shadow-xs hover:bg-success/5 hover:text-success text-success",
+        outlineDestructive:
+          "border border-destructive bg-background shadow-xs hover:bg-destructive/5 hover:text-destructive text-destructive",
       },
       size: {
         default: "h-9 px-4 py-2",
