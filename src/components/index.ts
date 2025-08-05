@@ -16,6 +16,7 @@ export * from "./Collapsible";
 export * from "./Checkbox";
 export * from "./CheckboxContainer";
 export * from "./Label";
+export * from "./MultiSelect";
 export * from "./Form";
 export * from "./Select";
 export * from "./Sonner";
