@@ -49,3 +49,17 @@ export const WithInput: Story = {
     )
   }
 };
+
+export const WithReactNode: Story = {
+  render: () => {
+    return (
+      <div className="grid w-full max-w-sm items-center gap-1.5">
+        <TipLabel>
+          <Label htmlFor="email">Email</Label>
+          <TipIcon message={<span>Email contans @</span>} />
+        </TipLabel>
+        <Input type="email" id="email" placeholder="Email" />
+      </div>
+    )
+  }
+};

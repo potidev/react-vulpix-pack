@@ -1,43 +1,59 @@
 "use client";
 
 import React from "react";
+import {
+  Ban,
+  CircleAlert,
+  CircleEllipsis,
+  CircleHelp,
+  Copy,
+} from "lucide-react";
 
 import { TipIconProps } from "./types";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../Tooltip";
-import { Button } from "../Button";
-import { Ban, CircleAlert, CircleEllipsis, CircleHelp, Copy } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../Tooltip";
 import { cn } from "../../lib";
 import { LabelIconButton } from "../LabelIconButton/component";
 
-
-
-export const TipIcon = ({ className, message, type = "question", color = "default" }: TipIconProps) => {
+export const TipIcon = ({
+  className,
+  contentClassName,
+  stringContentClassName,
+  message,
+  type = "question",
+  color = "default",
+  toolTipProps,
+}: TipIconProps) => {
   const renderIcon = () => {
-    switch(type) {
+    switch (type) {
       case "alert":
-        return <CircleAlert />
+        return <CircleAlert />;
       case "ban":
-        return <Ban />
+        return <Ban />;
       case "ellipsis":
-        return <CircleEllipsis />
+        return <CircleEllipsis />;
       case "copy":
-        return <Copy />
+        return <Copy />;
       case "question":
       default:
         return <CircleHelp />;
     }
-  }
+  };
 
   return (
     <TooltipProvider>
-      <Tooltip delayDuration={100}>
+      <Tooltip delayDuration={100} {...toolTipProps}>
         <TooltipTrigger asChild>
           <LabelIconButton color={color} className={cn(className)}>
             {renderIcon()}
           </LabelIconButton>
         </TooltipTrigger>
-        <TooltipContent>
-          <p>{message}</p>
+        <TooltipContent className={contentClassName}>
+          {typeof message === "string" ? <p className={stringContentClassName}>{message}</p> : message}
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
