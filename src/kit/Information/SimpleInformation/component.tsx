@@ -4,7 +4,7 @@ import React, { ReactNode, useMemo, useState } from "react";
 
 import { cn } from "@/lib";
 import { SimpleInformationProps } from "./types";
-import { LabelIconButton, Popover, PopoverContent, PopoverTrigger, TipIcon, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components";
+import { LabelIconButton, Popover, PopoverContent, PopoverTrigger, TipIcon } from "@/components";
 import { LineClampClassName, DisplayBlockClassName } from "@/utils";
 import { Copy } from "lucide-react";
 
@@ -28,6 +28,7 @@ export const SimpleInformation = ({
   colonContent = ":",
   responsiveColon = [],
   renderValue = (children) => children,
+  tipIconProps,
 }: SimpleInformationProps) => {
   const [valueCollapsed, setValueCollapsed] = useState(true);
   const [showCopiedMessage, setShowCopiedMessage] = useState(false);
@@ -72,29 +73,26 @@ export const SimpleInformation = ({
           <p className={cn("text-muted-foreground text-sm leading-[100%] flex flex-row", labelClassName)}>
             {label}{responsiveColon.length !== 0 && <span className={`hidden ${responsiveColon.map((r) => DisplayBlockClassName.getResponsive(r)).join(" ")}`}>{colonContent}</span>}
           </p>
-          {
-            tipMessage && <TipIcon
-              message={tipMessage}
-              color="soft"
-            />
-          }
-          {
-            copyButton && (
-              <Popover open={showCopiedMessage} onOpenChange={handleOnClickCopy}>
-                <PopoverTrigger>
-                  <LabelIconButton
-                    color="soft"
-                    title={copyButtonTitle}
-                  >
-                    <Copy />
-                  </LabelIconButton>
-                </PopoverTrigger>
-                <PopoverContent className="p-2 w-auto text-xs">
-                  {copiedMessage}
-                </PopoverContent>
-              </Popover>
-            )
-          }
+          {tipMessage ? <TipIcon
+            message={tipMessage}
+            color="soft"
+            {...tipIconProps}
+          /> : null}
+          {copyButton ? (
+            <Popover open={showCopiedMessage} onOpenChange={handleOnClickCopy}>
+              <PopoverTrigger>
+                <LabelIconButton
+                  color="soft"
+                  title={copyButtonTitle}
+                >
+                  <Copy />
+                </LabelIconButton>
+              </PopoverTrigger>
+              <PopoverContent className="p-2 w-auto text-xs">
+                {copiedMessage}
+              </PopoverContent>
+            </Popover>
+          ) : null}
         </div>
         {
           renderValue(

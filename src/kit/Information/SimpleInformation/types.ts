@@ -1,3 +1,4 @@
+import { TipIconProps } from "@/components";
 import { ResponsiveIndicator } from "@/types/tailwind-responsive";
 import { ReactNode } from "react";
 
@@ -11,6 +12,7 @@ export type SimpleInformationProps = {
   defaultValue?: string;
   icon?: ReactNode;
   tipMessage?: string;
+  tipIconProps?: Omit<TipIconProps, "message">;
   valueTitle?: string;
   collapsedValueLineClamp?: number;
   disableCollapsedClick?: boolean;
