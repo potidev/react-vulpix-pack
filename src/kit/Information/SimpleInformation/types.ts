@@ -11,7 +11,7 @@ export type SimpleInformationProps = {
   value?: string;
   defaultValue?: string;
   icon?: ReactNode;
-  tipMessage?: string;
+  tipMessage?: TipIconProps["message"];
   tipIconProps?: Omit<TipIconProps, "message">;
   valueTitle?: string;
   collapsedValueLineClamp?: number;
