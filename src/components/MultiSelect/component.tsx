@@ -93,7 +93,7 @@ const MultiSelectTrigger = React.forwardRef<
               {selectedValues.length > maxCount && (
                 <Badge
                   className={cn(
-                    "bg-transparent text-foreground border-foreground/1 hover:bg-transparent",
+                    "bg-field text-foreground border-foreground/1 hover:bg-field",
                     isAnimating ? "animate-bounce" : "",
                     multiSelectVariants({ variant })
                   )}
@@ -163,7 +163,7 @@ const MultiSelectSearch = React.forwardRef<
     <input
       ref={ref}
       className={cn(
-        "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-10 w-full rounded-md bg-field py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       onKeyDown={onKeyDown}
