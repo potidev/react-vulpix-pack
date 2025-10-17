@@ -1,7 +1,7 @@
 {
   "name": "@potidev/react-vulpix-pack",
   "author": "Eduardo Costa",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "license": "MIT",
   "main": "dist/index.ts",
   "sideEffects": false,
@@ -129,6 +129,7 @@
     "next-themes": "^0.4.4",
     "react-day-picker": "^8.10.1",
     "react-hook-form": "^7.54.2",
+    "react-resizable-panels": "^3.0.6",
     "recharts": "^2.15.1",
     "sonner": "^1.7.1",
     "tailwind-merge": "^3.0.2",

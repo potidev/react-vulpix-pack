@@ -42,4 +42,5 @@ export * from "./LabelIconButton";
 export * from "./Command";
 export * from "./Pagination";
 export * from "./RadioGroup";
+export * from "./Resizable";
 export * from "./ScrollArea";
