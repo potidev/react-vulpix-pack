@@ -14,6 +14,7 @@ export * from "./Sheet";
 export * from "./Sidebar";
 export * from "./Skeleton";
 export * from "./Tooltip";
+export * from "./Drawer";
 export * from "./DropdownMenu";
 export * from "./Collapsible";
 export * from "./Checkbox";
