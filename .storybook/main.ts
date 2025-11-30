@@ -1,45 +1,19 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
-import path from "path";
+import type { StorybookConfig } from '@storybook/nextjs-vite';
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
-    {
-      name: "@storybook/addon-styling-webpack",
-      options: {
-        rules: [
-          {
-            test: /\.css$/,
-            use: [
-              'style-loader',
-              {
-                loader: 'css-loader',
-                options: { importLoaders: 1 }
-              },
-              {
-                // Gets options from `postcss.config.js` in your project root
-                loader: 'postcss-loader',
-                options: { implementation: require.resolve('postcss') }
-              }
-            ],
-          }
-        ]
-      }
-    }
+  "stories": [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
-  framework: '@storybook/nextjs',
-  staticDirs: ['../assets'],
-  webpackFinal: async (config) => {
-    if (config.resolve) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': path.resolve(__dirname, '../src'),
-      };
-    }
-    return config;
-  },
+  "addons": [
+    "@chromatic-com/storybook",
+    "@storybook/addon-vitest",
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs",
+    "@storybook/addon-onboarding",
+    "@storybook/addon-styling-webpack",
+    "@storybook/addon-themes"
+  ],
+  "framework": "@storybook/nextjs-vite"
 };
 export default config;
