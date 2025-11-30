@@ -2,33 +2,28 @@ import React from "react";
 
 import { SimpleStatsCardProps } from "./types";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components";
+import { Card, CardContent, CardHeader, CardTitle, Paragraph } from "@/components";
 import { cn } from "@/lib";
 
-export const SimpleStatsCard = ({ className, icon, title, description, value, children }: SimpleStatsCardProps) => {
+export const SimpleStatsCard = ({ className, icon: Icon, title, description, value, descriptionClassName, titleClassName, valueClassName, iconClassName, valueDescription, valueDescriptionClassName, children }: SimpleStatsCardProps) => {
   return (
-    <Card withoutDefaultPadding className={cn(className)}>
-      <CardHeader className={cn("flex flex-row items-center justify-between space-y-0 pb-2")}>
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        {
-          icon && (
-            <div className="[&_svg]:h-4 [&_svg]:w-4 text-muted-foreground fill-muted-foreground">
-              {icon}
-            </div>   
-          )
-        }
-      </CardHeader>
-      <CardContent>
-        <span className="text-2xl font-bold">{value}</span>
-        {
-          description && (
-            <p className="text-xs text-muted-foreground">
-              {description}
-            </p>
-          )
-        }
-        {children}
-      </CardContent>
+    <Card className={cn('flex flex-col gap-3', className)}>
+      <section className="flex gap-4">
+        <div className="flex-1">
+          <p className={cn("text-xs mb-1", titleClassName)}>{title}</p>
+          <div className="flex items-end gap-1">
+            <span className={cn("text-xl font-medium", valueClassName)}>
+              {value}
+            </span>
+            {valueDescription ? <Paragraph className={cn("text-xs pb-1", valueDescriptionClassName)}>{valueDescription}</Paragraph> : null}
+          </div>
+          {description ? <Paragraph className={cn("text-xs mt-1", descriptionClassName)}>{description}</Paragraph> : null}
+        </div>
+        {Icon ? <div>
+          <Icon className={cn("size-5 text-muted-foreground", iconClassName)} />
+        </div> : null}
+      </section>
+      {children}
     </Card>
   );
 };

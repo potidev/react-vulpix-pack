@@ -51,7 +51,7 @@ export const Default: Story = {
     title: "Total Revenue",
     value: "$45,231.89",
     description: "+20.1% from last month",
-    icon: <DollarSign />,
+    icon: DollarSign,
     className: "w-[250px]"
   },
 };
@@ -72,11 +72,12 @@ export const WithLineChart: Story = {
       <SimpleStatsCard
         title="Total Revenue"
         value="$15,231.89"
+        valueDescription="/ Per day"
         description="+20.1% from last month"
-        icon={<DollarSign />}
+        icon={DollarSign}
         className="w-[250px]"
       >
-        <div className="h-[80px]">
+        <div className="h-20">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={lineChartDataExemple}

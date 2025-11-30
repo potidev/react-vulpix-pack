@@ -2,9 +2,15 @@ import { ReactNode } from "react";
 
 export type SimpleStatsCardProps = {
   className?: string;
-  value: string;
+  value: ReactNode;
+  valueClassName?: string;
   description?: string;
+  descriptionClassName?: string;
+  valueDescription?: ReactNode;
+  valueDescriptionClassName?: string;
   title: string;
-  icon?: ReactNode;
+  titleClassName?: string;
+  icon: React.ComponentType<{ className?: string }>;
+  iconClassName?: string;
   children?: ReactNode;
 };
