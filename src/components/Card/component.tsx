@@ -16,7 +16,7 @@ const Card = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "rounded-xl border bg-card text-card-foreground shadow-sm",
+        "rounded-lg md:rounded-xl border dark:border-0 bg-card text-card-foreground shadow-sm dark:shadow-none",
         defaultPaddingClass,
         className
       )}
