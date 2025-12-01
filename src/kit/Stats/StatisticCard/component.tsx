@@ -17,7 +17,7 @@ export type StatisticCardProps = {
   labelClassName?: string;
   labelIcon?: StatisticCardIcon;
   labelIconClassName?: string;
-  description?: string;
+  description?: ReactNode;
   icon?: StatisticCardIcon;
   iconClassName?: string;
   badge?: ReactNode;
