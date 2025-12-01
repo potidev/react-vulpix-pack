@@ -24,7 +24,7 @@ export type StatisticCardProps = {
   badgeClassName?: string;
   badgeLeftIcon?: StatisticCardIcon;
   badgeRightIcon?: StatisticCardIcon;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export const StatisticCard = ({ 
