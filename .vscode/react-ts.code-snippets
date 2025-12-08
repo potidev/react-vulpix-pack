@@ -92,5 +92,10 @@
 		  ""
 		],
 		"description": "Cria uma estrutura para ContextAPI e Provider."
+	},
+	"Pipe": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "pipe",
+		"body": ["|"]
 	}
 }
