@@ -11,9 +11,20 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs",
     "@storybook/addon-onboarding",
-    "@storybook/addon-styling-webpack",
     "@storybook/addon-themes"
   ],
-  "framework": "@storybook/nextjs-vite"
+  "framework": "@storybook/nextjs-vite",
+  async viteFinal(config) {
+    return {
+      ...config,
+      server: {
+        ...config.server,
+        host: '0.0.0.0',
+        hmr: {
+          host: 'localhost',
+        },
+      },
+    };
+  },
 };
 export default config;
