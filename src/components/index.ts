@@ -8,6 +8,7 @@ export * from "./Button";
 export * from "./Calendar";
 export * from "./Card";
 export * from "./Carousel";
+export * from "./ContextMenu";
 export * from "./Drawer";
 export * from "./DropdownMenu";
 export * from "./Empty";
